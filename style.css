@@ -6,122 +6,81 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    height: 100vh; /* Make sure body covers full height */
-    overflow: auto; /* Enable scrolling for the body */
+    height: 100vh; /* Full height */
+}
+
+header {
+    background-color: transparent;
+    height: 60px; /* Fixed height for the header */
+    display: flex; /* Use flex to align items */
+    align-items: center; /* Center items vertically */
+    padding: 0 20px; /* Side padding */
+    color: white; /* Text color */
+    position: relative; /* Positioning context */
+    z-index: 10; /* Ensure header is above other elements */
+}
+
+header img {
+    height: 40px; /* Adjust image height */
+    margin-right: 15px; /* Space between images */
+}
+
+header p {
+    color: white; /* Text color */
+    margin-right: 15px; /* Space between items */
 }
 
 .container {
-    display: block; /* Use block display */
-    height: auto; /* Let the height be dynamic */
-    overflow: hidden; /* Prevent overflowing content */
+    display: flex; /* Flex layout for two sections */
+    height: calc(100vh - 60px); /* Full height minus header */
 }
 
-.coffee-image {
-    float: left; /* Float the coffee image to the left */
-    width: 30%; /* Set width to 50% */
-    height: 100%;
+.text-section {
+    flex: 1; /* Fill remaining space */
+    background-color: #333; /* Dark background color */
+    color: white; /* Text color */
+    padding: 40px; /* Inner padding */
+    display: flex; /* Use flexbox for vertical alignment */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center vertically */
 }
 
-.coffee-image img {
-    width: 100%;
-    height: 100%;
+.text-section h1 {
+    font-size: 2.5em; /* Heading size */
 }
 
-.registration-form {
-    float: right; /* Float registration form to the right */
-    width: 70%; /* Set width to 50% */
-    height: 100%;
-    background-color: #fff;
-    padding: 60px;
+.text-section p {
+    margin: 20px 0; /* Space between paragraphs */
 }
 
-.logo-container {
-    text-align: left; /* Center-align the logo */
+.get-started-button {
+    background-color: #FF5722; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Button padding */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer on hover */
+    margin-bottom: 20px; /* Space below button */
 }
 
-.main-logo {
-    margin-bottom: 10px;
+.stats {
+    display: flex; /* Horizontal layout for stats */
+    justify-content: space-between; /* Even spacing */
 }
 
-h2 {
-    margin: 20px 0;
-    text-align: left; /* Align text to the left */
+.stat-item {
+    text-align: center; /* Center the text */
 }
 
-span {
-    margin-bottom: 20px;
-    color: #555;
-    display: block; /* Ensure it occupies a new line */
-    text-align: left; /* Align text to the left */
+.stat-item h2 {
+    font-size: 2em; /* Stat size */
 }
 
-.login-ref{
-    margin-top: 10px;
-    color: #555;
-    display: block; /* Ensure it occupies a new line */
-    text-align: center; /* Align text to the left */
-}
-.input-container {
-    width: 100%;
-    margin-bottom: 15px;
+.image-section {
+    flex: 1; /* Fill remaining space */
+    background-image: url('./src/background.jpg'); /* Background image */
+    background-size: cover; /* Cover the area */
+    background-position: center; /* Center the image */
 }
 
-.input-container label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.input-wrapper {
-    position: relative; /* Positioning context for the absolute icon */
-}
-
-.input-wrapper input {
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px 40px; /* Extra padding for the icon */
-    outline: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.input-icon {
-    height: 20px; /* Adjust to your desired icon size */
-    width: 20px;
-    position: absolute;
-    top: 50%;
-    left: 10px; /* Space from the left */
-    transform: translateY(-50%); /* Center vertically */
-}
-
-button {
-    background-color: #FF5722; /* Orange color */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 10px;
-    width: 100%;
-    cursor: pointer;
-    margin: 20px 0;
-}
-
-button:hover {
-    background-color: #e64a19; /* Darker orange on hover */
-}
-
-.social-media {
-    margin-top: 20px;
-}
-
-.social-button {
-    margin: 75px;
-    display: inline; /* Inline block for buttons */
-    color: #333;
-    cursor: pointer;
-    border-radius: 8px;
-}
-
-.social-button img {
-    margin-right: 5px;
-}
