@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Payment Details</title>
+</head>
+<body>
+    <header>
+        <div class="logo">Coffee Shop</div>
+        <div class="auth-buttons">
+            <button>Sign in</button>
+            <button>Sign Up</button>
+        </div>
+    </header>
+    
+    <main>
+        <h1>Payment Details</h1>
+        <div class="order-summary">
+            <h2>Your Order</h2>
+            <div class="order-item">
+                <h3>Hazelnut Latte</h3>
+                <p>2 pcs | Regular | Dine In</p>
+                <p>IDR 20.000</p>
+            </div>
+            <div class="order-item">
+                <h3>Hazelnut Latte</h3>
+                <p>2 pcs | Ice | Dine In</p>
+                <p>IDR 20.000</p>
+            </div>
+            <div class="total">
+                <h2>Total</h2>
+                <p>Order: IDR 40.000</p>
+                <p>Delivery: IDR 0</p>
+                <p>Tax: IDR 4.000</p>
+                <p>Subtotal: IDR 44.000</p>
+                <button class="checkout">Checkout</button>
+            </div>
+        </div>
+
+        <div class="payment-info">
+            <h2>Payment Info & Delivery</h2>
+            <form>
+                <input type="email" placeholder="Enter Your Email" required>
+                <input type="text" placeholder="Enter Your Full Name" required>
+                <input type="text" placeholder="Enter Your Address" required>
+                <div class="delivery-options">
+                    <label>
+                        <input type="radio" name="delivery" checked>Dine In
+                    </label>
+                    <label>
+                        <input type="radio" name="delivery">Door Delivery
+                    </label>
+                    <label>
+                        <input type="radio" name="delivery">Pick Up
+                    </label>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Coffee Shop is a store that sells some good meals, and especially coffee. We provide high-quality beans.</p>
+            <p>&copy; 2020 Coffee Store</p>
+        </div>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>

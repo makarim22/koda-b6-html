@@ -1,0 +1,115 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.signup,
+.signin {
+    background-color: #FF5722;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.image-display {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.main-image {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.thumbnail-images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.thumbnail-images img {
+    width: 70px;
+    border-radius: 5px;
+}
+
+.details {
+    flex: 1;
+}
+
+.options {
+    margin: 10px 0;
+}
+
+.buy-button {
+    background-color: #FF5722;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.recommendations {
+    margin-top: 30px;
+}
+
+.recommended-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.rec-details {
+    margin-left: 10px;
+}
+
+.footer {
+    background-color: #F5F5F5;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+}
+
+.footer p {
+    margin: 5px 0;
+    color: #666;
+}
