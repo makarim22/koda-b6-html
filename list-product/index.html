@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Product List</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Coffee Shop</div>
+            <div class="user-info">
+                <img src="default-profile.png" alt="User Profile">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="sidebar">
+            <ul>
+                <li>Dashboard</li>
+                <li class="active">Product</li>
+                <li>Order</li>
+                <li>User</li>
+                <li>Keluar</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header-content">
+                <h1>Product List</h1>
+                <button class="add-product">+ Add Product</button>
+                <div class="search-section">
+                    <input type="text" placeholder="Enter Product Name">
+                    <button class="filter-button">Filter</button>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Image</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Desc</th>
+                        <th>Product Size</th>
+                        <th>Method</th>
+                        <th>Stock</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><img src="product1.jpg" alt="Caramel Machiato"></td>
+                        <td>Caramel Machiato</td>
+                        <td>IDR 40.000</td>
+                        <td>Cold brewing is a method of brewing that ...</td>
+                        <td>R, L, XL, 250gr</td>
+                        <td>Deliver, Dine In</td>
+                        <td>200</td>
+                        <td>
+                            <button class="edit-button">✏️</button>
+                            <button class="delete-button">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><img src="product2.jpg" alt="Hazelnut Latte"></td>
+                        <td>Hazelnut Latte</td>
+                        <td>IDR 40.000</td>
+                        <td>Cold brewing is a method of brewing that ...</td>
+                        <td>R, L, XL, 250gr</td>
+                        <td>Deliver, Dine In</td>
+                        <td>200</td>
+                        <td>
+                            <button class="edit-button">✏️</button>
+                            <button class="delete-button">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><img src="product3.jpg" alt="Kopi Susu"></td>
+                        <td>Kopi Susu</td>
+                        <td>IDR 40.000</td>
+                        <td>Cold brewing is a method of brewing that ...</td>
+                        <td>R, L, XL, 250gr</td>
+                        <td>Dine In</td>
+                        <td>200</td>
+                        <td>
+                            <button class="edit-button">✏️</button>
+                            <button class="delete-button">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><img src="product4.jpg" alt="Espresso Supreme"></td>
+                        <td>Espresso Supreme</td>
+                        <td>IDR 40.000</td>
+                        <td>Cold brewing is a method of brewing that ...</td>
+                        <td>R, L, XL, 250gr</td>
+                        <td>Deliver</td>
+                        <td>200</td>
+                        <td>
+                            <button class="edit-button">✏️</button>
+                            <button class="delete-button">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><img src="product5.jpg" alt="Caramel Velvet Latte"></td>
+                        <td>Caramel Velvet Latte</td>
+                        <td>IDR 40.000</td>
+                        <td>Cold brewing is a method of brewing that ...</td>
+                        <td>R, L, XL, 250gr</td>
+                        <td>Deliver, Dine In</td>
+                        <td>200</td>
+                        <td>
+                            <button class="edit-button">✏️</button>
+                            <button class="delete-button">🗑️</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pagination">
+                <p>Show 5 product of 100 product</p>
+                <button>Prev</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>Next</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

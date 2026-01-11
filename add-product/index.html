@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Add Product</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Coffee Shop</div>
+            <div class="user-info">
+                <img src="default-profile.png" alt="User Profile">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="sidebar">
+            <ul>
+                <li>Dashboard</li>
+                <li class="active">Product</li>
+                <li>Order</li>
+                <li>User</li>
+                <li>Keluar</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header-content">
+                <h1>Add Product</h1>
+                <button class="close-button">✖️</button>
+            </div>
+            <div class="add-product-form">
+                <div class="photo-upload">
+                    <label for="productPhoto">
+                        <img src="default-product.png" alt="Product Photo">
+                    </label>
+                    <input type="file" id="productPhoto" style="display: none;">
+                    <button class="upload-button">Upload</button>
+                </div>
+                <form>
+                    <div>
+                        <label for="productName">Product Name</label>
+                        <input type="text" id="productName" placeholder="Enter Product Name">
+                    </div>
+                    <div>
+                        <label for="productPrice">Price</label>
+                        <input type="text" id="productPrice" placeholder="Enter Product Price">
+                    </div>
+                    <div>
+                        <label for="productDescription">Description</label>
+                        <textarea id="productDescription" placeholder="Enter Product Description"></textarea>
+                    </div>
+                    <div>
+                        <label>Product Size</label>
+                        <div class="size-buttons">
+                            <button type="button">R</button>
+                            <button type="button">L</button>
+                            <button type="button">XL</button>
+                            <button type="button">250 gr</button>
+                            <button type="button">500 gr</button>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="productStock">Stock</label>
+                        <input type="text" id="productStock" placeholder="Enter Product Stock">
+                    </div>
+                    <button type="submit" class="save-product">Save Product</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

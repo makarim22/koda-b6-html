@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Edit Product</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Coffee Shop</div>
+            <div class="user-info">
+                <img src="default-profile.png" alt="User Profile">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="sidebar">
+            <ul>
+                <li>Dashboard</li>
+                <li class="active">Product</li>
+                <li>Order</li>
+                <li>User</li>
+                <li>Keluar</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header-content">
+                <h1>Edit Product</h1>
+                <button class="close-button">✖️</button>
+            </div>
+            <div class="edit-product-form">
+                <div class="photo-upload">
+                    <label for="productPhoto">
+                        <img src="product1.jpg" alt="Product Photo 1">
+                        <img src="product2.jpg" alt="Product Photo 2">
+                    </label>
+                    <input type="file" id="productPhoto" style="display: none;">
+                    <button class="upload-button">Upload</button>
+                </div>
+                <form>
+                    <div>
+                        <label for="productName">Product Name</label>
+                        <input type="text" id="productName" value="Hazelnut Latte">
+                    </div>
+                    <div>
+                        <label for="productPrice">Price</label>
+                        <input type="text" id="productPrice" value="40.000">
+                    </div>
+                    <div>
+                        <label for="productDescription">Description</label>
+                        <textarea id="productDescription">Cold brewing is a method of brewing that combines ground coffee and cool water and uses time instead of heat to extract the flavor. It is brewed in small batches and steeped for as long as 48 hours.</textarea>
+                    </div>
+                    <div>
+                        <label>Product Size</label>
+                        <div class="size-buttons">
+                            <button type="button">R</button>
+                            <button type="button">L</button>
+                            <button type="button">XL</button>
+                            <button type="button">250 gr</button>
+                            <button type="button">500 gr</button>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="productStock">Stock</label>
+                        <input type="text" id="productStock" value="200 Stock">
+                    </div>
+                    <button type="submit" class="save-product">Edit Save</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
