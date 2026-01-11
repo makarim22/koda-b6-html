@@ -412,7 +412,7 @@ h3 {
 }
 
 .social-icons {
-    display: flex;
+    display: inline;
     justify-content: center;
 }
 
