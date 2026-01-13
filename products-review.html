@@ -1,88 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="products-review.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="products-review.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Rubik:wght@300..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Coffee Shop</title>
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <h1>Coffee Shop</h1>
-            <nav class="nav">
-                <a href="#">Home</a>
-                <a href="#">Product</a>
-                <button class="signup">Sign Up</button>
-                <button class="signin">Sign In</button>
-            </nav>
-        </div>
+  </head>
+
+  <body>
+    <header class="container">
+      <div class="logo">
+        <img src="./src/icons/home/Logo.svg" alt="Logo" />
+        <img src="./src/icons/home/Frame.svg" alt="Menu" />
+      </div>
+      <nav class="left-header">
+        <p>Home</p>
+        <p>Product</p>
+      </nav>
+      <nav class="right-header">
+        <img src="./src/icons/Search.svg" alt="Search" />
+        <img src="./src/icons/ShoppingCart.svg" alt="Cart" />
+        <p class="login-button">Sign In</p>
+        <p class="register-button">Sign Up</p>
+      </nav>
     </header>
 
     <main class="main-container">
-        <div class="product-info">
-            <div class="image-display">
-                <img src="https://via.placeholder.com/400" alt="Hazelnut Latte" class="main-image">
-                <div class="thumbnail-images">
-                    <img src="https://via.placeholder.com/100" alt="Thumbnail 1">
-                    <img src="https://via.placeholder.com/100" alt="Thumbnail 2">
-                    <img src="https://via.placeholder.com/100" alt="Thumbnail 3">
-                </div>
-            </div>
-            <div class="details">
-                <h2>Hazelnut Latte</h2>
-                <p>IDR 10.000</p>
-                <p>⭐ 5.0 (200+ Reviews)</p>
-                <p>Cold brewing is a method of brewing that combines ground coffee and cool water.</p>
-                <div class="options">
-                    <label for="size">Choose Size:</label>
-                    <select id="size">
-                        <option>Regular</option>
-                        <option>Medium</option>
-                        <option>Large</option>
-                    </select>
-                    <label for="hot-ice">Hot/Ice:</label>
-                    <select id="hot-ice">
-                        <option>Hot</option>
-                        <option>Ice</option>
-                    </select>
-                </div>
-                <button class="buy-button">Buy</button>
-            </div>
+      <div class="product-info">
+        <div class="image-display">
+          <img
+            src="./src/detail/latte-cup.png"
+            alt="Hazelnut Latte"
+            class="main-image"
+          />
+          <div class="thumbnail-images">
+            <img src="./src/detail/latte-cup2.png" alt="Thumbnail 1" />
+            <img src="./src/detail/latte-cup3.png" alt="Thumbnail 2" />
+            <img src="./src/detail/latte-cup4.png" alt="Thumbnail 3" />
+          </div>
         </div>
+        <div class="details">
+          <h2>Hazelnut Latte</h2>
+          <p class="old-price">IDR 20.000</p>
+          <p class="current-price">IDR 10.000</p>
+          <div class="rating">
+            <span>⭐⭐⭐⭐⭐</span>
+            <span class="rating-score">5.0</span>
+          </div>
+          <div class="reviews">
+            <span>200+ Review</span>
+            <span>|</span>
+            <span>Recommendation</span>
+            <span class="recommend-icon">👍</span>
+          </div>
+          <p class="description">
+            Cold brewing is a method of brewing that combines ground coffee and
+            cool water.
+          </p>
+          <div class="options">
+            <h4>Size</h4>
+            <div class="size-options">
+              <button class="size-button active">Regular</button>
+              <button class="size-button">Medium</button>
+              <button class="size-button">Large</button>
+            </div>
+            <h4>Hot/Ice?</h4>
+            <div class="hot-ice-options">
+              <button class="ice-button">Ice</button>
+              <button class="hot-button">Hot</button>
+            </div>
+            <br />
+            <br />
+            <div class="buy-options">
+              <button class="buy-button">Buy</button>
+              <button class="add-to-cart-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <div class="recommendations">
-            <h3>Recommendation For You</h3>
-            <div class="recommended-item">
-                <img src="https://via.placeholder.com/100" alt="Recommendation 1">
-                <div class="rec-details">
-                    <h4>Hazelnut Latte</h4>
-                    <p>IDR 10.000</p>
-                    <button class="buy-button">Buy</button>
-                </div>
+      <div class="recommendations">
+        <h3 class="title">Recommendation <strong>For You</strong></h3>
+        <div class="recommended-items">
+          <div class="recommended-item">
+            <img src="./src/detail/snack.png" alt="Recommendation 1" />
+            <div class="rec-details">
+              <h4>Hazelnut Latte</h4>
+              <p>
+                You can explore the menu that we provide with fun and have their
+                own taste and make your day better.
+              </p>
+              <p>IDR 10.000</p>
+              <button class="buy-button">Buy</button>
             </div>
-            <div class="recommended-item">
-                <img src="https://via.placeholder.com/100" alt="Recommendation 2">
-                <div class="rec-details">
-                    <h4>Hazelnut Latte</h4>
-                    <p>IDR 10.000</p>
-                    <button class="buy-button">Buy</button>
-                </div>
+          </div>
+          <div class="recommended-item">
+            <img src="./src/detail/latte-cup.png" alt="Recommendation 2" />
+            <div class="rec-details">
+              <h4>Hazelnut Latte</h4>
+              <p>
+                You can explore the menu that we provide with fun and have their
+                own taste and make your day better.
+              </p>
+              <p>IDR 10.000</p>
+              <button class="buy-button">Buy</button>
             </div>
-            <div class="recommended-item">
-                <img src="https://via.placeholder.com/100" alt="Recommendation 3">
-                <div class="rec-details">
-                    <h4>Hazelnut Latte</h4>
-                    <p>IDR 10.000</p>
-                    <button class="buy-button">Buy</button>
-                </div>
+          </div>
+          <div class="recommended-item">
+            <img src="./src/detail/latte-cup.png" alt="Recommendation 3" />
+            <div class="rec-details">
+              <h4>Hazelnut Latte</h4>
+              <p>IDR 10.000</p>
+              <p>
+                You can explore the menu that we provide with fun and have their
+                own taste and make your day better.
+              </p>
+              <button class="buy-button">Buy</button>
             </div>
+          </div>
         </div>
+      </div>
     </main>
 
     <footer class="footer">
-        <p>©2020 Coffee Store</p>
-        <p>Product | Engage | Social Media</p>
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h2>Coffee Shop</h2>
+          <p>
+            Coffee Shop is a store that sells some good meals, and especially
+            coffee. We provide high quality beans.
+          </p>
+          <p>&copy; 2020 CoffeeStore</p>
+        </div>
+        <div class="footer-section products">
+          <h3>Product</h3>
+          <ul>
+            <li>Our Product</li>
+            <li>Pricing</li>
+            <li>Locations</li>
+            <li>Countries</li>
+            <li>Blog</li>
+          </ul>
+        </div>
+        <div class="footer-section engage">
+          <h3>Engage</h3>
+          <ul>
+            <li>Partner</li>
+            <li>FAQ</li>
+            <li>About Us</li>
+            <li>Privacy Policy</li>
+            <li>Terms of Service</li>
+          </ul>
+        </div>
+        <div class="footer-section social-media">
+          <h3>Social Media</h3>
+          <div class="social-icons">
+            <img src="./src/icons/Facebook.svg" alt="Facebook" />
+            <img src="./src/icons/Twitter.svg" alt="Twitter" />
+            <img src="./src/icons/Instagram.png" alt="Instagram" />
+          </div>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
