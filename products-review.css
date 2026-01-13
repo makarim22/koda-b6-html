@@ -1,8 +1,15 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Plus Jakarta Sans', 'Rubik', sans-serif;
     height: 100vh;
     background-color: #f5f5f5;
 }
+
 .header {
     background-color: black;
     color: white;
@@ -241,7 +248,6 @@ body {
 .right-header {
     display: inline-block;
     vertical-align: middle;
-    float: right;
     margin-right: 130px;
 }
 

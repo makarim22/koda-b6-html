@@ -1,75 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="products-checkout.css" />
     <title>Payment Details</title>
-</head>
-<body>
-    <header>
-        <div class="logo">Coffee Shop</div>
-        <div class="auth-buttons">
-            <button>Sign in</button>
-            <button>Sign Up</button>
-        </div>
+  </head>
+  <body>
+    <header class="container">
+      <div class="logo">
+        <img src="./src/icons/home/Logo.svg" alt="Logo" />
+        <img src="./src/icons/home/Frame.svg" alt="Menu" />
+      </div>
+      <nav class="left-header">
+        <a href="home.html">Home</a>
+        <a href="product.html">Product</a>
+      </nav>
+      <nav class="right-header">
+        <img src="./src/icons/Search.svg" alt="Search" />
+        <img src="./src/icons/ShoppingCart.svg" alt="Cart" />
+        <a href="login.html" class="login-button">Sign In</a>
+        <a href="register.html" class="register-button">Sign Up</a>
+      </nav>
     </header>
-    
+
     <main>
-        <h1>Payment Details</h1>
-        <div class="order-summary">
-            <h2>Your Order</h2>
-            <div class="order-item">
-                <h3>Hazelnut Latte</h3>
-                <p>2 pcs | Regular | Dine In</p>
-                <p>IDR 20.000</p>
+      <h1>Payment Details</h1>
+      <div class="title">
+        <h2>Your Order</h2>
+        <button class="add-menu">+ Add Menu</button>
+      </div>
+      <div class="order-summary">
+        <div class="order-left">
+          <div class="order-item">
+            <div class="product-image-container">
+              <img
+                src="./src/product/product1.png"
+                alt="Hazelnut Latte"
+                class="product-image"
+              />
             </div>
-            <div class="order-item">
-                <h3>Hazelnut Latte</h3>
-                <p>2 pcs | Ice | Dine In</p>
-                <p>IDR 20.000</p>
+            <div class="item-info">
+              <h3>
+                Hazelnut Latte <span class="flash-sale">FLASH SALE!</span>
+              </h3>
+              <p>2 pcs | Regular | Dine In</p>
+              <p class="old-price">IDR 40.000</p>
+              <p class="current-price">IDR 20.000</p>
+              <button class="remove-item">❌</button>
             </div>
-            <div class="total">
-                <h2>Total</h2>
-                <p>Order: IDR 40.000</p>
-                <p>Delivery: IDR 0</p>
-                <p>Tax: IDR 4.000</p>
-                <p>Subtotal: IDR 44.000</p>
-                <button class="checkout">Checkout</button>
+          </div>
+          <div class="order-item">
+            <div class="product-image-container">
+              <img
+                src="./src/product/product2.png"
+                alt="Hazelnut Latte"
+                class="product-image"
+              />
             </div>
+            <div class="item-info">
+              <h3>
+                Hazelnut Latte <span class="flash-sale">FLASH SALE!</span>
+              </h3>
+              <p>2 pcs | Ice | Dine In</p>
+              <p class="old-price">IDR 40.000</p>
+              <p class="current-price">IDR 20.000</p>
+              <button class="remove-item">❌</button>
+            </div>
+          </div>
         </div>
 
-        <div class="payment-info">
-            <h2>Payment Info & Delivery</h2>
-            <form>
-                <input type="email" placeholder="Enter Your Email" required>
-                <input type="text" placeholder="Enter Your Full Name" required>
-                <input type="text" placeholder="Enter Your Address" required>
-                <div class="delivery-options">
-                    <label>
-                        <input type="radio" name="delivery" checked>Dine In
-                    </label>
-                    <label>
-                        <input type="radio" name="delivery">Door Delivery
-                    </label>
-                    <label>
-                        <input type="radio" name="delivery">Pick Up
-                    </label>
-                </div>
-            </form>
+        <div class="total">
+          <p>Order: IDR 40.000</p>
+          <p>Delivery: IDR 0</p>
+          <p>Tax: IDR 4.000</p>
+          <p>Subtotal: IDR 44.000</p>
+          <button class="checkout">Checkout</button>
+          <div class="payment-options">
+            <p>We Accept</p>
+            <div class="payment-channel">
+              <img src="./src/product/payments/bca.svg" alt="Payment Options" />
+              <img src="./src/product/payments/bri.svg"" alt="Payment Options"
+              /> <img src="./src/product/payments/dana.svg"" alt="Payment
+              Options" /> <img src="./src/product/payments/gopay.svg""
+              alt="Payment Options" /> <img
+              src="./src/product/payments/ovo.svg"" alt="Payment Options" />
+              <img src="./src/product/payments/logos_paypal.svg"" alt="Payment
+              Options" />
+            </div>
+            <p>*Get Discount if you pay with Bank Central Asia</p>
+          </div>
         </div>
+      </div>
+
+      <div class="payment-info">
+        <h2>Payment Info & Delivery</h2>
+        <div class="input-container">
+          <label for="email">Email:</label>
+          <div class="input-wrapper">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter Your Email"
+              required
+            />
+            <img
+              src="./src/icons/mail.svg"
+              alt="Email Icon"
+              class="input-icon"
+            />
+          </div>
+        </div>
+
+        <div class="input-container">
+          <label for="email">Fullname:</label>
+          <div class="input-wrapper">
+            <input
+              type="name"
+              id="fullname"
+              name="fullname"
+              placeholder="Enter Your Name"
+              required
+            />
+            <img
+              src="./src/product/Profile.svg"
+              alt="Email Icon"
+              class="input-icon"
+            />
+          </div>
+          </div>
+          <div class="input-container">
+          <label for="email">Address:</label>
+          <div class="input-wrapper">
+            <input
+              type="address"
+              id="address"
+              name="address"
+              placeholder="Enter Your Adress"
+              required
+            />
+            <img
+              src="./src/product/Location.svg"
+              alt="Email Icon"
+              class="input-icon"
+            />
+          </div>
+          <div class="delivery-options">
+          <button type="button" name="delivery">Dine In</button>
+          <button type="button" name="delivery">Door Delivery</button>
+          <button type="button" name="delivery">Pickup</button>
+        </div>
+        </div>
+          
+        </div>
+
+      </div>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p>Coffee Shop is a store that sells some good meals, and especially coffee. We provide high-quality beans.</p>
-            <p>&copy; 2020 Coffee Store</p>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h2>Coffee Shop</h2>
+          <p>
+            Coffee Shop is a store that sells some good meals, and especially
+            coffee. We provide high quality beans.
+          </p>
+          <p>&copy; 2020 CoffeeStore</p>
         </div>
-        <div class="social-media">
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href="#">Instagram</a>
+        <div class="footer-section products">
+          <h3>Product</h3>
+          <ul>
+            <li>Our Product</li>
+            <li>Pricing</li>
+            <li>Locations</li>
+            <li>Countries</li>
+            <li>Blog</li>
+          </ul>
         </div>
+        <div class="footer-section engage">
+          <h3>Engage</h3>
+          <ul>
+            <li>Partner</li>
+            <li>FAQ</li>
+            <li>About Us</li>
+            <li>Privacy Policy</li>
+            <li>Terms of Service</li>
+          </ul>
+        </div>
+        <div class="footer-section social-media">
+          <h3>Social Media</h3>
+          <div class="social-icons">
+            <img src="./src/icons/Facebook.svg" alt="Facebook" />
+            <img src="./src/icons/Twitter.svg" alt="Twitter" />
+            <img src="./src/icons/Instagram.png" alt="Instagram" />
+          </div>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

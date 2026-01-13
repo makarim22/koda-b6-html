@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */
 }
 
 header {
@@ -21,7 +21,7 @@ header {
 .auth-buttons button {
     margin-left: 10px;
     padding: 5px 10px;
-    background-color: #ff9900;
+    /* background-color: #ff9900; */
     border: none;
     color: white;
     cursor: pointer;
@@ -34,62 +34,189 @@ main {
 h1, h2 {
     color: #333;
 }
-
 .order-summary {
-    background: #fff;
-    padding: 20px;
-    borderRadius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex; /* Use flex for equal height */
+    /* background-color: goldenrod; */
 }
 
-.order-item {
-    margin: 10px 0;
+.order-left {
+    flex: 2; /* Take more space */
+    display: flex;
+    flex-direction: column; 
 }
 
 .total {
-    margin-top: 20px;
+    flex: 1; /* Take less space */
+    /* background-color: #f9f9f9;  */
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: space-between; /* Distribute space */
 }
 
-.checkout {
-    background-color: #ff9900;
+.order-item {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 15px; 
+    border-bottom: 1px solid #eee; 
+    padding-bottom: 10px;
+}
+
+.product-image-container {
+    /* background-color: #ff9900; */
+    display: flex;
+    flex-direction: row;
+}
+
+.product-image {
+    width: 90%; 
+    height: auto; 
+    margin-right: 10px; 
+}
+
+.item-info {
+    /* background-color: greenyellow; */
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.flash-sale {
+    /* background-color: red;  */
     color: white;
-    padding: 10px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.current-price {
+    color: orange;
+    font-size: 1.2em;
+}
+
+.remove-item {
+    background: none;
     border: none;
+    cursor: pointer;
+    color: red;
+    font-size: 1.5em;
+    position: absolute;
+    margin-left: 400px;
+}
+
+.add-menu {
+    margin-top: 10px;
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-.payment-info {
-    margin-top: 20px;
+.checkout {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; 
 }
 
-.payment-info form {
+.payment-options {
+    /* background-color: #ff9900; */
+    margin-top: 15px;
+    text-align: center;
+}
+
+.payment-options > img {
+    height: 20px;
+    margin: 0 5px;
+    width: 20px
+}
+
+.payment-channel {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+    align-items: center;
+}
+.title {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment-info {
+    width: 50%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: bisque; */
 }
 
-.payment-info input {
-    margin-bottom: 10px;
-    padding: 10px;
+.payment-info > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .delivery-options {
-    margin-top: 10px;
-}
-
-.delivery-options label {
-    display: block;
-}
-
-footer {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
+    /* background-color: aqua; */
     margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.social-media a {
-    margin: 0 10px;
-    color: #ff9900;
-    text-decoration: none;
+.delivery-options > button {
+    /* background-color: white; */
+    color: black; 
+    border: black 1px solid;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-container {
+     width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+
+.input-wrapper {
+    position: relative; 
+    width: 100%; 
+}
+.input-wrapper  input {
+    width: 85%;
+    padding: 10px 30px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}
+
+.input-icon {
+    position: absolute; 
+    left: 8px; 
+    top: 50%; 
+    transform: translateY(-50%);
+    width: 20px; 
+    height: auto; 
+}
+
+.input-container label {
+    margin-bottom: 5px;
 }

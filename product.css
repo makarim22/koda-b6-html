@@ -32,7 +32,6 @@ body {
 .right-header {
     display: inline-block;
     vertical-align: middle;
-    float: right;
     margin-right: 130px;
 }
 
@@ -175,6 +174,7 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Footer */
 .footer {
     background-color: #f5f5f5;
     padding: 40px 20px;
