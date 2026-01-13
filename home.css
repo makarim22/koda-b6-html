@@ -315,6 +315,7 @@ body {
     color: white;
     padding: 20px;
     border-radius: 8px;
+    width: 100%;
     max-width: 800px;
     margin: auto;
 }
@@ -322,6 +323,9 @@ body {
 .testimonial-card {
     display: flex;
     align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
 }
 
 .testimonial-image {
@@ -363,8 +367,9 @@ h3 {
     text-align: center;
 }
 .navigation-image {
-    display: block;
-    margin: 0 auto;
+    display: flex;
+    justify-content: start;
+    
 }
 
 .nav-button {
