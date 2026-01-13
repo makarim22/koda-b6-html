@@ -8,7 +8,6 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     background-color: #000;
     color: #fff;
     padding: 10px 20px;
@@ -29,6 +28,12 @@ header {
 
 main {
     padding: 20px;
+    /* background-color: #ff9900; */
+}
+
+.content {
+    display: flex;
+
 }
 
 h1 {
@@ -36,9 +41,12 @@ h1 {
 }
 
 .order-filters {
+    width: 50%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     padding: 10px 0;
+    /* background-color: aqua; */
 }
 
 .order-filters span {
@@ -46,28 +54,56 @@ h1 {
 }
 
 .orders {
+    flex: 1;
     margin-top: 20px;
 }
 
 .order-item {
-    background: #fff;
+    display: flex;
+    background: #E8E8E84D
     padding: 15px;
     margin: 10px 0;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-image {
+    width: 100px; 
+    height: auto; 
+    border-radius: 5px; 
+    margin-right: 15px; 
+}
+
+.order-info {
+    display: flex;
+    flex-direction: column; 
+    flex-grow: 1; 
+}
+
+.order-details {
+    display: flex; 
+    justify-content: space-between; 
 }
 
 .status {
-    color: #ff9900;
+    background-color: orange; 
+    color: white;
+    padding: 3px 6px; 
+    border-radius: 4px; 
 }
 
 .view-details {
-    background-color: #ff9900;
-    color: white;
-    padding: 5px 10px;
+    /* background-color: #ff9900;  */
+    color: orange;
     border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
     cursor: pointer;
+    margin-top: 10px;
 }
+
+
+
 
 .pagination {
     margin: 20px 0;
@@ -79,11 +115,23 @@ h1 {
 }
 
 .message-box {
-    background: #fff;
+    flex: 1;
+    /* background: #fff; */
     padding: 20px;
     margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    
+}
+
+.box {
+    background-color: whitesmoke;
+    border: black 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
 }
 
 footer {
