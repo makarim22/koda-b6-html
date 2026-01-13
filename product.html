@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="product.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Rubik:wght@300..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Coffee Shop Products</title>
   </head>
   <body>
@@ -36,69 +40,73 @@
         <h2>We Provide Good Coffee and Healthy Meals</h2>
       </div>
     </div>
-
-      <div class="coupon-container">
-        <p>Today Promo</p>
-        <div class="promo-box">
+    <div style="margin-left: 130px; margin-top: 20px">
+      <p class="title">Today <strong style="color: #8e6447">Promo</strong></p>
+    </div>
+    <div class="coupon-container">
+      <div class="promo-box">
+        <div class="background">
           <img
             src="./src/rectangle.svg"
             alt="Rectangle"
             class="rectangle-image"
           />
           <img src="./src/woman.png" alt="Woman" class="woman-image" />
-          <div class="promo-text">
-            <h3>HAPPY MOTHER'S DAY!</h3>
-            <p>Get one of our favorite menu for free!</p>
-            <p class="code">Klaim Kupon</p>
-          </div>
         </div>
-        <div class="promo-box">
-          <img
-            src="./src/rectangle.svg"
-            alt="Rectangle"
-            class="rectangle-image"
-          />
-          <img src="./src/woman.png" alt="Woman" class="woman-image" />
-          <div class="promo-text">
-            <h3>HAPPY MOTHER'S DAY!</h3>
-            <p>Get one of our favorite menu for free!</p>
-            <p class="code">Klaim Kupon</p>
-          </div>
+        <div class="promo-text">
+          <h3>HAPPY MOTHER'S DAY!</h3>
+          <p>Get one of our favorite menu for free!</p>
+          <p class="code">Klaim Kupon</p>
         </div>
-        <div class="promo-box">
-          <img
-            src="./src/rectangle.svg"
-            alt="Rectangle"
-            class="rectangle-image"
-          />
-          <img src="./src/woman.png" alt="Woman" class="woman-image" />
-          <div class="promo-text">
-            <h3>HAPPY MOTHER'S DAY!</h3>
-            <p>Get one of our favorite menu for free!</p>
-            <p class="code">Klaim Kupon</p>
-          </div>
+      </div>
+      <div class="promo-box">
+        <img
+          src="./src/rectangle.svg"
+          alt="Rectangle"
+          class="rectangle-image"
+        />
+        <img src="./src/woman.png" alt="Woman" class="woman-image" />
+        <div class="promo-text">
+          <h3>HAPPY MOTHER'S DAY!</h3>
+          <p>Get one of our favorite menu for free!</p>
+          <p class="code">Klaim Kupon</p>
         </div>
-        <div class="promo-box">
-          <img
-            src="./src/rectangle-yellow.png"
-            alt="Rectangle"
-            class="rectangle-image"
-          />
-          <img src="./src/man.png" alt="man" class="woman-image" />
-          <div class="promo-text">
-            <h3>Get a cup of coffee for free on sunday morning
-            </h3>
-            <p>Only at 7 to 9 AM</p>
-          </div>
+      </div>
+      <div class="promo-box">
+        <img
+          src="./src/rectangle.svg"
+          alt="Rectangle"
+          class="rectangle-image"
+        />
+        <img src="./src/woman.png" alt="Woman" class="woman-image" />
+        <div class="promo-text">
+          <h3>HAPPY MOTHER'S DAY!</h3>
+          <p>Get one of our favorite menu for free!</p>
+          <p class="code">Klaim Kupon</p>
         </div>
+      </div>
+      <div class="promo-box">
+        <img
+          src="./src/rectangle-yellow.png"
+          alt="Rectangle"
+          class="rectangle-image"
+        />
+        <img src="./src/man.png" alt="man" class="woman-image" />
+        <div class="promo-text">
+          <h3>Get a cup of coffee for free on sunday morning</h3>
+          <p>Only at 7 to 9 AM</p>
+        </div>
+      </div>
+    </div>
 
     <div class="main-container">
-      <h3>Our Product</h3>
+      <h3 class="title">Our <strong style="color: #8e6447"></strong></h3>
       <div class="sidebar">
         <h3>Filter</h3>
         <input type="text" placeholder="Search Product..." class="search-bar" />
         <h4>Category</h4>
-        <label class="cek"><input type="checkbox" /> Favorite Products</label><br />
+        <label class="cek"><input type="checkbox" /> Favorite Products</label
+        ><br />
         <label class="cek"><input type="checkbox" /> Coffee</label><br />
         <label class="cek"><input type="checkbox" /> Non Coffee</label><br />
         <label class="cek"><input type="checkbox" /> Foods</label><br />
@@ -106,7 +114,8 @@
         <h4>Sort By</h4>
         <label class="cek"><input type="checkbox" /> Buy 1 Get 1</label><br />
         <label class="cek"><input type="checkbox" /> Flash Sale</label><br />
-        <label class="cek"><input type="checkbox" /> Birthday Package</label><br />
+        <label class="cek"><input type="checkbox" /> Birthday Package</label
+        ><br />
         <label class="cek"><input type="checkbox" /> Cheap</label><br />
         <h4>Price Range</h4>
         <input type="range" min="0" max="100000" step="5000" />
@@ -116,88 +125,160 @@
       <div class="product-section">
         <div class="product-grid">
           <div class="product-card">
-            <img
-              src="./src/product/product3.png"
-              alt="Hazelnut Latte"
-              class="product-image"
-            />
-            <h4>Hazelnut Latte</h4>
-            <p class="description">
-              You can explore the menu that we provide with fun and have their
-              own taste and make your day better.
-            </p>
-            <p class="price">IDR 30,000</p>
-            <button class="add-to-cart">Add to Cart</button>
-          </div>
-          <div class="product-card">
+            <div class="sale-banner">FLASH SALE!</div>
             <img
               src="./src/product/product4.png"
               alt="Hazelnut Latte"
               class="product-image"
             />
-            <h4>Hazelnut Latte</h4>
-            <p class="description">
-              You can explore the menu that we provide with fun and have their
-              own taste and make your day better.
-            </p>
-            <p class="price">IDR 30,000</p>
-            <button class="add-to-cart">Add to Cart</button>
+            <div class="description-main">
+              <h4>Hazelnut Latte</h4>
+              <p class="description">
+                You can explore the menu that we provide with fun and have their
+                own taste and make your day better.
+              </p>
+              <div class="rating">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="rating-score">5.0</span>
+              </div>
+              <p class="price">IDR 20,000</p>
+              <p class="discounted-price">IDR 10,000</p>
+              <button class="add-to-cart">Buy</button>
+            </div>
           </div>
           <div class="product-card">
+            <div class="sale-banner">FLASH SALE!</div>
             <img
-              src="./src/product/product2.png"
+              src="./src/product/product4.png"
               alt="Hazelnut Latte"
               class="product-image"
             />
-            <h4>Hazelnut Latte</h4>
-            <p class="description">
-              You can explore the menu that we provide with fun and have their
-              own taste and make your day better.
-            </p>
-            <p class="price">IDR 30,000</p>
-            <button class="add-to-cart">Add to Cart</button>
+            <div class="description-main">
+              <h4>Hazelnut Latte</h4>
+              <p class="description">
+                You can explore the menu that we provide with fun and have their
+                own taste and make your day better.
+              </p>
+              <div class="rating">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="rating-score">5.0</span>
+              </div>
+              <p class="price">IDR 20,000</p>
+              <p class="discounted-price">IDR 10,000</p>
+              <button class="add-to-cart">Buy</button>
+            </div>
           </div>
           <div class="product-card">
+            <div class="sale-banner">FLASH SALE!</div>
             <img
-              src="./src/product/product3.png"
+              src="./src/product/product4.png"
               alt="Hazelnut Latte"
               class="product-image"
             />
-            <h4>Hazelnut Latte</h4>
-            <p class="description">
-              You can explore the menu that we provide with fun and have their
-              own taste and make your day better.
-            </p>
-            <p class="price">IDR 30,000</p>
-            <button class="add-to-cart">Add to Cart</button>
+            <div class="description-main">
+              <h4>Hazelnut Latte</h4>
+              <p class="description">
+                You can explore the menu that we provide with fun and have their
+                own taste and make your day better.
+              </p>
+              <div class="rating">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="rating-score">5.0</span>
+              </div>
+              <p class="price">IDR 20,000</p>
+              <p class="discounted-price">IDR 10,000</p>
+              <button class="add-to-cart">Buy</button>
+            </div>
           </div>
           <div class="product-card">
+            <div class="sale-banner">FLASH SALE!</div>
             <img
-              src="./src/product/product2.png"
+              src="./src/product/product4.png"
               alt="Hazelnut Latte"
               class="product-image"
             />
-            <h4>Hazelnut Latte</h4>
-            <p class="description">
-              You can explore the menu that we provide with fun and have their
-              own taste and make your day better.
-            </p>
-            <p class="price">IDR 30,000</p>
-            <button class="add-to-cart">Add to Cart</button>
+            <div class="description-main">
+              <h4>Hazelnut Latte</h4>
+              <p class="description">
+                You can explore the menu that we provide with fun and have their
+                own taste and make your day better.
+              </p>
+              <div class="rating">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="rating-score">5.0</span>
+              </div>
+              <p class="price">IDR 20,000</p>
+              <p class="discounted-price">IDR 10,000</p>
+              <button class="add-to-cart">Buy</button>
+            </div>
           </div>
           <div class="product-card">
+            <div class="sale-banner">FLASH SALE!</div>
             <img
-              src="./src/product/product1.png"
+              src="./src/product/product4.png"
               alt="Hazelnut Latte"
               class="product-image"
             />
-            <h4>Hazelnut Latte</h4>
-            <p class="description">
-              You can explore the menu that we provide with fun and have their
-              own taste and make your day better.
-            </p>
-            <p class="price">IDR 30,000</p>
-            <button class="add-to-cart">Add to Cart</button>
+            <div class="description-main">
+              <h4>Hazelnut Latte</h4>
+              <p class="description">
+                You can explore the menu that we provide with fun and have their
+                own taste and make your day better.
+              </p>
+              <div class="rating">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="rating-score">5.0</span>
+              </div>
+              <p class="price">IDR 20,000</p>
+              <p class="discounted-price">IDR 10,000</p>
+              <button class="add-to-cart">Buy</button>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="sale-banner">FLASH SALE!</div>
+            <img
+              src="./src/product/product4.png"
+              alt="Hazelnut Latte"
+              class="product-image"
+            />
+            <div class="description-main">
+              <h4>Hazelnut Latte</h4>
+              <p class="description">
+                You can explore the menu that we provide with fun and have their
+                own taste and make your day better.
+              </p>
+              <div class="rating">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="rating-score">5.0</span>
+              </div>
+              <p class="price">IDR 20,000</p>
+              <p class="discounted-price">IDR 10,000</p>
+              <button class="add-to-cart">Buy</button>
+            </div>
           </div>
         </div>
       </div>

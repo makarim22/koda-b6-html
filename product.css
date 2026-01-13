@@ -1,7 +1,18 @@
-body {
+/* body {
     font-family: 'Plus Jakarta Sans', 'Rubik', sans-serif;
     height: 100vh;
     background-color: #f5f5f5;
+} */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', 'Rubik', sans-serif;
+    height: 100vh;
 }
 
 .container {
@@ -11,6 +22,28 @@ body {
     background-color: black;
     width: 100%;
     z-index: 10;
+}
+
+.promo-container {
+    background-color: chocolate;
+    /* display: flex; */
+}
+
+.coupon-container {
+    /* background-color: #333; */
+    display: flex;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.promo-box {
+    display: flex; /* Flexbox for aligning items */
+    align-items: center; /* Center vertically */
+    border-radius: 10px; /* Rounded corners */
+    padding: 5px; /* Padding inside the promo box */
+    margin: 10px 0; /* Space between boxes */
+    position: relative; /* For positioning images */
 }
 
 .logo {
@@ -78,9 +111,6 @@ body {
     cursor: pointer;
 }
 
-.coupon-container {
-    display: inline-block;
-}
 
 .coupon-container > img {
     width: 300px;
@@ -103,9 +133,13 @@ body {
     border-right: 1px solid #ddd;
 }
 
-.sidebar h3, h4 {
+.sidebar h3 {
     margin-bottom: 20px;
     color: white;
+}
+
+.description-main > h4 {
+    color: black;
 }
 
 .cek {
@@ -125,35 +159,37 @@ body {
 
 .product-card {
     display: inline-block;
-    width: 45%;
     padding: auto;
     margin: 5px;
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
-    height: 350px;
+    height: 400px;
     width: 300px;
 }
 
 .product-image {
-    max-width: 75%;
-    max-height: 150px;
+   width: 100%; /* Full width image */
+    max-height: 200px; /* Limit height */
     object-fit: cover;
 }
 
+
+.description-main {
+    position: absolute; /* Position absolute to overlap the image */
+    bottom: 0;
+    left: 12px; /* Align to the left */
+    right: 12px; /* Expand to the right */
+    padding: 12px;
+    background-color: white;
+    padding: 10px; /* Padding around the text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+    z-index: 2; /* Make sure it’s on top of the image */
+}
 .price {
     color: #FF5722;
     font-weight: bold;
-}
-
-.add-to-cart {
-    background-color: #FF5722;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
 }
 
 .description {
@@ -172,6 +208,39 @@ body {
     font-size: 24px;
     font-weight: semibold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+}
+
+
+.description {
+    color: #666; /* Description text color */
+    font-size: 14px; /* Font size for the description */
+}
+
+.price, .discounted-price {
+    font-size: 16px; /* Font size for prices */
+    color: #FF5722; /* Price color */
+    font-weight: bold; /* Price bold */
+    display: inline-block;
+}
+
+.discounted-price {
+    text-decoration: line-through; /* Strike through for original price */
+    color: #999; /* Lighter color for original price */
+}
+
+.rating {
+    display: flex; /* Flexbox for stars */
+    align-items: center; /* Center stars vertically */
+    margin: 10px 0; /* Margin around the rating */
+}
+
+.rating-score {
+    margin: 10px;
+}
+.star {
+    color: #FF8906; /* Color for stars */
+    font-size: 16px; /* Size for stars */
 }
 
 /* Footer */
@@ -227,43 +296,136 @@ body {
     margin: 0 10px;
 }
 
-.coupon-container {
-    background-color: #f4f4f4;
-    display: inline-block;
-}
-
 .promo-box {
     position: relative;
-    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
 .rectangle-image {
-    position: absolute;
-    width: 335px;
-    height: 109px;
-    z-index: 0;
+    width: 100%; /* Make the rectangle image take full width */
+    height: 130px; /* Maintain aspect ratio */
+    padding: 0;
 }
 
+.rectangle-yellow {
+    background-color: #FF8906; /* Yellow background */
+}
+
+
 .woman-image {
-    width: 96px;
-    margin-right: 10px;
-    z-index: 1;
-    display: inline-block;
+    position: absolute; /* Position woman image absolutely */
+    left: 20px; /* Adjust as needed */
+    top: 20px; /* Adjust as needed */
+    width: 50px; /* Width of the image */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .promo-text {
-    color: #333;
-    font-size: small;
-    z-index: 1;
+    position: absolute;
+    top: 20px;
+    margin-left: 80px; /* Leave space for the woman image */
+    z-index: 1; /* Ensure text is above rectangle image */
+    color: #333; /* Text color */
 }
 
 .promo-text h3 {
-    margin: 0;
-    font-size: medium;
+    margin: 0; /* Remove default margin */
+    font-size: medium; /* Adjust heading size */
+    margin-bottom: 10px;
+}
+
+p {
+    margin-top: 10px;
+    margin: 0; /* Remove default margin */
+    color: black; /* Description color */
 }
 
 .code {
     font-weight: bold;
     font-size: medium;
+    color: white;
+    margin-top: 10px;
+}
+
+.background {
+    position: relative;
+}
+
+.title {
+    font-family: 'Plus Jakarta Sans', 'Rubik', sans-serif;
+    font-size: 2.5em;  
+    text-align: left;
+    color: black;
+}
+
+.background-image {
+    width: 100%;
+}
+
+
+
+.product-card {
+    position: relative; /* Set to allow absolute positioning of children */
+    background: #fff; /* White background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Hide overflowing parts */
+    margin: 15px; /* Space between cards */
+}
+
+.sale-banner {
+    position: absolute; /* Position absolutely within the card */
+    top: 10px; /* Position at the top */
+    left: 10px; /* Position at the left */
+    background-color: red; /* Banner background */
+    color: white; /* Text color */
+    padding: 5px 10px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+    z-index: 1; /* Make sure the banner appears above other elements */
+}
+
+.product-image {
+    width: 100%; /* Full width image */
+    max-height: 200px; /* Set max height */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+
+.description {
+    color: #666; /* Description text color */
+    font-size: 14px; /* Description font size */
+}
+
+.price, .discounted-price {
+    font-size: 16px; /* Price font size */
+    color: #FF5722; /* Price color */
+    font-weight: bold; /* Bold price */
+}
+
+.discounted-price {
+    text-decoration: line-through; /* Strike through for original price */
+    color: #999; /* Lighter color for the original price */
+}
+
+.rating {
+    display: flex; /* Flexbox for stars */
+    align-items: center; /* Center stars vertically */
+    margin: 10px 0; /* Margin around the rating */
+}
+
+.star {
+    color: #FF8906; /* Color for stars */
+    font-size: 16px; /* Star size */
+}
+
+.add-to-cart {
+    background-color: #FF5722; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for button */
+    cursor: pointer; /* Pointer for button */
+    margin-top: 10px; /* Margin above the button */
 }
