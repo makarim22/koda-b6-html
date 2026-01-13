@@ -6,81 +6,151 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    height: 100vh; /* Full height */
+    height: 100vh;
 }
 
 header {
-    background-color: transparent;
-    height: 60px; /* Fixed height for the header */
-    display: flex; /* Use flex to align items */
-    align-items: center; /* Center items vertically */
-    padding: 0 20px; /* Side padding */
-    color: white; /* Text color */
-    position: relative; /* Positioning context */
-    z-index: 10; /* Ensure header is above other elements */
+    background-color: transparent; /* Adjust as needed */
+    height: 60px; 
+    display: flex; 
+    align-items: center; 
+    padding: 0 20px; 
+    color: black; /* Changed to black for better contrast */
+    position: relative; 
+    z-index: 10; 
 }
 
 header img {
-    height: 40px; /* Adjust image height */
-    margin-right: 15px; /* Space between images */
-}
-
-header p {
-    color: white; /* Text color */
-    margin-right: 15px; /* Space between items */
+    height: 40px; 
+    margin-right: 15px;
 }
 
 .container {
-    display: flex; /* Flex layout for two sections */
-    height: calc(100vh - 60px); /* Full height minus header */
-}
-
-.text-section {
-    flex: 1; /* Fill remaining space */
-    background-color: #333; /* Dark background color */
-    color: white; /* Text color */
-    padding: 40px; /* Inner padding */
-    display: flex; /* Use flexbox for vertical alignment */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center vertically */
-}
-
-.text-section h1 {
-    font-size: 2.5em; /* Heading size */
-}
-
-.text-section p {
-    margin: 20px 0; /* Space between paragraphs */
-}
-
-.get-started-button {
-    background-color: #FF5722; /* Button color */
-    color: white; /* Button text color */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 20px; /* Button padding */
-    font-size: 16px; /* Font size */
-    cursor: pointer; /* Pointer on hover */
-    margin-bottom: 20px; /* Space below button */
-}
-
-.stats {
-    display: flex; /* Horizontal layout for stats */
-    justify-content: space-between; /* Even spacing */
-}
-
-.stat-item {
-    text-align: center; /* Center the text */
-}
-
-.stat-item h2 {
-    font-size: 2em; /* Stat size */
+    display: flex; 
+    height: calc(100vh - 60px);
 }
 
 .image-section {
-    flex: 1; /* Fill remaining space */
-    background-image: url('./src/background.jpg'); /* Background image */
-    background-size: cover; /* Cover the area */
-    background-position: center; /* Center the image */
+    flex: 1; 
+    background-image: url('./src/background.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+}
+
+.registration-form {
+    flex: 1; 
+    background-color: white; 
+    color: black; 
+    padding: 70px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+}
+
+.registration-form h2 {
+    font-size: 2em; 
+    margin-bottom: 20px; 
+}
+
+
+.input-container {
+    position: relative;
+    margin-bottom: 20px; /* Added spacing between input fields */
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;  /* Align icon and input field */
+}
+
+.input-icon {
+    margin-right: 10px;
+    height: 20px; /* Adjust height for icons */
+}
+
+.registration-form button {
+    background-color: #FF8906; 
+    color: white; 
+    border: none;
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    margin-top: 10px; 
+}
+
+.social-media {
+    margin-top: 20px; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.social-button img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.registration-form > h2 {
+    font-family: 'Plus Jakarta Sans', 'Rubik', sans-serif;
+    color: #8E6447;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.registration-form > span {
+    font-family: 'Plus Jakarta Sans', 'Rubik', sans-serif;
+    color: #4F5665;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.input-container > label {
+    font-family: 'Plus Jakarta Sans', 'Rubik', sans-serif;
+    color: #0B132A;
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+    vertical-align: middle;
+}
+
+.login-ref {
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Plus Jakarta Sans', 'Rubik', sans-serif;
+    color: #4F5665;
+    font-size: 16px;
+}
+
+.input-wrapper > input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.input-icon {
+    margin-left: 10px;
+    height: 20px; 
+}
+
+.forgot-password {
+    text-align: right;
+    font-family: 'Plus Jakarta Sans', 'Rubik', sans-serif;
+    color: #FF8906;
+    font-size: 16px;
+    cursor: pointer;
 }
 

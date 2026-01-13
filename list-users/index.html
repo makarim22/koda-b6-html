@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>User List</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Coffee Shop</div>
+            <div class="user-info">
+                <img src="default-profile.png" alt="User Profile">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="sidebar">
+            <ul>
+                <li>Dashboard</li>
+                <li>Product</li>
+                <li>Order</li>
+                <li class="active">User</li>
+                <li>Keluar</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header-content">
+                <h1>User List</h1>
+                <button class="add-user">+ Add User</button>
+            </div>
+            <div class="search-section">
+                <input type="text" placeholder="Enter User Name">
+                <button class="filter-button">Filter</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Image</th>
+                        <th>Full Name</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><img src="user1.jpg" alt="Eleanor Pena"></td>
+                        <td>Eleanor Pena</td>
+                        <td>(205) 555-0100</td>
+                        <td>3517 W. Gray St. Utica, Pennsylvania 57867</td>
+                        <td>cikaracak@gmail.com</td>
+                        <td>
+                            <button class="edit-button">✏️</button>
+                            <button class="delete-button">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><img src="user2.jpg" alt="Ronald Richards"></td>
+                        <td>Ronald Richards</td>
+                        <td>(205) 555-0100</td>
+                        <td>1901 Thornridge Cir. Shiloh, Hawaii 81063</td>
+                        <td>cikaracak@gmail.com</td>
+                        <td>
+                            <button class="edit-button">✏️</button>
+                            <button class="delete-button">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><img src="user3.jpg" alt="Darlene Robertson"></td>
+                        <td>Darlene Robertson</td>
+                        <td>(209) 555-0104</td>
+                        <td>4140 Parker Rd. Allentown, New Mexico 31134</td>
+                        <td>cikaracak@gmail.com</td>
+                        <td>
+                            <button class="edit-button">✏️</button>
+                            <button class="delete-button">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><img src="user4.jpg" alt="Kristin Watson"></td>
+                        <td>Kristin Watson</td>
+                        <td>(252) 555-0126</td>
+                        <td>2972 Westheimer Rd. Santa Ana, Illinois 85486</td>
+                        <td>cikaracak@gmail.com</td>
+                        <td>
+                            <button class="edit-button">✏️</button>
+                            <button class="delete-button">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td><img src="user5.jpg" alt="Dianne Russell"></td>
+                        <td>Dianne Russell</td>
+                        <td>(201) 555-0124</td>
+                        <td>4517 Washington Ave. Manchester, Kentucky 39495</td>
+                        <td>cikaracak@gmail.com</td>
+                        <td>
+                            <button class="edit-button">✏️</button>
+                            <button class="delete-button">🗑️</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pagination">
+                <p>Show 5 user of 100 user</p>
+                <button>Prev</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>Next</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
