@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Edit User</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Coffee Shop</div>
+            <div class="user-info">
+                <img src="default-profile.png" alt="User Profile">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="sidebar">
+            <ul>
+                <li>Dashboard</li>
+                <li>Product</li>
+                <li>Order</li>
+                <li class="active">User</li>
+                <li>Keluar</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header-content">
+                <h1>Darlene Robertson</h1>
+                <button class="close-button">✖️</button>
+            </div>
+            <div class="edit-user-form">
+                <h2>Image User</h2>
+                <div class="image-upload">
+                    <label for="userImage">
+                        <img src="user4.jpg" alt="User Image" class="user-image">
+                    </label>
+                    <input type="file" id="userImage" style="display: none;">
+                    <button class="upload-button">Upload</button>
+                </div>
+                <form>
+                    <div>
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" value="Darlene Robertson">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" value="darlenerobert@gmail.com">
+                    </div>
+                    <div>
+                        <label for="phone">Phone</label>
+                        <input type="text" id="phone" value="(201) 555-0124">
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" value="********">
+                        <button type="button" class="set-password">Set New Password</button>
+                    </div>
+                    <div>
+                        <label for="address">Address</label>
+                        <input type="text" id="address" value="4517 Washington Ave. Manchester, Kentucky 39495">
+                    </div>
+                    <button type="submit" class="update-button">Update</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
