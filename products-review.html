@@ -18,8 +18,8 @@
         <img src="./src/icons/home/Frame.svg" alt="Menu" />
       </div>
       <nav class="left-header">
-            <a href="#">Home</a>
-            <a href="product.html">Product</a>
+        <a href="#">Home</a>
+        <a href="product.html">Product</a>
       </nav>
       <nav class="right-header">
         <img src="./src/icons/Search.svg" alt="Search" />
@@ -30,7 +30,7 @@
     </header>
 
     <main class="main-container">
-      <div class="product-info">
+      <!-- <div class="product-info">
         <div class="image-display">
           <img
             src="./src/detail/latte-cup.png"
@@ -81,7 +81,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="recommendations">
         <h3 class="title">Recommendation <strong>For You</strong></h3>
@@ -166,5 +166,236 @@
         </div>
       </div>
     </footer>
+
+<script>
+  const currentUrl = window.location.href; 
+  const url = new URL(currentUrl); 
+  const searchParams = url.searchParams; 
+  const id = searchParams.get("id"); 
+
+  console.log("ID retrieved from query string:", id); 
+
+  const productId = parseInt(id); 
+  console.log("Product ID as integer:", productId);
+  const products = [
+    {
+      id: 1,
+      name: "Espresso",
+      description: "A strong and bold coffee drink made by forcing hot water through finely-ground coffee beans.",
+      rating: 5,
+      isFlashSale: true,
+      price: 18000,
+      discountedPrice: 15000,
+      image: "./src/product/new-item/espresso.jfif",
+    },
+    {
+      id: 2,
+      name: "Latte",
+      description: "A creamy drink made with espresso and steamed milk, topped with a light layer of froth.",
+      rating: 5,
+      isFlashSale: true,
+      price: 22000,
+      discountedPrice: 19000,
+      image: "./src/product/new-item/latte.jpg",
+    },
+    {
+      id: 3,
+      name: "Mocha",
+      description: "A chocolate-flavored variant of a latte, combining espresso, steamed milk, and chocolate syrup.",
+      rating: 4,
+      isFlashSale: true,
+      price: 24000,
+      discountedPrice: 21000,
+      image: "./src/product/new-item/mocha.jfif",
+    },
+    {
+      id: 4,
+      name: "Americano",
+      description: "A simple and rich coffee drink made by adding hot water to espresso.",
+      rating: 4,
+      isFlashSale: false,
+      price: 15000,
+      discountedPrice: 12000,
+      image: "./src/product/new-item/americano.jfif",
+    },
+    {
+      id: 5,
+      name: "Flat White",
+      description: "A velvety drink similar to a latte, but with a higher ratio of coffee to milk.",
+      rating: 4,
+      isFlashSale: true,
+      price: 23000,
+      discountedPrice: 20000,
+      image: "./src/product/new-item/flat-white.jfif",
+    },
+    {
+      id: 6,
+      name: "Affogato",
+      description: "A delightful dessert made with a scoop of vanilla gelato topped with hot espresso.",
+      rating: 5,
+      isFlashSale: false,
+      price: 30000,
+      discountedPrice: 25000,
+      image: "./src/product/new-item/affogato.jfif",
+    },
+  ];
+
+  const product = products.find((prod) => prod.id === productId);
+  console.log('produknya adalah', product);
+  
+  if (product) {
+    const main = document.querySelector(".main-container");
+    const productInfo = document.createElement("div");
+    productInfo.setAttribute("class", "product-info");
+    main.append(productInfo);
+
+    // Image Display
+    const imageDisplay = document.createElement("div");
+    imageDisplay.setAttribute("class", "image-display");
+    productInfo.append(imageDisplay);
+
+    const productImage = document.createElement("img");
+    productImage.setAttribute("src", product.image);  // Change here: use product's image
+    productImage.setAttribute("alt", product.name);    // Change here: use product's name
+    productImage.setAttribute("class", "product-image");
+    imageDisplay.append(productImage);
+
+    // // Thumbnail Images
+    // const thumbnailImages = document.createElement("div");
+    // thumbnailImages.setAttribute("class", "thumbnail-images");
+    // productInfo.append(thumbnailImages);
+
+    // products.forEach((prod) => { // Iterate over each product for thumbnails
+    //   const thumbnailImage = document.createElement("img");
+    //   thumbnailImage.setAttribute("src", prod.image);
+    //   thumbnailImage.setAttribute("alt", prod.name);
+    //   thumbnailImages.append(thumbnailImage);
+    // });
+
+    // Product Details
+    const productDetails = document.createElement("div");
+    productDetails.setAttribute("class", "product-details");
+    productInfo.append(productDetails);
+
+    const productName = document.createElement("h2");
+    productName.textContent = product.name; // Change here
+    productDetails.append(productName);
+
+    const oldPrice = document.createElement("p");
+    oldPrice.setAttribute("class", "old-price");
+    oldPrice.textContent = "IDR " + product.price; // Change here
+    productDetails.append(oldPrice);
+
+    const currentPrice = document.createElement("p");
+    currentPrice.setAttribute("class", "current-price");
+    currentPrice.textContent = "IDR " + product.discountedPrice; // Change here
+    productDetails.append(currentPrice); // Use currentPrice, not newPrice
+
+    // Rating
+    const rating = document.createElement("div");
+    rating.setAttribute("class", "rating");
+    productDetails.append(rating);
+
+    for (let i = 0; i < product.rating; i++) {  // Change here: use product's rating
+      const star = document.createElement("span");
+      star.classList.add("star");
+      star.textContent = "★";
+      rating.append(star);
+    }
+
+    const ratingScore = document.createElement("span");
+    ratingScore.setAttribute("class", "rating-score");
+    ratingScore.textContent = product.rating;
+    rating.append(ratingScore);
+
+    // Reviews Section
+    const reviews = document.createElement("div");
+    reviews.setAttribute("class", "reviews");
+    productDetails.append(reviews);
+
+    const reviewCount = document.createElement("span");
+    reviewCount.textContent = "200+ Review"; // Replace with actual review count if available
+    reviews.append(reviewCount);
+
+    const separator = document.createElement("span");
+    separator.textContent = " | ";
+    reviews.append(separator);
+
+    const recommendation = document.createElement("span");
+    recommendation.textContent = "Recommendation";
+    reviews.append(recommendation);
+
+    const recommendationIcon = document.createElement("span");
+    recommendationIcon.textContent = "👍";
+    reviews.append(recommendationIcon);
+
+    // Product Description
+    const description = document.createElement("p");
+    description.textContent = product.description; // Change here
+    productDetails.append(description);
+
+    // Options Section
+    const optionsDiv = document.createElement("div");
+    optionsDiv.setAttribute("class", "options");
+    productInfo.append(optionsDiv);
+
+    const sizeHeading = document.createElement("h4");
+    sizeHeading.textContent = "Size";
+    optionsDiv.append(sizeHeading);
+
+    const sizeOptionsDiv = document.createElement("div");
+    sizeOptionsDiv.setAttribute("class", "size-options");
+    optionsDiv.append(sizeOptionsDiv);
+
+    const regularButton = document.createElement("button");
+    regularButton.setAttribute("class", "size-button active");
+    regularButton.textContent = "Regular";
+    sizeOptionsDiv.append(regularButton);
+
+    const mediumButton = document.createElement("button");
+    mediumButton.setAttribute("class", "size-button");
+    mediumButton.textContent = "Medium";
+    sizeOptionsDiv.append(mediumButton);
+
+    const largeButton = document.createElement("button");
+    largeButton.setAttribute("class", "size-button");
+    largeButton.textContent = "Large";
+    sizeOptionsDiv.append(largeButton);
+
+    const hotIceHeading = document.createElement("h4");
+    hotIceHeading.textContent = "Hot/Ice?";
+    optionsDiv.append(hotIceHeading);
+
+    const hotIceOptionsDiv = document.createElement("div");
+    hotIceOptionsDiv.setAttribute("class", "hot-ice-options");
+    optionsDiv.append(hotIceOptionsDiv);
+
+    const iceButton = document.createElement("button");
+    iceButton.setAttribute("class", "ice-button");
+    iceButton.textContent = "Ice";
+    hotIceOptionsDiv.append(iceButton);
+
+    const hotButton = document.createElement("button");
+    hotButton.setAttribute("class", "hot-button");
+    hotButton.textContent = "Hot";
+    hotIceOptionsDiv.append(hotButton);
+
+    const buyOptionsDiv = document.createElement("div");
+    buyOptionsDiv.setAttribute("class", "buy-options");
+    optionsDiv.append(buyOptionsDiv);
+
+    const buyButton = document.createElement("button");
+    buyButton.setAttribute("class", "buy-button");
+    buyButton.textContent = "Buy";
+    buyOptionsDiv.append(buyButton);
+
+    const addToCartButton = document.createElement("button");
+    addToCartButton.setAttribute("class", "add-to-cart-button");
+    addToCartButton.textContent = "Add to Cart";
+    buyOptionsDiv.append(addToCartButton);
+  } else {
+    console.error("Product not found with ID:", productId);
+  }
+</script>
   </body>
 </html>

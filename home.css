@@ -268,7 +268,7 @@ body {
 }
 
 .buy-button {
-    background-color: #FF5722;
+    background-color: #FF8906;
     color: white;
     border: none;
     border-radius: 5px;
@@ -281,6 +281,18 @@ body {
 
 .buy-button:hover {
     background-color: #e64a19;
+}
+
+.cart-button {
+    background-color: #FF8906;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 20px 0;
+    font-size: 1em;
+    transition: background-color 0.3s;
 }
 
 .map-section {
