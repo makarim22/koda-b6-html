@@ -177,13 +177,15 @@ body {
 
 
 .description-main {
+    display: flex;
+    flex-direction: column;
     position: absolute; /* Position absolute to overlap the image */
     bottom: 0;
     left: 12px; /* Align to the left */
     right: 12px; /* Expand to the right */
     padding: 12px;
     background-color: white;
-    padding: 10px; /* Padding around the text */
+    /* padding: 10px; Padding around the text */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
     z-index: 2; /* Make sure it’s on top of the image */
 }
@@ -428,4 +430,5 @@ p {
     padding: 10px 20px; /* Padding for button */
     cursor: pointer; /* Pointer for button */
     margin-top: 10px; /* Margin above the button */
+    
 }

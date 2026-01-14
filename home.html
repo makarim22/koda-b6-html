@@ -84,7 +84,7 @@
             </p>
         </div>
         <div class="products-section">
-            <div class="product-card">
+            <!-- <div class="product-card">
                 <img src="./src/product/product1.png" alt="Hazelnut Latte" />
                 <h3>Hazelnut Latte</h3>
                 <p>You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
@@ -111,7 +111,7 @@
                 <p>You can explore the menu that we provide with fun and have their own taste and make your day better.</p>
                 <p class="price">IDR 20.000</p>
                 <button class="buy-button">Buy</button>
-            </div>
+            </div> -->
         </div>
 
         <div class="map-section">
@@ -176,6 +176,72 @@
             </div>
         </div>
     </footer>
+
+    <script>
+     const product = [
+        {
+            id: 1,
+            name: "Hazelnut Latte",
+            description: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
+            price: 20000,
+            image: "./src/product/product1.png",
+        },
+        {
+            id: 2,
+            name: "Kopi Susu Sekeluarga",
+            description: "Kopi Susu Mewah perpaduan biji kopi pilihan dengan susu oat yang gurih. cocok buat kamu yang berjiwa Genzi",
+            price: 20000,
+            image: "./src/product/product2.png",
+        },
+        {
+            id: 3,
+            name: "coffee Latte",
+            description: "Our Signature Menu. made from highest quality of coffee beans from Kintamani, Bali",
+            price: 100000,
+            image: "./src/product/product3.png",
+        },
+        {
+            id: 4,
+            name: "Americano Ice",
+            description: "Es Americano yang dibuat dengan blend rahasia kami. Sangat cocok untuk menemani aktivitas sehari-hari.",
+            price: 50000,
+            image: "./src/product/product4.png",
+        },
+    ]
+
+    product.forEach((product) => {
+    console.log(product)
+    const productsSection = document.querySelector(".products-section")
+    const productCard = document.createElement("div")
+    productCard.setAttribute("class", "product-card")
+    productsSection.append(productCard);
+
+    const productImage = document.createElement("img")
+    productImage.setAttribute("src", product.image)
+    productCard.append(productImage)
+
+    const productName = document.createElement("h3")
+    productName.textContent = product.name
+    productCard.append(productName)
+
+    const productDescription = document.createElement("p")
+    productDescription.textContent = product.description
+    productCard.append(productDescription)
+
+    const productPrice = document.createElement("p")
+    productPrice.setAttribute("class", "price")
+    productPrice.textContent = "IDR " + product.price
+    productCard.append(productPrice)
+
+    const buyButton = document.createElement("button")
+    buyButton.setAttribute("class", "buy-button")
+    buyButton.textContent = "Buy"
+    productCard.append(buyButton)
+
+    })
+    
+
+    </script>
 
 </body>
 </html>
