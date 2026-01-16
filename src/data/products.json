@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Espresso",
+    "description": "A strong and bold coffee drink made by forcing hot water through finely-ground coffee beans.",
+    "rating": 5,
+    "isFlashSale": true,
+    "price": 18000,
+    "discountedPrice": 15000,
+    "image": "./src/product/new-item/espresso.jfif"
+  },
+  {
+    "id": 2,
+    "name": "Latte",
+    "description": "A creamy drink made with espresso and steamed milk, topped with a light layer of froth.",
+    "rating": 5,
+    "isFlashSale": true,
+    "price": 22000,
+    "discountedPrice": 19000,
+    "image": "./src/product/new-item/latte.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Mocha",
+    "description": "A chocolate-flavored variant of a latte, combining espresso, steamed milk, and chocolate syrup.",
+    "rating": 4,
+    "isFlashSale": true,
+    "price": 24000,
+    "discountedPrice": 21000,
+    "image": "./src/product/new-item/mocha.jfif"
+  },
+  {
+    "id": 4,
+    "name": "Americano",
+    "description": "A simple and rich coffee drink made by adding hot water to espresso.",
+    "rating": 4,
+    "isFlashSale": false,
+    "price": 15000,
+    "discountedPrice": 12000,
+    "image": "./src/product/new-item/americano.jfif"
+  },
+  {
+    "id": 5,
+    "name": "Flat White",
+    "description": "A velvety drink similar to a latte, but with a higher ratio of coffee to milk.",
+    "rating": 4,
+    "isFlashSale": true,
+    "price": 23000,
+    "discountedPrice": 20000,
+    "image": "./src/product/new-item/flat-white.jfif"
+  },
+  {
+    "id": 6,
+    "name": "Affogato",
+    "description": "A delightful dessert made with a scoop of vanilla gelato topped with hot espresso.",
+    "rating": 5,
+    "isFlashSale": false,
+    "price": 30000,
+    "discountedPrice": 25000,
+    "image": "./src/product/new-item/affogato.jfif"
+  }
+]
