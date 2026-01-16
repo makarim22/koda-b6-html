@@ -432,3 +432,9 @@ p {
     margin-top: 20px; /* Margin above the button */
     
 }
+
+/* .promo-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+} */

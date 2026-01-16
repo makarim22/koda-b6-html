@@ -44,7 +44,11 @@
       <p class="title">Today <strong style="color: #8e6447">Promo</strong></p>
     </div>
     <div class="coupon-container">
-      <div class="promo-box">
+      <!-- <div class="promo-box">
+        <div class="navigation">
+           <img src="./src/arrow-left.svg" alt="Arrow Left" class="left-arrow" />
+           <img src="./src/arrow-right.svg" alt="Arrow Right" class="right-arrow" />
+        </div>
         <div class="background">
           <img
             src="./src/rectangle.svg"
@@ -58,8 +62,8 @@
           <p>Get one of our favorite menu for free!</p>
           <p class="code">Klaim Kupon</p>
         </div>
-      </div>
-      <div class="promo-box">
+      </div> -->
+      <!-- <div class="promo-box">
         <img
           src="./src/rectangle.svg"
           alt="Rectangle"
@@ -96,7 +100,7 @@
           <h3>Get a cup of coffee for free on sunday morning</h3>
           <p>Only at 7 to 9 AM</p>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <div class="main-container">
@@ -124,7 +128,7 @@
 
       <div class="product-section">
         <div class="product-grid">
-           <!-- <div class="product-card"> 
+          <!-- <div class="product-card"> 
             <div class="sale-banner">FLASH SALE!</div>
             <img
               src="./src/product/product4.png"
@@ -328,150 +332,248 @@
     </footer>
 
     <script>
-      const products = [
+      function loadProducts() {
+        return fetch(
+          "https://raw.githubusercontent.com/makarim22/koda-b6-html/refs/heads/master/src/data/products.json"
+        )
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then((products) => {
+            console.log("products", products);
+            return products;
+          })
+          .catch((error) => {
+            console.error("Error loading products:", error);
+            return [];
+          });
+      }
+
+      loadProducts().then((products) => {
+        products.forEach((product) => {
+          const productGrid = document.querySelector(".product-grid");
+          const productCard = document.createElement("div");
+          productCard.setAttribute("class", "product-card");
+          productGrid.append(productCard);
+
+          if (product.isFlashSale) {
+            const saleBanner = document.createElement("div");
+            saleBanner.setAttribute("class", "sale-banner");
+            saleBanner.textContent = "FLASH SALE!";
+            productCard.append(saleBanner);
+          }
+
+          const productImage = document.createElement("img");
+          productImage.setAttribute("src", product.image);
+          productImage.setAttribute("alt", product.name);
+          productImage.setAttribute("class", "product-image");
+          productCard.append(productImage);
+
+          const descriptionMain = document.createElement("div");
+          descriptionMain.setAttribute("class", "description-main");
+          productCard.append(descriptionMain);
+
+          const productName = document.createElement("h4");
+          productName.textContent = product.name;
+          descriptionMain.append(productName);
+
+          const productDescription = document.createElement("p");
+          productDescription.textContent = product.description;
+          descriptionMain.append(productDescription);
+
+          const rating = document.createElement("div");
+          rating.setAttribute("class", "rating");
+
+          for (let i = 0; i < 5; i++) {
+            const star = document.createElement("span");
+            star.classList.add("star");
+            star.textContent = "★";
+            rating.append(star);
+          }
+
+          const ratingScore = document.createElement("span");
+          ratingScore.setAttribute("class", "rating-score");
+          ratingScore.textContent = product.rating;
+          rating.append(ratingScore);
+
+          descriptionMain.append(rating);
+
+          const priceContainer = document.createElement("div");
+          priceContainer.style.display = "flex";
+          priceContainer.style.gap = "10px";
+          descriptionMain.append(priceContainer);
+
+          const oldPrice = document.createElement("p");
+          oldPrice.setAttribute("class", "price");
+          oldPrice.textContent = "IDR " + product.price;
+          priceContainer.append(oldPrice);
+
+          const newPrice = document.createElement("p");
+          newPrice.setAttribute("class", "discounted-price");
+          newPrice.textContent = "IDR " + product.discountedPrice;
+          priceContainer.append(newPrice);
+
+          const addToCart = document.createElement("button");
+          addToCart.setAttribute("class", "add-to-cart");
+          addToCart.textContent = "Buy";
+          descriptionMain.append(addToCart);
+
+          addToCart.addEventListener("click", () => {
+            const params = new URLSearchParams({ id: product.id });
+            window.location.href = `products-review.html?${params.toString()}`;
+          });
+
+          descriptionMain.append(addToCart);
+
+          const cartButton = document.createElement("button");
+          cartButton.setAttribute("class", "cart-button");
+          cartButton.textContent = "Add to Cart";
+          descriptionMain.append(cartButton);
+
+          cartButton.addEventListener("click", () => {
+            const params = new URLSearchParams({ id: product.id });
+            window.location.href = `products-checkout.html?${params.toString()}`;
+          });
+
+          descriptionMain.append(cartButton);
+        });
+      });
+
+      const searchBar = document.querySelector(".search-bar");
+      searchBar.addEventListener("input", (e) => {
+        const query = e.target.value.toLowerCase();
+        const productCards = document.querySelectorAll(".product-card");
+        productCards.forEach((productCard) => {
+          const productName = productCard
+            .querySelector("h4")
+            .textContent.toLowerCase();
+          if (productName.includes(query)) {
+            productCard.style.display = "block";
+          } else {
+            productCard.style.display = "none";
+          }
+        });
+      });
+
+      const promo = [
         {
-          id: 1,
-          name: "Espresso",
-          description:
-            "A strong and bold coffee drink made by forcing hot water through finely-ground coffee beans.",
-          rating: 5,
-          isFlashSale: true,
-          price: 18000,
-          discountedPrice: 15000,
-          image: "./src/product/new-item/espresso.jfif",
+          image: "./src/woman.png",
+          rectangleImage: "./src/rectangle.svg",
+          title: "HAPPY MOTHER'S DAY!",
+          description: "Get one of our favorite menu for free!",
+          code: "Klaim Kupon",
         },
         {
-          id: 2,
-          name: "Latte",
-          description:
-            "A creamy drink made with espresso and steamed milk, topped with a light layer of froth.",
-          rating: 5,
-          isFlashSale: true,
-          price: 22000,
-          discountedPrice: 19000,
-          image: "./src/product/new-item/latte.jpg",
+          image: "./src/woman.png",
+          rectangleImage: "./src/rectangle.svg",
+          title: "HAPPY MOTHER'S DAY!",
+          description: "Get one of our favorite menu for free!",
+          code: "Klaim Kupon",
         },
         {
-          id: 3,
-          name: "Mocha",
-          description:
-            "A chocolate-flavored variant of a latte, combining espresso, steamed milk, and chocolate syrup.",
-          rating: 4,
-          isFlashSale: true,
-          price: 24000,
-          discountedPrice: 21000,
-          image: "./src/product/new-item/mocha.jfif",
+          image: "./src/woman.png",
+          rectangleImage: "./src/rectangle.svg",
+          title: "HAPPY MOTHER'S DAY!",
+          description: "Get one of our favorite menu for free!",
+          code: "Klaim Kupon",
         },
         {
-          id: 4,
-          name: "Americano",
-          description:
-            "A simple and rich coffee drink made by adding hot water to espresso.",
-          rating: 4,
-          isFlashSale: false,
-          price: 15000,
-          discountedPrice: 12000,
-          image: "./src/product/new-item/americano.jfif",
+          image: "./src/man.png",
+          rectangleImage: "./src/rectangle-yellow.png",
+          title: "Get a cup of coffee for free on sunday morning",
+          description: "Only at 7 to 9 AM",
+          code: null,
         },
         {
-          id: 5,
-          name: "Flat White",
-          description:
-            "A velvety drink similar to a latte, but with a higher ratio of coffee to milk.",
-          rating: 4,
-          isFlashSale: true,
-          price: 23000,
-          discountedPrice: 20000,
-          image: "./src/product/new-item/flat-white.jfif",
+          image: "./src/woman.png",
+          rectangleImage: "./src/rectangle.svg",
+          title: "HAPPY MOTHER'S DAY!",
+          description: "Get one of our favorite menu for free!",
+          code: "Klaim Kupon",
         },
         {
-          id: 6,
-          name: "Affogato",
-          description:
-            "A delightful dessert made with a scoop of vanilla gelato topped with hot espresso.",
-          rating: 5,
-          isFlashSale: false,
-          price: 30000,
-          discountedPrice: 25000,
-          image: "./src/product/new-item/affogato.jfif",
+          image: "./src/woman.png",
+          rectangleImage: "./src/rectangle.svg",
+          title: "HAPPY MOTHER'S DAY!",
+          description: "Get one of our favorite menu for free!",
+          code: "Klaim Kupon",
         },
       ];
 
-      products.forEach((product) => {
-    const productGrid = document.querySelector(".product-grid");
-    const productCard = document.createElement("div");
-    productCard.setAttribute("class", "product-card");
-    productGrid.append(productCard);
+      const couponContainer = document.querySelector(".coupon-container");
 
-    if (product.isFlashSale) {
-        const saleBanner = document.createElement("div");
-        saleBanner.setAttribute("class", "sale-banner");
-        saleBanner.textContent = "FLASH SALE!";
-        productCard.append(saleBanner);
-    }
+      const navigation = document.createElement("div");
+      navigation.setAttribute("class", "navigation");
 
-    const productImage = document.createElement("img");
-    productImage.setAttribute("src", product.image);
-    productImage.setAttribute("alt", product.name);
-    productImage.setAttribute("class", "product-image");
-    productCard.append(productImage);
+      const leftArrow = document.createElement("img");
+      leftArrow.setAttribute("src", "./src/arrow-left.svg");
+      leftArrow.setAttribute("alt", "Arrow Left");
+      leftArrow.setAttribute("class", "left-arrow");
+      navigation.append(leftArrow);
 
-    const descriptionMain = document.createElement("div");
-    descriptionMain.setAttribute("class", "description-main");
-    productCard.append(descriptionMain);
+      const rightArrow = document.createElement("img");
+      rightArrow.setAttribute("src", "./src/arrow-right.svg");
+      rightArrow.setAttribute("alt", "Arrow Right");
+      rightArrow.setAttribute("class", "right-arrow");
+      navigation.append(rightArrow);
 
-    const productName = document.createElement("h4");
-    productName.textContent = product.name;
-    descriptionMain.append(productName);
+      couponContainer.append(navigation);
 
-    const productDescription = document.createElement("p");
-    productDescription.textContent = product.description;
-    descriptionMain.append(productDescription);
+      promo.forEach((item) => {
+        const promoBox = document.createElement("div");
+        promoBox.setAttribute("class", "promo-box");
 
-    const rating = document.createElement("div");
-    rating.setAttribute("class", "rating");
-    
-    for (let i = 0; i < 5; i++) {
-        const star = document.createElement("span");
-        star.classList.add("star");
-        star.textContent = "★"; 
-        rating.append(star);
-    }
-    
-    const ratingScore = document.createElement("span");
-    ratingScore.setAttribute("class", "rating-score");
-    ratingScore.textContent = product.rating; 
-    rating.append(ratingScore);
-    
-    descriptionMain.append(rating);
+        const rectangleImage = document.createElement("img");
+        rectangleImage.setAttribute("src", item.rectangleImage);
+        rectangleImage.setAttribute("alt", "Rectangle");
+        rectangleImage.setAttribute("class", "rectangle-image");
+        promoBox.append(rectangleImage);
 
-    const priceContainer = document.createElement("div");
-    priceContainer.style.display = "flex";
-    priceContainer.style.gap = "10px";
-    descriptionMain.append(priceContainer);
+        const mainImage = document.createElement("img");
+        mainImage.setAttribute("src", item.image);
+        mainImage.setAttribute("alt", "Promo Image");
+        mainImage.setAttribute("class", "woman-image");
+        promoBox.append(mainImage);
 
-    const oldPrice = document.createElement("p");
-    oldPrice.setAttribute("class", "price");
-    oldPrice.textContent = "IDR " + product.price;
-    priceContainer.append(oldPrice);
+        const promoText = document.createElement("div");
+        promoText.setAttribute("class", "promo-text");
 
-    const newPrice = document.createElement("p");
-    newPrice.setAttribute("class", "discounted-price");
-    newPrice.textContent = "IDR " + product.discountedPrice;
-    priceContainer.append(newPrice);
+        const heading = document.createElement("h3");
+        heading.textContent = item.title;
+        promoText.append(heading);
 
-    const addToCart = document.createElement("button");
-    addToCart.setAttribute("class", "add-to-cart");
-    addToCart.textContent = "Buy";
-    descriptionMain.append(addToCart); 
+        const description = document.createElement("p");
+        description.textContent = item.description;
+        promoText.append(description);
 
-    addToCart.addEventListener("click", () => {
-        const params = new URLSearchParams({ id: product.id });
-        window.location.href = `products-review.html?${params.toString()}`;
-    });
+        if (item.code) {
+          const codeText = document.createElement("p");
+          codeText.setAttribute("class", "code");
+          codeText.textContent = item.code;
+          promoText.append(codeText);
+        }
 
-    descriptionMain.append(addToCart); 
-});
+        promoBox.append(promoText);
+        couponContainer.append(promoBox);
+      });
+
+
+      let currentIndex = 0;
+
+      leftArrow.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + promo.length) % promo.length;
+        updatePromo(promo[currentIndex]);
+      });
+
+      rightArrow.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % promo.length;
+        updatePromo(promo[currentIndex]);
+      });
+
+
     </script>
   </body>
 </html>
