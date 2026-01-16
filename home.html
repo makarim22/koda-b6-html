@@ -125,15 +125,16 @@
         <div class="testimonial-section">
             <h2>TESTIMONIAL</h2>
             <div class="testimonial-card">
-                <img src="./src/photo.png" alt="Viezh Robert" class="testimonial-image" />
-                <div class="testimonial-content">
-                    <h3>Viezh Robert</h3>
+                <!-- <img src="./src/photo.png" alt="Viezh Robert" class="testimonial-image" />
+                <!-- <div class="testimonial-content"> -->
+                    <!-- <h3>Viezh Robert</h3>
                     <p class="role">Manager Coffee Shop</p>
                     <p class="quote">“Wow... I am very happy to spend my whole day here. The Wi-Fi is good, and the coffee and meals tho. I like it here!! Very recommended!”</p>
-                    <div class="rating">★★★★★ 5.0 </div>
-                    <div class="navigation">
-                    <img src="./src/arrows.png" alt="Navigation Arrows" class="navigation-image" height="20px" >
-                    </div>
+                    <div class="rating">★★★★★ 5.0 </div> -->
+                    <!-- <div class="navigation">
+                        <img src="./src/arrow-left.svg" alt="Arrow Left" class="left-arrow" />
+                        <img src="./src/arrow-right.svg" alt="Arrow Right" class="right-arrow" />
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -244,7 +245,110 @@
     productCard.append(cartButton)
 
     })
-    
+
+  const testimonials = [
+    {
+        id: 1,
+        name: "Viezh Robert",
+        role: "Manager Coffee Shop",
+        quote: "Wow... I am very happy to spend my whole day here. The Wi-Fi is good, and the coffee and meals tho. I like it here!! Very recommended!",
+        rating: 5,
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop"
+    },
+    {
+        id: 2,
+        name: "Sarah Johnson",
+        role: "Freelance Designer",
+        quote: "The ambiance is perfect for working remotely. Great coffee selection and the staff is super friendly. My go-to place for productive days!",
+        rating: 5,
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop"
+    },
+    {
+        id: 3,
+        name: "Ahmad Rizki",
+        role: "Software Engineer",
+        quote: "Tempatnya nyaman banget, kopi-nya enak, dan makanannya juga lezat. Cocok untuk meeting atau kerja sendiri. Highly recommended!",
+        rating: 4,
+        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop"
+    },
+    {
+        id: 4,
+        name: "Emily Chen",
+        role: "Food Blogger",
+        quote: "As a food blogger, I've been to many coffee shops. This one stands out with their unique blend and healthy meal options. A must-visit!",
+        rating: 5,
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop"
+    }
+];
+
+const testimonialSection = document.querySelector(".testimonial-section");
+
+const testimonialCard = document.createElement("div");
+testimonialCard.setAttribute("class", "testimonial-card");
+testimonialSection.append(testimonialCard);
+
+const imageContainer = document.createElement("div");
+imageContainer.setAttribute("class", "image-container");
+testimonialCard.append(imageContainer);
+
+const testimonialContent = document.createElement("div");
+testimonialContent.setAttribute("class", "testimonial-content");
+testimonialCard.append(testimonialContent);
+
+const navigation = document.createElement("div");
+navigation.setAttribute("class", "navigation");
+testimonialCard.append(navigation);
+
+const prevButton = document.createElement("img");
+prevButton.src = "./src/arrow-left.svg";
+prevButton.alt = "Previous";
+prevButton.setAttribute("class", "left-arrow");
+navigation.append(prevButton);
+
+const nextButton = document.createElement("img");
+nextButton.src = "./src/arrow-right.svg";
+nextButton.alt = "Next";
+nextButton.setAttribute("class", "right-arrow");
+navigation.append(nextButton);
+
+let currentIndex = 0;
+
+prevButton.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+    updateTestimonial(testimonials[currentIndex]);
+});
+
+nextButton.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    updateTestimonial(testimonials[currentIndex]);
+});
+
+function updateTestimonial(testimonial) {
+
+    const img = document.createElement("img");
+    img.src = testimonial.image;
+    img.alt = testimonial.name;
+    img.className = "testimonial-image";
+
+    const name = document.createElement("h3");
+    name.textContent = testimonial.name;
+
+    const role = document.createElement("p");
+    role.className = "role";
+    role.textContent = testimonial.role;
+
+    const quote = document.createElement("p");
+    quote.className = "quote";
+    quote.textContent = `"${testimonial.quote}"`;
+
+    const rating = document.createElement("div");
+    rating.className = "rating";
+    rating.textContent = "★".repeat(testimonial.rating) + "☆".repeat(5 - testimonial.rating) + " " + testimonial.rating + ".0";
+
+    testimonialContent.replaceChildren(img, name, role, quote, rating);
+}
+
+updateTestimonial(testimonials[currentIndex]);
 
     </script>
 
