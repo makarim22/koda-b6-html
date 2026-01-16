@@ -169,9 +169,16 @@
 
 <script>
   const currentUrl = window.location.href; 
+  console.log('current url', currentUrl);
+  
   const url = new URL(currentUrl); 
+  console.log('urlnya', url);
+  
   const searchParams = url.searchParams; 
-  const id = searchParams.get("id"); 
+  console.log('search param', searchParams);
+  
+  const id = searchParams.get("id");
+  
 
   console.log("ID retrieved from query string:", id); 
 

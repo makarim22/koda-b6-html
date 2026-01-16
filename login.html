@@ -60,5 +60,49 @@
             </div>
         </form>
     </div>
+
+    <script>
+      
+       const emailInput = document.getElementById('email');
+       const passwordInput = document.getElementById('password');
+
+
+        const form = document.querySelector('.registration-form');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const email = emailInput.value;
+            const password = passwordInput.value;
+
+            emailRegex =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            emailValid = 'koda@gmail.com';
+            passwordValid = 'password223';
+
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long.');
+                return;
+            }
+
+            if (email !== emailValid) {
+                alert('Incorrect email. Please try again.');
+                return;
+            }
+
+            if (password !== passwordValid) {
+                alert('Incorrect password. Please try again.');
+                return;
+            }
+
+            window.location.href = 'home.html';
+
+            alert('Registration successful!');
+        });
+    </script>
 </body>
 </html>

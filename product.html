@@ -465,10 +465,8 @@
     addToCart.textContent = "Buy";
     descriptionMain.append(addToCart); 
 
-     // Event listener for button click
     addToCart.addEventListener("click", () => {
         const params = new URLSearchParams({ id: product.id });
-        // Redirect to another page, for example, 'product-details.html'
         window.location.href = `products-review.html?${params.toString()}`;
     });
 
