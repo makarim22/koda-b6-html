@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="products-checkout.css" />
-    <title>Payment Details</title>
-  </head>
-  <body>
-    <header class="container">
-      <div class="logo">
-        <img src="./src/icons/home/Logo.svg" alt="Logo" />
-        <img src="./src/icons/home/Frame.svg" alt="Menu" />
-      </div>
-      <nav class="left-header">
-        <a href="home.html">Home</a>
-        <a href="product.html">Product</a>
-      </nav>
-      <nav class="right-header">
-        <img src="./src/icons/Search.svg" alt="Search" />
-        <img src="./src/icons/ShoppingCart.svg" alt="Cart" />
-        <a href="login.html" class="login-button">Sign In</a>
-        <a href="register.html" class="register-button">Sign Up</a>
-      </nav>
-    </header>
 
-    <main>
-      <h1>Payment Details</h1>
-      <div class="title">
-        <h2>Your Order</h2>
-        <button class="add-menu">+ Add Menu</button>
-      </div>
-      <div class="order-summary">
-        <div class="order-left">
-          <div class="order-item">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="products-checkout.css" />
+  <title>Payment Details</title>
+</head>
+
+<body>
+  <header class="container">
+    <div class="logo">
+      <img src="./src/icons/home/Logo.svg" alt="Logo" />
+      <img src="./src/icons/home/Frame.svg" alt="Menu" />
+    </div>
+    <nav class="left-header">
+      <a href="home.html">Home</a>
+      <a href="product.html">Product</a>
+    </nav>
+    <nav class="right-header">
+      <img src="./src/icons/Search.svg" alt="Search" />
+      <img src="./src/icons/ShoppingCart.svg" alt="Cart" />
+      <a href="login.html" class="login-button">Sign In</a>
+      <a href="register.html" class="register-button">Sign Up</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Payment Details</h1>
+    <div class="title">
+      <h2>Your Order</h2>
+      <button class="add-menu">+ Add Menu</button>
+    </div>
+    <div class="order-summary">
+      <div class="order-left">
+        <!-- <div class="order-item">
             <div class="product-image-container">
               <img
                 src="./src/product/product1.png"
@@ -67,177 +69,231 @@
               <p class="current-price">IDR 20.000</p>
               <button class="remove-item">❌</button>
             </div>
-          </div>
-        </div>
+          </div> -->
+      </div>
 
-        <div class="total">
-          <p>Order: IDR 40.000</p>
-          <p>Delivery: IDR 0</p>
-          <p>Tax: IDR 4.000</p>
-          <p>Subtotal: IDR 44.000</p>
-          <button class="checkout">Checkout</button>
-          <div class="payment-options">
-            <p>We Accept</p>
-            <div class="payment-channel">
-              <img src="./src/product/payments/bca.svg" alt="Payment Options" />
-              <img src="./src/product/payments/bri.svg"" alt="Payment Options"
-              /> <img src="./src/product/payments/dana.svg"" alt="Payment
-              Options" /> <img src="./src/product/payments/gopay.svg""
-              alt="Payment Options" /> <img
-              src="./src/product/payments/ovo.svg"" alt="Payment Options" />
-              <img src="./src/product/payments/logos_paypal.svg"" alt="Payment
-              Options" />
-            </div>
-            <p>*Get Discount if you pay with Bank Central Asia</p>
+      <div class="total">
+        <p data-total="order">Order: IDR 0</p>
+        <p data-total="delivery">Delivery: IDR 0</p>
+        <p data-total="tax">Tax: IDR 0</p>
+        <p data-total="subtotal">Subtotal: IDR 0</p>
+        <button class="checkout">Checkout</button>
+        <div class="payment-options">
+          <p>We Accept</p>
+          <div class="payment-channel">
+            <img src="./src/product/payments/bca.svg" alt="Payment Options" />
+            <img src="./src/product/payments/bri.svg"" alt=" Payment Options" /> <img
+              src="./src/product/payments/dana.svg"" alt=" Payment Options" /> <img
+              src="./src/product/payments/gopay.svg""
+              alt=" Payment Options" /> <img src="./src/product/payments/ovo.svg"" alt=" Payment Options" />
+            <img src="./src/product/payments/logos_paypal.svg"" alt=" Payment Options" />
           </div>
+          <p>*Get Discount if you pay with Bank Central Asia</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="payment-info">
+      <h2>Payment Info & Delivery</h2>
+      <div class="input-container">
+        <label for="email">Email:</label>
+        <div class="input-wrapper">
+          <input type="email" id="email" name="email" placeholder="Enter Your Email" required />
+          <img src="./src/icons/mail.svg" alt="Email Icon" class="input-icon" />
         </div>
       </div>
 
-      <div class="payment-info">
-        <h2>Payment Info & Delivery</h2>
-        <div class="input-container">
-          <label for="email">Email:</label>
-          <div class="input-wrapper">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter Your Email"
-              required
-            />
-            <img
-              src="./src/icons/mail.svg"
-              alt="Email Icon"
-              class="input-icon"
-            />
-          </div>
+      <div class="input-container">
+        <label for="email">Fullname:</label>
+        <div class="input-wrapper">
+          <input type="name" id="fullname" name="fullname" placeholder="Enter Your Name" required />
+          <img src="./src/product/Profile.svg" alt="Email Icon" class="input-icon" />
         </div>
-
-        <div class="input-container">
-          <label for="email">Fullname:</label>
-          <div class="input-wrapper">
-            <input
-              type="name"
-              id="fullname"
-              name="fullname"
-              placeholder="Enter Your Name"
-              required
-            />
-            <img
-              src="./src/product/Profile.svg"
-              alt="Email Icon"
-              class="input-icon"
-            />
-          </div>
-          </div>
-          <div class="input-container">
-          <label for="email">Address:</label>
-          <div class="input-wrapper">
-            <input
-              type="address"
-              id="address"
-              name="address"
-              placeholder="Enter Your Adress"
-              required
-            />
-            <img
-              src="./src/product/Location.svg"
-              alt="Email Icon"
-              class="input-icon"
-            />
-          </div>
-          <div class="delivery-options">
+      </div>
+      <div class="input-container">
+        <label for="email">Address:</label>
+        <div class="input-wrapper">
+          <input type="address" id="address" name="address" placeholder="Enter Your Adress" required />
+          <img src="./src/product/Location.svg" alt="Email Icon" class="input-icon" />
+        </div>
+        <div class="delivery-options">
           <button type="button" name="delivery">Dine In</button>
           <button type="button" name="delivery">Door Delivery</button>
           <button type="button" name="delivery">Pickup</button>
         </div>
-        </div>
-          
-        </div>
-
       </div>
-    </main>
 
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-section about">
-          <h2>Coffee Shop</h2>
-          <p>
-            Coffee Shop is a store that sells some good meals, and especially
-            coffee. We provide high quality beans.
-          </p>
-          <p>&copy; 2020 CoffeeStore</p>
-        </div>
-        <div class="footer-section products">
-          <h3>Product</h3>
-          <ul>
-            <li>Our Product</li>
-            <li>Pricing</li>
-            <li>Locations</li>
-            <li>Countries</li>
-            <li>Blog</li>
-          </ul>
-        </div>
-        <div class="footer-section engage">
-          <h3>Engage</h3>
-          <ul>
-            <li>Partner</li>
-            <li>FAQ</li>
-            <li>About Us</li>
-            <li>Privacy Policy</li>
-            <li>Terms of Service</li>
-          </ul>
-        </div>
-        <div class="footer-section social-media">
-          <h3>Social Media</h3>
-          <div class="social-icons">
-            <img src="./src/icons/Facebook.svg" alt="Facebook" />
-            <img src="./src/icons/Twitter.svg" alt="Twitter" />
-            <img src="./src/icons/Instagram.png" alt="Instagram" />
-          </div>
+    </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h2>Coffee Shop</h2>
+        <p>
+          Coffee Shop is a store that sells some good meals, and especially
+          coffee. We provide high quality beans.
+        </p>
+        <p>&copy; 2020 CoffeeStore</p>
+      </div>
+      <div class="footer-section products">
+        <h3>Product</h3>
+        <ul>
+          <li>Our Product</li>
+          <li>Pricing</li>
+          <li>Locations</li>
+          <li>Countries</li>
+          <li>Blog</li>
+        </ul>
+      </div>
+      <div class="footer-section engage">
+        <h3>Engage</h3>
+        <ul>
+          <li>Partner</li>
+          <li>FAQ</li>
+          <li>About Us</li>
+          <li>Privacy Policy</li>
+          <li>Terms of Service</li>
+        </ul>
+      </div>
+      <div class="footer-section social-media">
+        <h3>Social Media</h3>
+        <div class="social-icons">
+          <img src="./src/icons/Facebook.svg" alt="Facebook" />
+          <img src="./src/icons/Twitter.svg" alt="Twitter" />
+          <img src="./src/icons/Instagram.png" alt="Instagram" />
         </div>
       </div>
-    </footer>
-  </body>
+    </div>
+  </footer>
+</body>
 
-  <script>
+<script>
 
-    const item = [
-      {
-        name: cappucino,
-        isFlashSale: true,
-        price: 18000,
-        discountedPrice: 15000,
-        quantity: 2,
-        image: "./src/product/new-item/cappucino.jfif",
-        orderType: dine_in,
-        size: regular
-      },
-      {
-        name: Latte,
-        isFlashSale : true,
-        price: 20000,
-        discountedPrice : 18000,
-        quantity: 1,
-        imzage: './src/product/new-item/latte.jpg'
-      }
-    ]
-    const itemInfo = document.querySelector(".item-info");
+  const items = [
+    {
+      name: "cappucino",
+      isFlashSale: true,
+      price: 18000,
+      discountedPrice: 15000,
+      quantity: 2,
+      image: "./src/product/new-item/affogato.jfif",
+      orderType: "dine-in",
+      size: "regular"
+    },
+    {
+      name: "Latte",
+      isFlashSale: true,
+      price: 20000,
+      discountedPrice: 18000,
+      quantity: 3,
+      imzage: "./src/product/new-item/mocha.jfif",
+      orderType: "dine-in",
+      size: "large"
+    }
+  ]
 
-    item.forEach(items => {
-      itemInfo.innerHTML += `
-        <h3>${items.name}</h3>
-        <p>${items.isFlashSale ? "FLASH SALE!" : ""}</p>
-        <p>${items.price}</p>
-        <p>${items.discountedPrice}</p>
-        <p>${items.quantity}</p>
-        <p>${items.orderType}</p>
-        <p>${items.size}</p>
-        <img src="${items.image}" alt="${items.name}">
-      `
-    })
+  const orderLeft = document.querySelector(".order-left");
+
+  const TAX_RATE = 0.1;
+
+  items.forEach((item) => {
+    const orderItem = document.createElement("div");
+    orderItem.setAttribute("class", "order-item");
+    orderLeft.append(orderItem);
+
+    const productImageContainer = document.createElement("div");
+    productImageContainer.setAttribute("class", "product-image-container");
+    orderItem.append(productImageContainer);
+
+    const itemImage = document.createElement("img");
+    itemImage.setAttribute("src", item.image);
+    itemImage.setAttribute("alt", item.name);
+    itemImage.setAttribute("class", "product-image");
+    productImageContainer.append(itemImage);
+
+    const itemInfo = document.createElement("div");
+    itemInfo.setAttribute("class", "item-info");
+    orderItem.append(itemInfo);
+
+    const itemName = document.createElement("h3");
+    itemName.textContent = item.name + " ";
+
+    if (item.isFlashSale) {
+      const flashSaleBadge = document.createElement("span");
+      flashSaleBadge.setAttribute("class", "flash-sale");
+      flashSaleBadge.textContent = "FLASH SALE!";
+      itemName.append(flashSaleBadge);
+    }
+    itemInfo.append(itemName);
+
+    const itemDetails = document.createElement("p");
+    itemDetails.textContent = `${item.quantity} pcs | ${item.size.charAt(0).toUpperCase() + item.size.slice(1)} | ${item.orderType === "dine-in" ? "Dine In" : item.orderType}`;
+    itemInfo.append(itemDetails);
+
+    const oldPrice = document.createElement("p");
+    oldPrice.setAttribute("class", "old-price");
+    oldPrice.textContent = "IDR " + item.price.toLocaleString("id-ID");
+    itemInfo.append(oldPrice);
+
+    const currentPrice = document.createElement("p");
+    currentPrice.setAttribute("class", "current-price");
+    const displayPrice = item.isFlashSale ? item.discountedPrice : item.price;
+    currentPrice.textContent = "IDR " + displayPrice.toLocaleString("id-ID");
+    itemInfo.append(currentPrice);
+
+    const removeButton = document.createElement("button");
+    removeButton.setAttribute("class", "remove-item");
+    removeButton.textContent = "❌";
+    removeButton.onclick = () => {
+      orderItem.remove();
+      updateTotals();
+    };
+    itemInfo.append(removeButton);
+  });
 
 
+  function calculateSubtotal() {
+    let subtotal = 0;
+    items.forEach(item => {
+      const price = item.isFlashSale ? item.discountedPrice : item.price;
+      subtotal += price * item.quantity;
+    });
+    console.log('subtotal', subtotal);
 
-  </script>
+    return subtotal;
+  }
+  function calculateTotal() {
+    const subtotal = calculateSubtotal();
+    console.log('subtotal', subtotal);
+
+    const tax = Math.round(subtotal * TAX_RATE);
+    const total = subtotal + tax;
+    return {
+      subtotal: subtotal,
+      tax: tax,
+      total: total
+    };
+  }
+
+  function updateTotals() {
+    const totals = calculateTotal();
+
+    const orderTotalEl = document.querySelector('[data-total="order"]');
+    const deliveryCostEl = document.querySelector('[data-total="delivery"]');
+    const taxEl = document.querySelector('[data-total="tax"]');
+    const subtotalEl = document.querySelector('[data-total="subtotal"]');
+
+    if (orderTotalEl) orderTotalEl.textContent = `Order: IDR ${totals.subtotal.toLocaleString("id-ID")}`;
+    if (taxEl) taxEl.textContent = `Tax: IDR ${totals.tax.toLocaleString("id-ID")}`;
+    if (subtotalEl) subtotalEl.textContent = `Subtotal: IDR ${totals.total.toLocaleString("id-ID")}`;
+  }
+
+  document.addEventListener("DOMContentLoaded", updateTotals);
+
+  window.updateTotals = updateTotals;
+</script>
+
 </html>
