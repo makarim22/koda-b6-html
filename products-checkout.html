@@ -199,4 +199,45 @@
       </div>
     </footer>
   </body>
+
+  <script>
+
+    const item = [
+      {
+        name: cappucino,
+        isFlashSale: true,
+        price: 18000,
+        discountedPrice: 15000,
+        quantity: 2,
+        image: "./src/product/new-item/cappucino.jfif",
+        orderType: dine_in,
+        size: regular
+      },
+      {
+        name: Latte,
+        isFlashSale : true,
+        price: 20000,
+        discountedPrice : 18000,
+        quantity: 1,
+        imzage: './src/product/new-item/latte.jpg'
+      }
+    ]
+    const itemInfo = document.querySelector(".item-info");
+
+    item.forEach(items => {
+      itemInfo.innerHTML += `
+        <h3>${items.name}</h3>
+        <p>${items.isFlashSale ? "FLASH SALE!" : ""}</p>
+        <p>${items.price}</p>
+        <p>${items.discountedPrice}</p>
+        <p>${items.quantity}</p>
+        <p>${items.orderType}</p>
+        <p>${items.size}</p>
+        <img src="${items.image}" alt="${items.name}">
+      `
+    })
+
+
+
+  </script>
 </html>
