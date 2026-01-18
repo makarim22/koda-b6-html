@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css" />
+  <title>User List - Coffee Shop Admin</title>
+</head>
+<body>
+  
+  <div class="main-container">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="./src/icons/home/Logo.svg" alt="Coffee Shop Logo" />
+        <span>Coffee Shop</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="#" class="menu-item">
+          <img src="./src/icons/dashboard.svg" alt="Dashboard" />
+          <span>Dashboard</span>
+        </a>
+        <a href="#" class="menu-item">
+          <img src="./src/icons/product.svg" alt="Product" />
+          <span>Product</span>
+        </a>
+        <a href="#" class="menu-item">
+          <img src="./src/icons/order.svg" alt="Order" />
+          <span>Order</span>
+        </a>
+        <a href="#" class="menu-item active">
+          <img src="./src/icons/user.svg" alt="User" />
+          <span>User</span>
+        </a>
+        <a href="#" class="menu-item">
+          <img src="./src/icons/logout.svg" alt="Logout" />
+          <span>Keluar</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      
+      <!-- HEADER -->
+      <header class="navbar">
+        <div class="navbar-search">
+          <img src="./src/icons/Search.svg" alt="Search" />
+          <input type="text" placeholder="Search..." />
+        </div>
+
+        <div class="navbar-right">
+          <img src="./src/icons/ShoppingCart.svg" alt="Cart" class="navbar-icon" />
+          <div class="navbar-profile">
+            <img src="./src/users/profile.jpg" alt="Profile" class="profile-img" />
+            <img src="./src/icons/chevron-down.svg" alt="Dropdown" class="dropdown-icon" />
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT WRAPPER -->
+      <div class="content-wrapper">
+        
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+          <h1>User List</h1>
+          <button class="add-user-btn">
+            <span>+</span> Add User
+          </button>
+        </div>
+
+        <!-- SEARCH & FILTER -->
+        <div class="search-filter-section">
+          <div class="search-input">
+            <label>Search User</label>
+            <div class="search-box">
+              <input type="text" placeholder="Enter User Name" />
+              <img src="./src/icons/Search.svg" alt="Search" />
+            </div>
+          </div>
+          <button class="filter-btn">
+            <img src="./src/icons/filter.svg" alt="Filter" />
+            Filter
+          </button>
+        </div>
+
+        <!-- TABLE SECTION -->
+        <section class="table-section">
+          <div class="table-responsive">
+            <table class="users-table">
+              <thead>
+                <tr>
+                  <th>
+                    <input type="checkbox" />
+                  </th>
+                  <th>Image</th>
+                  <th>Full Name</th>
+                  <th>Phone</th>
+                  <th>Address</th>
+                  <th>Email</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                  <td>
+                    <img src="./src/users/user-1.jpg" alt="Eleanor Pena" class="user-img" />
+                  </td>
+                  <td>Eleanor Pena</td>
+                  <td>(205) 555-0100</td>
+                  <td>3517 W. Gray St. Utica, Pennsylvania 57867</td>
+                  <td>cikaracak@gmail.com</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="action-btn view-btn" title="View Details">
+                        <img src="./src/icons/view-list.svg" alt="View" />
+                      </button>
+                      <button class="action-btn edit-btn" title="Edit User">
+                        <img src="./src/icons/pen.svg" alt="Edit" />
+                      </button>
+                      <button class="action-btn delete-btn" title="Delete User">
+                        <img src="./src/icons/delete.svg" alt="Delete" />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                  <td>
+                    <img src="./src/users/user-2.jpg" alt="Ronald Richards" class="user-img" />
+                  </td>
+                  <td>Ronald Richards</td>
+                  <td>(205) 555-0100</td>
+                  <td>1901 Thornridge Cir. Shiloh, Hawaii 81063</td>
+                  <td>cikaracak@gmail.com</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="action-btn view-btn" title="View Details">
+                        <img src="./src/icons/view-list.svg" alt="View" />
+                      </button>
+                      <button class="action-btn edit-btn" title="Edit User">
+                        <img src="./src/icons/pen.svg" alt="Edit" />
+                      </button>
+                      <button class="action-btn delete-btn" title="Delete User">
+                        <img src="./src/icons/delete.svg" alt="Delete" />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                  <td>
+                    <img src="./src/users/user-3.jpg" alt="Darlene Robertson" class="user-img" />
+                  </td>
+                  <td>Darlene Robertson</td>
+                  <td>(209) 555-0104</td>
+                  <td>4140 Parker Rd. Allentown, New Mexico 31134</td>
+                  <td>cikaracak@gmail.com</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="action-btn view-btn" title="View Details">
+                        <img src="./src/icons/view-list.svg" alt="View" />
+                      </button>
+                      <button class="action-btn edit-btn" title="Edit User">
+                        <img src="./src/icons/pen.svg" alt="Edit" />
+                      </button>
+                      <button class="action-btn delete-btn" title="Delete User">
+                        <img src="./src/icons/delete.svg" alt="Delete" />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                  <td>
+                    <img src="./src/users/user-4.jpg" alt="Kristin Watson" class="user-img" />
+                  </td>
+                  <td>Kristin Watson</td>
+                  <td>(252) 555-0126</td>
+                  <td>2972 Westheimer Rd. Santa Ana, Illinois 85486</td>
+                  <td>cikaracak@gmail.com</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="action-btn view-btn" title="View Details">
+                        <img src="./src/icons/view-list.svg" alt="View" />
+                      </button>
+                      <button class="action-btn edit-btn" title="Edit User">
+                        <img src="./src/icons/pen.svg" alt="Edit" />
+                      </button>
+                      <button class="action-btn delete-btn" title="Delete User">
+                        <img src="./src/icons/delete.svg" alt="Delete" />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                  <td>
+                    <img src="./src/users/user-5.jpg" alt="Dianne Russell" class="user-img" />
+                  </td>
+                  <td>Dianne Russell</td>
+                  <td>(201) 555-0124</td>
+                  <td>4517 Washington Ave. Manchester, Kentucky 39495</td>
+                  <td>cikaracak@gmail.com</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="action-btn view-btn" title="View Details">
+                        <img src="./src/icons/view-list.svg" alt="View" />
+                      </button>
+                      <button class="action-btn edit-btn" title="Edit User">
+                        <img src="./src/icons/pen.svg" alt="Edit" />
+                      </button>
+                      <button class="action-btn delete-btn" title="Delete User">
+                        <img src="./src/icons/delete.svg" alt="Delete" />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- PAGINATION & INFO -->
+          <div class="table-footer">
+            <p class="showing-text">Show 5 user of 100 user</p>
+            <div class="pagination">
+              <a href="#" class="prev">Prev</a>
+              <a href="#" class="page-num active">1</a>
+              <a href="#" class="page-num">2</a>
+              <a href="#" class="page-num">3</a>
+              <a href="#" class="page-num">4</a>
+              <a href="#" class="page-num">5</a>
+              <a href="#" class="page-num">6</a>
+              <a href="#" class="page-num">7</a>
+              <a href="#" class="page-num">8</a>
+              <a href="#" class="page-num">9</a>
+              <a href="#" class="next">Next</a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

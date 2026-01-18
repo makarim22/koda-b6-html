@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css" />
+  <title>User List & Insert - Coffee Shop Admin</title>
+</head>
+<body>
+  
+  <div class="main-container">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="./src/icons/home/Logo.svg" alt="Coffee Shop Logo" />
+        <span>Coffee Shop</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="#" class="menu-item">
+          <img src="./src/icons/dashboard.svg" alt="Dashboard" />
+          <span>Dashboard</span>
+        </a>
+        <a href="#" class="menu-item">
+          <img src="./src/icons/product.svg" alt="Product" />
+          <span>Product</span>
+        </a>
+        <a href="#" class="menu-item">
+          <img src="./src/icons/order.svg" alt="Order" />
+          <span>Order</span>
+        </a>
+        <a href="#" class="menu-item active">
+          <img src="./src/icons/user.svg" alt="User" />
+          <span>User</span>
+        </a>
+        <a href="#" class="menu-item">
+          <img src="./src/icons/logout.svg" alt="Logout" />
+          <span>Keluar</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      
+      <!-- HEADER -->
+      <header class="navbar">
+        <div class="navbar-search">
+          <img src="./src/icons/Search.svg" alt="Search" />
+          <input type="text" placeholder="Search..." />
+        </div>
+
+        <div class="navbar-right">
+          <img src="./src/icons/ShoppingCart.svg" alt="Cart" class="navbar-icon" />
+          <div class="navbar-profile">
+            <img src="./src/users/profile.jpg" alt="Profile" class="profile-img" />
+            <img src="./src/icons/chevron-down.svg" alt="Dropdown" class="dropdown-icon" />
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT WRAPPER -->
+      <div class="content-wrapper">
+        
+        <!-- LEFT COLUMN: USER LIST TABLE -->
+        <div class="left-column">
+          <div class="page-header">
+            <h1>User List</h1>
+            <button class="add-user-btn" id="openInsertUserBtn" style="display: none;">
+              <span>+</span> Add User
+            </button>
+          </div>
+
+          <section class="table-section">
+            <div class="table-responsive">
+              <table class="users-table">
+                <thead>
+                  <tr>
+                    <th>
+                      <input type="checkbox" />
+                    </th>
+                    <th>Image</th>
+                    <th>Full Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="checkbox" />
+                    </td>
+                    <td>
+                      <img src="./src/users/user-1.jpg" alt="Eleanor Pena" class="user-img" />
+                    </td>
+                    <td>Eleanor Pena</td>
+                    <td>(205) 555-0100</td>
+                    <td>cikaracak@gmail.com</td>
+                    <td>
+                      <div class="action-buttons">
+                        <button class="action-btn edit-btn" title="Edit User">
+                          <img src="./src/icons/pen.svg" alt="Edit" />
+                        </button>
+                        <button class="action-btn delete-btn" title="Delete User">
+                          <img src="./src/icons/delete.svg" alt="Delete" />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <input type="checkbox" />
+                    </td>
+                    <td>
+                      <img src="./src/users/user-2.jpg" alt="Ronald Richards" class="user-img" />
+                    </td>
+                    <td>Ronald Richards</td>
+                    <td>(205) 555-0100</td>
+                    <td>cikaracak@gmail.com</td>
+                    <td>
+                      <div class="action-buttons">
+                        <button class="action-btn edit-btn" title="Edit User">
+                          <img src="./src/icons/pen.svg" alt="Edit" />
+                        </button>
+                        <button class="action-btn delete-btn" title="Delete User">
+                          <img src="./src/icons/delete.svg" alt="Delete" />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- More rows can be added here -->
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table-footer">
+              <p class="showing-text">Show 5 user of 100 user</p>
+              <div class="pagination">
+                <a href="#" class="prev">Prev</a>
+                <a href="#" class="page-num active">1</a>
+                <a href="#" class="page-num">2</a>
+                <a href="#" class="next">Next</a>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- RIGHT COLUMN: INSERT USER FORM -->
+        <div class="right-column insert-user-form-container">
+          <div class="form-header">
+            <h2 class="form-title">Darlene Robertson</h2>
+            <!-- Remove close button as it's not a modal -->
+          </div>
+
+          <form class="insert-user-form">
+            <!-- IMAGE USER -->
+            <div class="form-group">
+              <label>Image User</label>
+              <div class="image-upload">
+                <img src="./src/icons/image-upload.svg" alt="Upload Icon" class="upload-icon" />
+                <input type="file" accept="image/*" hidden id="imageInput" />
+                <button type="button" class="upload-btn" id="uploadImageBtn">
+                  Upload
+                </button>
+              </div>
+            </div>
+
+            <!-- FULL NAME -->
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <div class="input-with-icon">
+                <img src="./src/icons/user-line.svg" alt="User Icon" />
+                <input 
+                  type="text" 
+                  id="fullName" 
+                  placeholder="Enter Full Name"
+                  class="form-input"
+                />
+              </div>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="form-group">
+              <label for="email">Email</label>
+              <div class="input-with-icon">
+                <img src="./src/icons/mail.svg" alt="Mail Icon" />
+                <input 
+                  type="email" 
+                  id="email" 
+                  placeholder="Enter Your Email"
+                  class="form-input"
+                />
+              </div>
+            </div>
+
+            <!-- PHONE -->
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <div class="input-with-icon">
+                <img src="./src/icons/phone.svg" alt="Phone Icon" />
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  placeholder="Enter Your Number"
+                  class="form-input"
+                />
+              </div>
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="form-group">
+              <label for="password">Password</label>
+              <div class="input-with-icon password-input">
+                <img src="./src/icons/lock.svg" alt="Lock Icon" />
+                <input 
+                  type="password" 
+                  id="password" 
+                  placeholder="Enter Your Password"
+                  class="form-input"
+                />
+                <span class="set-new-password">Set New Password</span>
+                <button type="button" class="toggle-password">
+                  <img src="./src/icons/eye-off.svg" alt="Toggle Password" />
+                </button>
+              </div>
+            </div>
+
+            <!-- ADDRESS -->
+            <div class="form-group">
+              <label for="address">Address</label>
+              <div class="input-with-icon">
+                <img src="./src/icons/map-pin.svg" alt="Map Pin Icon" />
+                <input 
+                  type="text" 
+                  id="address" 
+                  placeholder="Enter Your Address"
+                  class="form-input"
+                />
+              </div>
+            </div>
+
+
+            <!-- ADD USER BUTTON -->
+            <button type="submit" class="edit-user-submit-btn">Edit User</button>
+          </form>
+        </div>
+
+      </div> <!-- /content-wrapper -->
+
+    </div> <!-- /main-content -->
+
+  </div> <!-- /main-container -->
+
+  <script src="user-insert-split.js"></script>
+</body>
+</html>
