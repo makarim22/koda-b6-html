@@ -328,7 +328,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     width: 100%;
-    max-width: 800px;
+    /* max-width: 800px; */
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -450,7 +450,7 @@ h3 {
 }
 
 .social-icons img {
-    width: 30px;
+    /* width: 30px; */
     margin: 0 10px;
 }
 
