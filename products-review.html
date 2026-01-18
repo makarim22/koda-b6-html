@@ -12,14 +12,15 @@
   </head>
 
   <body>
-    <header class="container">
+       <header class="container">
       <div class="logo">
+                <img src="./src/icons/home/Frame.svg" alt="Menu" />
         <img src="./src/icons/home/Logo.svg" alt="Logo" />
-        <img src="./src/icons/home/Frame.svg" alt="Menu" />
+
       </div>
       <nav class="left-header">
-        <a href="#">Home</a>
-        <a href="product.html">Product</a>
+        <p>Home</p>
+        <p>Product</p>
       </nav>
       <nav class="right-header">
         <img src="./src/icons/Search.svg" alt="Search" />
@@ -30,58 +31,6 @@
     </header>
 
     <main class="main-container">
-      <!-- <div class="product-info">
-        <div class="image-display">
-          <img
-            src="./src/detail/latte-cup.png"
-            alt="Hazelnut Latte"
-            class="main-image"
-          />
-          <div class="thumbnail-images">
-            <img src="./src/detail/latte-cup2.png" alt="Thumbnail 1" />
-            <img src="./src/detail/latte-cup3.png" alt="Thumbnail 2" />
-            <img src="./src/detail/latte-cup4.png" alt="Thumbnail 3" />
-          </div>
-        </div>
-        <div class="details">
-          <h2>Hazelnut Latte</h2>
-          <p class="old-price">IDR 20.000</p>
-          <p class="current-price">IDR 10.000</p>
-          <div class="rating">
-            <span>⭐⭐⭐⭐⭐</span>
-            <span class="rating-score">5.0</span>
-          </div>
-          <div class="reviews">
-            <span>200+ Review</span>
-            <span>|</span>
-            <span>Recommendation</span>
-            <span class="recommend-icon">👍</span>
-          </div>
-          <p class="description">
-            Cold brewing is a method of brewing that combines ground coffee and
-            cool water.
-          </p>
-          <div class="options">
-            <h4>Size</h4>
-            <div class="size-options">
-              <button class="size-button active">Regular</button>
-              <button class="size-button">Medium</button>
-              <button class="size-button">Large</button>
-            </div>
-            <h4>Hot/Ice?</h4>
-            <div class="hot-ice-options">
-              <button class="ice-button">Ice</button>
-              <button class="hot-button">Hot</button>
-            </div>
-            <br />
-            <br />
-            <div class="buy-options">
-              <button class="buy-button">Buy</button>
-              <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-      </div> -->
 
       <div class="recommendations">
         <h3 class="title">Recommendation <strong>For You</strong></h3>
@@ -129,7 +78,8 @@
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-section about">
-          <h2>Coffee Shop</h2>
+                         <img src="./src/icons/coffee-cup.svg">
+               <img src="./src/icons/coffee-shop.svg">
           <p>
             Coffee Shop is a store that sells some good meals, and especially
             coffee. We provide high quality beans.
@@ -252,9 +202,20 @@
   
   if (product) {
     const main = document.querySelector(".main-container");
+
+     const recommendationsDiv = document.querySelector(".recommendations"); 
+
+
     const productInfo = document.createElement("div");
     productInfo.setAttribute("class", "product-info");
     main.append(productInfo);
+
+
+    if (recommendationsDiv) {
+      main.insertBefore(productInfo, recommendationsDiv);
+    } else {
+      main.append(productInfo); // Fallback jika tidak ada div rekomendasi
+    }
 
     // Image Display
     const imageDisplay = document.createElement("div");
@@ -267,43 +228,34 @@
     productImage.setAttribute("class", "product-image");
     imageDisplay.append(productImage);
 
-    // // Thumbnail Images
-    // const thumbnailImages = document.createElement("div");
-    // thumbnailImages.setAttribute("class", "thumbnail-images");
-    // productInfo.append(thumbnailImages);
+     const productRightSection = document.createElement("div");
+    productRightSection.setAttribute("class", "product-right-section"); // Tambahkan kelas baru
+    productInfo.append(productRightSection); // productRightSection adalah saudara dari imageDisplay
 
-    // products.forEach((prod) => { // Iterate over each product for thumbnails
-    //   const thumbnailImage = document.createElement("img");
-    //   thumbnailImage.setAttribute("src", prod.image);
-    //   thumbnailImage.setAttribute("alt", prod.name);
-    //   thumbnailImages.append(thumbnailImage);
-    // });
-
-    // Product Details
+    // Product Details (Nama, Harga, Rating, Review, Deskripsi)
     const productDetails = document.createElement("div");
     productDetails.setAttribute("class", "product-details");
-    productInfo.append(productDetails);
+    productRightSection.append(productDetails); // productDetails adalah anak dari productRightSection
 
     const productName = document.createElement("h2");
-    productName.textContent = product.name; // Change here
+    productName.textContent = product.name;
     productDetails.append(productName);
 
     const oldPrice = document.createElement("p");
     oldPrice.setAttribute("class", "old-price");
-    oldPrice.textContent = "IDR " + product.price; // Change here
+    oldPrice.textContent = "IDR " + product.price;
     productDetails.append(oldPrice);
 
     const currentPrice = document.createElement("p");
     currentPrice.setAttribute("class", "current-price");
-    currentPrice.textContent = "IDR " + product.discountedPrice; // Change here
-    productDetails.append(currentPrice); // Use currentPrice, not newPrice
+    currentPrice.textContent = "IDR " + product.discountedPrice;
+    productDetails.append(currentPrice);
 
-    // Rating
     const rating = document.createElement("div");
     rating.setAttribute("class", "rating");
     productDetails.append(rating);
 
-    for (let i = 0; i < product.rating; i++) {  // Change here: use product's rating
+    for (let i = 0; i < product.rating; i++) {
       const star = document.createElement("span");
       star.classList.add("star");
       star.textContent = "★";
@@ -315,13 +267,12 @@
     ratingScore.textContent = product.rating;
     rating.append(ratingScore);
 
-    // Reviews Section
     const reviews = document.createElement("div");
     reviews.setAttribute("class", "reviews");
     productDetails.append(reviews);
 
     const reviewCount = document.createElement("span");
-    reviewCount.textContent = "200+ Review"; // Replace with actual review count if available
+    reviewCount.textContent = "200+ Review";
     reviews.append(reviewCount);
 
     const separator = document.createElement("span");
@@ -336,18 +287,16 @@
     recommendationIcon.textContent = "👍";
     reviews.append(recommendationIcon);
 
-    // Product Description
     const description = document.createElement("p");
-    description.textContent = product.description; // Change here
+    description.textContent = product.description;
     productDetails.append(description);
 
-    // Options Section
     const optionsDiv = document.createElement("div");
     optionsDiv.setAttribute("class", "options");
-    productInfo.append(optionsDiv);
+    productRightSection.append(optionsDiv); 
 
     const sizeHeading = document.createElement("h4");
-    sizeHeading.textContent = "Size";
+    sizeHeading.textContent = "Choose Size";
     optionsDiv.append(sizeHeading);
 
     const sizeOptionsDiv = document.createElement("div");
@@ -389,6 +338,7 @@
 
     const buyOptionsDiv = document.createElement("div");
     buyOptionsDiv.setAttribute("class", "buy-options");
+    buyOptionsDiv.style.marginTop = "20px";
     optionsDiv.append(buyOptionsDiv);
 
     const buyButton = document.createElement("button");
@@ -398,7 +348,7 @@
 
     const addToCartButton = document.createElement("button");
     addToCartButton.setAttribute("class", "add-to-cart-button");
-    addToCartButton.textContent = "Add to Cart";
+    addToCartButton.textContent = "Add to Cart"; 
     buyOptionsDiv.append(addToCartButton);
   } else {
     console.error("Product not found with ID:", productId);
