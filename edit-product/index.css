@@ -31,9 +31,12 @@ header {
 
 main {
     display: flex;
+    flex-direction: row;
+    background-color: orange;
 }
 
 .sidebar {
+
     width: 200px;
     background-color: #f0f0f0;
     padding: 10px;
@@ -60,7 +63,11 @@ main {
 
 .content {
     flex-grow: 1;
+    background-color: white;
     padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .header-content {
@@ -78,10 +85,15 @@ main {
     cursor: pointer;
 }
 
+.left-section {
+    flex: 1;
+}
+
 .edit-product-form {
-    background-color: #f8f8f8;
+    background-color: white;
     padding: 20px;
     border-radius: 8px;
+    flex: 1;
 }
 
 .photo-upload {
