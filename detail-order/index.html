@@ -1,60 +1,155 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
     <title>Order Details</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="navbar">
-            <div class="logo">Coffee Shop</div>
-            <div class="user-info">
-                <img src="default-profile.png" alt="User Profile">
-            </div>
+      <div class="navbar">
+        <div class="logo">Coffee Shop</div>
+        <div class="user-info">
+          <img src="default-profile.png" alt="User Profile" />
         </div>
+      </div>
     </header>
     <main>
-        <div class="sidebar">
-            <ul>
-                <li>Dashboard</li>
-                <li>Product</li>
-                <li class="active">Order</li>
-                <li>User</li>
-                <li>Keluar</li>
-            </ul>
+      <div class="sidebar">
+        <ul>
+          <li>Dashboard</li>
+          <li>Product</li>
+          <li class="active">Order</li>
+          <li>User</li>
+          <li>Keluar</li>
+        </ul>
+      </div>
+      <div class="content">
+        <div class="table">
+          <table>
+            <thead>
+              <tr>
+                <th>Select</th>
+                <th>No. Order</th>
+                <th>Date</th>
+                <th>Order</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>#12354-09893</td>
+                <td>26 January 2023</td>
+                <td>Hazelnut Latte R 1x; Caramel Machiato L 1x</td>
+                <td class="status done">Done</td>
+                <td>IDR 40.000</td>
+                <td class="action-buttons">
+                  <button class="action-btn view-btn" title="View">
+                    <img src="/src/icons/view-list.svg" alt="View" />
+                  </button>
+                  <button class="action-btn edit-btn" title="Edit">
+                    <img src="/src/icons/pen.svg" alt="Edit" />
+                  </button>
+                  <button class="action-btn delete-btn" title="Delete">
+                    <img src="/src/icons/delete.svg" alt="Delete" />
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>#12354-09893</td>
+                <td>26 January 2023</td>
+                <td>Hazelnut Latte 1x; Caramel Machiato 1x</td>
+                <td class="status pending">Pending</td>
+                <td>IDR 40.000</td>
+                <td class="action-buttons">
+                  <button class="action-btn view-btn" title="View">
+                    <img src="/src/icons/view-list.svg" alt="View" />
+                  </button>
+                  <button class="action-btn edit-btn" title="Edit">
+                    <img src="/src/icons/pen.svg" alt="Edit" />
+                  </button>
+                  <button class="action-btn delete-btn" title="Delete">
+                    <img src="/src/icons/delete.svg" alt="Delete" />
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>#12354-09893</td>
+                <td>26 January 2023</td>
+                <td>Hazelnut Latte 1x; Caramel Machiato 1x</td>
+                <td class="status progress">On Progress</td>
+                <td>IDR 40.000</td>
+                <td class="action-buttons">
+                  <button class="action-btn view-btn" title="View">
+                    <img src="/src/icons/view-list.svg" alt="View" />
+                  </button>
+                  <button class="action-btn edit-btn" title="Edit">
+                    <img src="/src/icons/pen.svg" alt="Edit" />
+                  </button>
+                  <button class="action-btn delete-btn" title="Delete">
+                    <img src="/src/icons/delete.svg" alt="Delete" />
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" /></td>
+                <td>#12354-09893</td>
+                <td>26 January 2023</td>
+                <td>Hazelnut Latte 1x; Caramel Machiato 1x</td>
+                <td class="status waiting">Waiting</td>
+                <td>IDR 40.000</td>
+                <td class="action-buttons">
+                  <button class="action-btn view-btn" title="View">
+                    <img src="/src/icons/view-list.svg" alt="View" />
+                  </button>
+                  <button class="action-btn edit-btn" title="Edit">
+                    <img src="/src/icons/pen.svg" alt="Edit" />
+                  </button>
+                  <button class="action-btn delete-btn" title="Delete">
+                    <img src="/src/icons/delete.svg" alt="Delete" />
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="content">
-            <div class="header-content">
-                <h1>Order #12354-09893</h1>
-                <button class="close-button">✖️</button>
-            </div>
-            <div class="order-info">
-                <h2>Order Information</h2>
-                <p><strong>Full Name:</strong> Ghaluh Wizard Anggoro</p>
-                <p><strong>Address:</strong> Griya Bandung Indah</p>
-                <p><strong>Phone:</strong> 082116304338</p>
-                <p><strong>Payment Method:</strong> Cash</p>
-                <p><strong>Shipping:</strong> Dine In</p>
-                <p><strong>Status:</strong> On progress</p>
-                <p><strong>Total Transaksi:</strong> IDR 40.000</p>
-            </div>
-            <div class="order-details">
-                <h2>Your Order</h2>
-                <div class="order-item">
-                    <p>Hazelnut Latte</p>
-                    <p>2 pcs | Regular | Ice | Dine In</p>
-                    <p>IDR 40.000 IDR 20.000</p>
-                </div>
-                <div class="order-item">
-                    <p>Caramel Machiato</p>
-                    <p>1 pcs | Regular | Ice | Dine In</p>
-                    <p>IDR 40.000 IDR 20.000</p>
-                </div>
-                <button class="update-button">Update</button>
-            </div>
+       
+        <div class="order-info">
+             <div class="header-content">
+          <h1>Order #12354-09893</h1>
+          <button class="close-button">✖️</button>
         </div>
+          <h2>Order Information</h2>
+          <p><strong>Full Name:</strong> Ghaluh Wizard Anggoro</p>
+          <p><strong>Address:</strong> Griya Bandung Indah</p>
+          <p><strong>Phone:</strong> 082116304338</p>
+          <p><strong>Payment Method:</strong> Cash</p>
+          <p><strong>Shipping:</strong> Dine In</p>
+          <p><strong>Status:</strong> On progress</p>
+          <p><strong>Total Transaksi:</strong> IDR 40.000</p>
+          <div class="order-details">
+          <h2>Your Order</h2>
+          <div class="order-item">
+            <p>Hazelnut Latte</p>
+            <p>2 pcs | Regular | Ice | Dine In</p>
+            <p>IDR 40.000 IDR 20.000</p>
+          </div>
+          <div class="order-item">
+            <p>Caramel Machiato</p>
+            <p>1 pcs | Regular | Ice | Dine In</p>
+            <p>IDR 40.000 IDR 20.000</p>
+          </div>
+          <button class="update-button">Update</button>
+        </div>
+        </div>
+        
+      </div>
     </main>
-</body>
+  </body>
 </html>

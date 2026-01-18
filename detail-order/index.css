@@ -61,6 +61,14 @@ main {
 .content {
     flex-grow: 1;
     padding: 20px;
+    /* background-color: aquamarine; */
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.table {
+    flex: 1;
 }
 
 .header-content {
@@ -68,6 +76,7 @@ main {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    /* background-color: blueviolet; */
 }
 
 .close-button {
@@ -79,10 +88,14 @@ main {
 }
 
 .order-info {
-    background-color: #f8f8f8;
+    /* background-color: red; */
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
+    color: black;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
 }
 
 .order-info h2 {
@@ -90,7 +103,7 @@ main {
 }
 
 .order-details {
-    background-color: #f8f8f8;
+    /* background-color: greenyellow; */
     padding: 20px;
     border-radius: 8px;
 }
