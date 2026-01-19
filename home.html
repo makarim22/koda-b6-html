@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <title>Coffee Shop Landing Page</title>
+    <script defer src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="container">
@@ -95,9 +96,9 @@
         </div>
 
         <div class="testimonial-section">
-            <h2>TESTIMONIAL</h2>
+            <!-- <h2>TESTIMONIAL</h2>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -139,7 +140,7 @@
             </div>
         </div>
     </footer>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
      const product = [
         {
@@ -208,7 +209,9 @@
 
     })
 
-  const testimonials = [
+   $(document).ready(function() { 
+
+    const testimonials = [
     {
         id: 1,
         name: "Viezh Robert",
@@ -243,75 +246,90 @@
     }
 ];
 
-const testimonialSection = document.querySelector(".testimonial-section");
+    const $testimonialSection = $(".testimonial-section"); 
 
-const testimonialCard = document.createElement("div");
-testimonialCard.setAttribute("class", "testimonial-card");
-testimonialSection.append(testimonialCard);
+    const $testimonialCard = $("<div>")
+        .addClass("testimonial-card"); 
 
-const imageContainer = document.createElement("div");
-imageContainer.setAttribute("class", "image-container");
-testimonialCard.append(imageContainer);
+    const $imageContainer = $("<div>")
+        .addClass("image-container");
 
-const testimonialContent = document.createElement("div");
-testimonialContent.setAttribute("class", "testimonial-content");
-testimonialCard.append(testimonialContent);
+    const $testimonialContent = $("<div>")
+        .addClass("testimonial-content");
 
-const navigation = document.createElement("div");
-navigation.setAttribute("class", "navigation");
-testimonialCard.append(navigation);
+    const $navigation = $("<div>")
+        .addClass("navigation");
 
-const prevButton = document.createElement("img");
-prevButton.src = "./src/arrow-left.svg";
-prevButton.alt = "Previous";
-prevButton.setAttribute("class", "left-arrow");
-navigation.append(prevButton);
+    const $prevButton = $("<img>")
+        .attr({ 
+            src: "./src/arrow-left.svg",
+            alt: "Previous",
+            class: "left-arrow" 
+        });
 
-const nextButton = document.createElement("img");
-nextButton.src = "./src/arrow-right.svg";
-nextButton.alt = "Next";
-nextButton.setAttribute("class", "right-arrow");
-navigation.append(nextButton);
+    const $nextButton = $("<img>")
+        .attr({ 
+            src: "./src/arrow-right.svg",
+            alt: "Next",
+            class: "right-arrow"
+        });
 
-let currentIndex = 0;
+    $imageContainer.appendTo($testimonialCard); 
+    $testimonialContent.appendTo($testimonialCard);
+    $navigation.appendTo($testimonialCard);
+    $prevButton.appendTo($navigation);
+    $nextButton.appendTo($navigation);
+    $testimonialCard.appendTo($testimonialSection); 
 
-prevButton.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+    let currentIndex = 0;
+
+    $prevButton.on("click", () => { 
+        currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+        updateTestimonial(testimonials[currentIndex]);
+    });
+
+    $nextButton.on("click", () => { 
+        currentIndex = (currentIndex + 1) % testimonials.length;
+        updateTestimonial(testimonials[currentIndex]);
+    });
+
+    function updateTestimonial(testimonial) {
+        $imageContainer.empty();
+        $testimonialContent.empty();
+
+        const $img = $("<img>")
+            .attr({
+                src: testimonial.image,
+                alt: testimonial.name,
+                class: "testimonial-image"
+            });
+
+        const $name = $("<h3>")
+            .text(testimonial.name); 
+
+        const $role = $("<p>")
+            .addClass("role")
+            .text(testimonial.role);
+
+        const $quote = $("<p>")
+            .addClass("quote")
+            .text(`"${testimonial.quote}"`);
+
+        const $rating = $("<div>")
+            .addClass("rating")
+            .text("★".repeat(testimonial.rating) + "☆".repeat(5 - testimonial.rating) + " " + testimonial.rating + ".0");
+
+        $img.appendTo($imageContainer);
+
+        $name.appendTo($testimonialContent);
+        $role.appendTo($testimonialContent);
+        $quote.appendTo($testimonialContent);
+        $rating.appendTo($testimonialContent);
+    }
+
     updateTestimonial(testimonials[currentIndex]);
-});
 
-nextButton.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % testimonials.length;
-    updateTestimonial(testimonials[currentIndex]);
-});
-
-function updateTestimonial(testimonial) {
-
-    const img = document.createElement("img");
-    img.src = testimonial.image;
-    img.alt = testimonial.name;
-    img.className = "testimonial-image";
-
-    const name = document.createElement("h3");
-    name.textContent = testimonial.name;
-
-    const role = document.createElement("p");
-    role.className = "role";
-    role.textContent = testimonial.role;
-
-    const quote = document.createElement("p");
-    quote.className = "quote";
-    quote.textContent = `"${testimonial.quote}"`;
-
-    const rating = document.createElement("div");
-    rating.className = "rating";
-    rating.textContent = "★".repeat(testimonial.rating) + "☆".repeat(5 - testimonial.rating) + " " + testimonial.rating + ".0";
-
-    testimonialContent.replaceChildren(img, name, role, quote, rating);
-}
-
-updateTestimonial(testimonials[currentIndex]);
-
+}); 
     </script>
 
 </body>
