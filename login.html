@@ -1,108 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
-    <link rel="stylesheet" href="style.css">
-     <link
+    <link rel="stylesheet" href="style.css" />
+    <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Rubik:wght@300..900&display=swap"
       rel="stylesheet"
     />
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="coffee-image">
-            <img src="./src/login-girl.svg" alt="Coffee Grinds">
+      <div class="coffee-image">
+        <img src="./src/login-girl.svg" alt="Coffee Grinds" />
+      </div>
+
+      <form class="registration-form">
+        <div class="logo-container">
+          <img src="./src/icons/coffee-cup.svg" alt="Logo" class="main-logo" />
+          <img
+            src="./src/icons/coffee-shop.svg"
+            alt="Coffee Shop Logo"
+            class="secondary-logo"
+          />
         </div>
 
-        <form class="registration-form">
-            <div class="logo-container">
-                <img src="./src/icons/coffee-cup.svg" alt="Logo" class="main-logo">
-                <img src="./src/icons/coffee-shop.svg" alt="Coffee Shop Logo" class="secondary-logo">
-            </div>
+        <h2>Login</h2>
+        <span>Fill out the form correctly</span>
 
-            <h2>Login</h2>
-            <span>Fill out the form correctly</span>
+        <div class="input-container">
+          <label for="email">Email:</label>
+          <div class="input-wrapper">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter Your Email"
+              required
+            />
+            <img
+              src="./src/icons/mail.svg"
+              alt="Email Icon"
+              class="input-icon"
+            />
+          </div>
+        </div>
 
-            <div class="input-container">
-                <label for="email">Email:</label>
-                <div class="input-wrapper">
-                    <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
-                    <img src="./src/icons/mail.svg" alt="Email Icon" class="input-icon">
-                </div>
-            </div>
+        <div class="input-container">
+          <label for="password">Password:</label>
+          <div class="input-wrapper">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter Your Password"
+              required
+            />
+            <img
+              src="./src/icons/Password.svg"
+              alt="Password Icon"
+              class="input-icon"
+            />
+          </div>
+        </div>
 
-            <div class="input-container">
-                <label for="password">Password:</label>
-                <div class="input-wrapper">
-                    <input type="password" id="password" name="password" placeholder="Enter Your Password" required>
-                    <img src="./src/icons/Password.svg" alt="Password Icon" class="input-icon">
-                </div>
-            </div>
+        <div class="password-recovery">
+          <a
+            class="forgot-password"
+            style="text-decoration: none"
+            href="forgot-password.html"
+            >Lupa password?
+          </a>
+        </div>
 
-            <div class="password-recovery">
-                <a class="forgot-password" style="text-decoration: none;" href="forgot-password.html">Lupa password? </a>
-            </div>
+        <button type="submit">Login</button>
+        <span class="login-ref"
+          >Not Have an Account?
+          <a style="text-decoration: none; color: orange" href="register.html"
+            >Register</a
+          ></span
+        >
 
-            <button type="submit">Login</button>
-            <span class="login-ref">Not Have an Account? <a style="text-decoration: none; color:orange" href="register.html">Register</a></span>
-
-            <div class="social-media">
-                <div class="social-button">
-                    <img src="./src/icons/bx_bxl-facebook-circle.svg" alt="Facebook Icon">
-                    Facebook
-                </div>
-                <div class="social-button">
-                    <img src="./src/icons/flat-color-icons_google.svg" alt="Google Icon">
-                    Google
-                </div>
-            </div>
-        </form>
+        <div class="social-media">
+          <div class="social-button">
+            <img
+              src="./src/icons/bx_bxl-facebook-circle.svg"
+              alt="Facebook Icon"
+            />
+            Facebook
+          </div>
+          <div class="social-button">
+            <img
+              src="./src/icons/flat-color-icons_google.svg"
+              alt="Google Icon"
+            />
+            Google
+          </div>
+        </div>
+      </form>
     </div>
 
-    <script>
-      
-       const emailInput = document.getElementById('email');
-       const passwordInput = document.getElementById('password');
+<script>
+      const emailInput = document.getElementById("email");
+      const passwordInput = document.getElementById("password");
+
+      const STORAGE_KEY = 'user-data'; 
+
+      // helper
+      const getStoredCredentials = () => { 
+        const stored = localStorage.getItem(STORAGE_KEY);
+        return stored ? JSON.parse(stored) : [];
+      };
+
+      const saveCredentials = (credentialsArray) => { 
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(credentialsArray));
+      };
+
+      const form = document.querySelector(".registration-form");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault(); 
+
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
+
+        if (password.length < 8) {
+          alert("Password must be at least 8 characters long.");
+          passwordInput.focus();
+          return;
+        }
 
 
-        const form = document.querySelector('.registration-form');
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
+        let allCredentials = getStoredCredentials(); 
 
-            const email = emailInput.value;
-            const password = passwordInput.value;
+        console.log('Credentials', allCredentials);
+        
+        const wrongPassword = allCredentials.some(user => user.email === email && user.password !== password)
+        if (wrongPassword) {
+            alert('Email atau password yang dimasukkan salah');
+            passwordInput.focus();
+            return;
+        }
 
-            emailRegex =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        emailInput.value = '';
+        passwordInput.value = '';
 
-            emailValid = 'koda@gmail.com';
-            passwordValid = 'password223';
-
-            if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-
-            if (password.length < 8) {
-                alert('Password must be at least 8 characters long.');
-                return;
-            }
-
-            if (email !== emailValid) {
-                alert('Incorrect email. Please try again.');
-                return;
-            }
-
-            if (password !== passwordValid) {
-                alert('Incorrect password. Please try again.');
-                return;
-            }
-
-            window.location.href = 'home.html';
-
-            alert('Login berhasil!');
-        });
-    </script>
-</body>
+        alert("Berhasil masuk! mengarahkan ke halaman utama");
+        window.location.href = "home.html"; 
+      });
+</script>
+  </body>
 </html>
