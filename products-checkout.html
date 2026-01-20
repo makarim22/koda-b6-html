@@ -30,7 +30,7 @@
     <h1>Payment Details</h1>
     <div class="title">
       <h2>Your Order</h2>
-      <button class="add-menu">+ Add Menu</button>
+      <button class="add-menu"><a style = "text-decoration: none;" href="product.html">+ Add Menu</a></button>
     </div>
     <div class="order-summary">
       <div class="order-left">
@@ -166,7 +166,7 @@
 
         const products = await loadProducts();
 
-        const combinedItems = cart.map((item) => {
+        combinedItems = cart.map((item) => {
           const product = products.find((prod) => prod.id === item.id);
 
           if (!product) {
@@ -192,7 +192,8 @@
             orderType: 'dine-in'
           };
         }).filter(item => item !== null);
-
+        console.log('combined items', combinedItems);
+        
         renderCart(combinedItems);
         updateTotals();
       } catch (error) {
@@ -206,9 +207,8 @@
     const TAX_RATE = 0.1;
     const DELIVERY_COST = 10000;
 
-    function renderCart(combinedItems) {
+    function renderCart() {
       orderLeft.innerHTML = "";
-
 
       combinedItems.forEach((item, index) => {
         const orderItem = document.createElement("div");
@@ -272,17 +272,19 @@
       updateTotals();
     }
 
-    function calculateSubtotal() {
+    function calculateSubtotal(combinedItems) {
       let subtotal = 0;
+      
       combinedItems.forEach(item => {
         const price = item.isFlashSale ? item.discountedPrice : item.price;
         subtotal += price * item.quantity;
       });
-      return subtotal;
+      console.log('subtotal', subtotal);
+      return subtotal; 
     }
 
     function calculateTotal() {
-      const subtotal = calculateSubtotal();
+      const subtotal = calculateSubtotal(combinedItems);
 
       if (combinedItems.length === 0) {
         return {
