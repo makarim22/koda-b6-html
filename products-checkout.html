@@ -306,6 +306,8 @@
       };
     }
 
+    let order = [];
+
     function updateTotals() {
       const totals = calculateTotal();
 
@@ -318,6 +320,22 @@
       if (deliveryCostEl) deliveryCostEl.textContent = `Delivery: IDR ${totals.delivery.toLocaleString("id-ID")}`;
       if (taxEl) taxEl.textContent = `Tax: IDR ${totals.tax.toLocaleString("id-ID")}`;
       if (subtotalEl) subtotalEl.textContent = `Subtotal: IDR ${totals.total.toLocaleString("id-ID")}`;
+
+      // order = [];
+
+      // combinedItems.forEach(item => {
+      //   const orderItem = {
+      //     name: item.name,
+      //     quantity: item.quantity,
+      //     size: item.size,
+      //     orderType: item.orderType,
+      //     price: item.isFlashSale ? item.discountedPrice : item.price,
+      //     total: totals.subtotal,
+      //     deliveryCost : totals.delivery,
+      //     tax: totals.tax,   
+      //   };
+      //   order.push(orderItem);
+      // });
     }
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -326,6 +344,31 @@
     });
 
     window.updateTotals = updateTotals;
+
+    /// Checkout
+    const checkoutButton = document.querySelector(".checkout");
+
+    checkoutButton.addEventListener("click", () => {
+
+      totals = calculateTotal();
+      
+      combinedItems.forEach(item => {
+        const orderItem = {
+          name: item.name,
+          quantity: item.quantity,
+          size: item.size,
+          orderType: item.orderType,
+          price: item.isFlashSale ? item.discountedPrice : item.price,
+          total: totals.subtotal,
+          deliveryCost : totals.delivery,
+          tax: totals.tax,   
+        };
+        order.push(orderItem);
+      });
+
+      localStorage.setItem("order", JSON.stringify(order));
+      window.location.href = "home.html";
+    });
   </script>
 
 </html>
