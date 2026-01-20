@@ -226,45 +226,67 @@ body {
     margin-bottom: 10px;
 }
 
-.products-section {
+.product-section {
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+}
+
+.product-card {
+    position: relative; /* Set to allow absolute positioning of children */
+    background: #fff; /* White background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Hide overflowing parts */
+    margin: 15px; /* Space between cards */
+}  
+.product-grid {
     display: inline-block;
     width: 100%;
-    padding: 40px;
-    text-align: center;
 }
 
 .product-card {
     display: inline-block;
-    width: 20%;
-    margin: 1%;
+    padding: auto;
+    margin: 5px;
+    background: #fff;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    vertical-align: top;
+    border-radius: 5px;
+    text-align: center;
+    height: 400px;
+    width: 300px;
 }
 
-.product-card img {
-    width: 100%;
-    height: auto;
+.product-image {
+   width: 100%; /* Full width image */
+    max-height: 200px; /* Limit height */
+    object-fit: cover;
 }
 
-.product-card h3 {
-    margin: 10px 0;
-    font-size: 1.5em;
-}
 
-.product-card p {
-    margin: 0;
-    padding: 0 10px;
-    margin-top: 10px;
+.description-main {
+    display: flex;
+    flex-direction: column;
+    position: absolute; /* Position absolute to overlap the image */
+    bottom: 0;
+    left: 12px; /* Align to the left */
+    right: 12px; /* Expand to the right */
+    padding: 12px;
+    background-color: white;
+    /* padding: 10px; Padding around the text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+    z-index: 2; /* Make sure it’s on top of the image */
 }
-
 .price {
-    font-size: 1.25em;
-    color: #FF5722;
+    color: #FF8906;
+     /* text-decoration: line-through; */
+    /* font-weight: bold; */
+    font-size: 20px;
+}
+
+.description {
     margin-top: 10px;
+    font-size: small;
 }
 
 .buy-button {
@@ -504,4 +526,50 @@ h3 {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+
+.add-to-cart,
+.cart-button {
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.add-to-cart {
+    flex: 8;
+    background-color: #FF8906;
+}
+
+.cart-button {
+    flex: 3;
+    background-color: transparent;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
 }

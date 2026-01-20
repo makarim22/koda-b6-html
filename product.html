@@ -17,14 +17,14 @@
         <img src="./src/icons/home/Frame.svg" alt="Menu" />
       </div>
       <nav class="left-header">
-        <p>Home</p>
-        <p>Product</p>
+        <a href="home.html">Home</a>
+        <a href="product.html">Product</a>
       </nav>
       <nav class="right-header">
         <img src="./src/icons/Search.svg" alt="Search" />
         <img src="./src/icons/ShoppingCart.svg" alt="Cart" />
-        <p class="login-button">Sign In</p>
-        <p class="register-button">Sign Up</p>
+            <a href="login.html">Sign In</a>
+            <a href="register.html">Sign Up</a>
       </nav>
     </header>
 
@@ -222,13 +222,11 @@
           cartButton.setAttribute("class", "cart-button");
           // Hapus baris ini: cartButton.textContent = "Add to Cart";
 
-          // Buat elemen <img> untuk ikon keranjang belanja
           const cartIcon = document.createElement("img");
-          cartIcon.src = "./src/shoppingCart-org.svg"; // Gunakan path yang Anda tentukan
-          cartIcon.alt = "Add to Cart"; // Atribut alt untuk aksesibilitas
-          cartIcon.classList.add("cart-icon"); // Tambahkan kelas untuk styling ikon jika diperlukan
+          cartIcon.src = "./src/shoppingCart-org.svg"; 
+          cartIcon.alt = "Add to Cart"; 
+          cartIcon.classList.add("cart-icon"); 
 
-          // Tambahkan ikon ke dalam tombol
           cartButton.append(cartIcon);
 
 
@@ -239,10 +237,10 @@
             window.location.href = `products-checkout.html?${params.toString()}`;
           });
 
-          // descriptionMain.append(cartButton);
         });
       });
-
+      
+      /// left-container function
       const searchBar = document.querySelector(".search-bar");
       searchBar.addEventListener("input", (e) => {
         const query = e.target.value.toLowerCase();

@@ -157,6 +157,7 @@ body {
     width: 100%;
 }
 
+
 .product-card {
     display: inline-block;
     padding: auto;
@@ -168,7 +169,6 @@ body {
     height: 400px;
     width: 300px;
 }
-
 .product-image {
    width: 100%; /* Full width image */
     max-height: 200px; /* Limit height */
@@ -362,105 +362,78 @@ p {
     width: 100%;
 }
 
-
-
 .product-card {
-    position: relative; /* Set to allow absolute positioning of children */
-    background: #fff; /* White background */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 10px; /* Rounded corners */
-    overflow: hidden; /* Hide overflowing parts */
-    margin: 15px; /* Space between cards */
+    position: relative;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px;
 }
 
 .sale-banner {
-    position: absolute; /* Position absolutely within the card */
-    top: 10px; /* Position at the top */
-    left: 10px; /* Position at the left */
-    background-color: red; /* Banner background */
-    color: white; /* Text color */
-    padding: 5px 10px; /* Padding */
-    border-radius: 20px; /* Rounded corners */
-    font-weight: bold; /* Bold text */
-    z-index: 1; /* Make sure the banner appears above other elements */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    z-index: 1;
 }
 
 .product-image {
-    width: 100%; /* Full width image */
-    max-height: 200px; /* Set max height */
-    object-fit: cover; /* Maintain aspect ratio */
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
 }
-
 
 .description {
-    color: #666; /* Description text color */
-    font-size: 14px; /* Description font size */
+    color: #666;
+    font-size: 14px;
 }
 
-
 .rating {
-    display: flex; /* Flexbox for stars */
-    align-items: center; /* Center stars vertically */
-    margin: 10px 0; /* Margin around the rating */
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
 }
 
 .star {
-    color: #FF8906; /* Color for stars */
-    font-size: 16px; /* Star size */
+    color: #FF8906;
+    font-size: 16px;
 }
 
 .add-to-cart,
-.cart-button { /* Button color (contoh, bisa diubah) */
-    color: white; /* Button text color */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 15px; /* Sedikit kurang padding horizontal agar lebih proporsional */
-    cursor: pointer; /* Pointer for button */
+.cart-button {
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
     font-size: 0.95em;
     font-weight: 600;
     transition: background-color 0.2s ease-in-out;
-
-    text-align: center; /* Memastikan teks di tengah tombol */
-    white-space: nowrap; /* Mencegah teks tombol patah baris */
+    text-align: center;
+    white-space: nowrap;
 }
 
-/* Gaya spesifik untuk tombol "Buy" (add-to-cart) */
 .add-to-cart {
-    flex: 8; /* Mengambil 7 bagian dari total 10 bagian (70%) */
-    /* Anda bisa juga menggunakan flex-basis dan flex-grow/shrink:
-       flex-grow: 0;
-       flex-shrink: 0;
-       flex-basis: 70%;
-    */
-    background-color: #FF8906; /* Contoh: Warna berbeda untuk tombol utama */
+    flex: 8;
+    background-color: #FF8906;
 }
 
-/* Gaya spesifik untuk tombol "Add to Cart" (cart-button) */
 .cart-button {
-    flex: 3; /* Mengambil 3 bagian dari total 10 bagian (30%) */
-    /* Anda bisa juga menggunakan flex-basis dan flex-grow/shrink:
-       flex-grow: 0;
-       flex-shrink: 0;
-       flex-basis: 30%;
-    */
-   /* Contoh: Warna berbeda untuk tombol sekunder */
-   background-color: transparent;
-   padding: 10px;
+    flex: 3;
+    background-color: transparent;
+    padding: 10px;
 }
-
-
-/* .promo-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-} */
 
 .wrapper {
-    display: flex; /* Make children (buttons) flex items */
-    flex-direction: row; /* Arrange buttons side by side */
-    gap: 10px; /* Space between the two buttons */
-    /* Jika Anda ingin ada jarak dari elemen di atasnya, tambahkan margin-top di sini */
-    margin-top: 20px; /* Contoh: Memberi jarak 20px dari elemen di atas wrapper */
-    width: 100%; /* Pastikan wrapper mengambil lebar penuh agar tombol bisa memenuhi */
-    /* background-color: blue ; */
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
+    width: 100%;
 }
