@@ -134,6 +134,7 @@
 
   const productId = parseInt(id); 
   console.log("Product ID as integer:", productId);
+
   const products = [
     {
       id: 1,
@@ -214,28 +215,26 @@
     if (recommendationsDiv) {
       main.insertBefore(productInfo, recommendationsDiv);
     } else {
-      main.append(productInfo); // Fallback jika tidak ada div rekomendasi
+      main.append(productInfo);
     }
 
-    // Image Display
     const imageDisplay = document.createElement("div");
     imageDisplay.setAttribute("class", "image-display");
     productInfo.append(imageDisplay);
 
     const productImage = document.createElement("img");
-    productImage.setAttribute("src", product.image);  // Change here: use product's image
-    productImage.setAttribute("alt", product.name);    // Change here: use product's name
+    productImage.setAttribute("src", product.image);  
+    productImage.setAttribute("alt", product.name);    
     productImage.setAttribute("class", "product-image");
     imageDisplay.append(productImage);
 
      const productRightSection = document.createElement("div");
-    productRightSection.setAttribute("class", "product-right-section"); // Tambahkan kelas baru
-    productInfo.append(productRightSection); // productRightSection adalah saudara dari imageDisplay
+    productRightSection.setAttribute("class", "product-right-section"); 
+    productInfo.append(productRightSection); 
 
-    // Product Details (Nama, Harga, Rating, Review, Deskripsi)
     const productDetails = document.createElement("div");
     productDetails.setAttribute("class", "product-details");
-    productRightSection.append(productDetails); // productDetails adalah anak dari productRightSection
+    productRightSection.append(productDetails);
 
     const productName = document.createElement("h2");
     productName.textContent = product.name;
@@ -294,6 +293,47 @@
     const optionsDiv = document.createElement("div");
     optionsDiv.setAttribute("class", "options");
     productRightSection.append(optionsDiv); 
+    
+    
+  const quantityContainer = document.createElement("div");
+  quantityContainer.setAttribute("class", "quantity-container");
+  productDetails.append(quantityContainer); 
+
+  const minusButton = document.createElement("button");
+  minusButton.setAttribute("class", "quantity-button minus");
+  minusButton.textContent = "−";
+  quantityContainer.append(minusButton);
+
+  const quantityInput = document.createElement("input");
+  quantityInput.setAttribute("type", "number");
+  quantityInput.setAttribute("class", "quantity-input");
+  quantityInput.setAttribute("value", "1");
+  quantityInput.setAttribute("min", "1");
+  quantityContainer.append(quantityInput);
+
+  const plusButton = document.createElement("button");
+  plusButton.setAttribute("class", "quantity-button plus");
+  plusButton.textContent = "+";
+  quantityContainer.append(plusButton);
+
+  minusButton.addEventListener("click", () => {
+    let currentQuantity = parseInt(quantityInput.value);
+    if (currentQuantity > 1) {
+      quantityInput.value = currentQuantity - 1;
+    }
+  });
+
+  plusButton.addEventListener("click", () => {
+    let currentQuantity = parseInt(quantityInput.value);
+    quantityInput.value = currentQuantity + 1;
+  });
+
+  quantityInput.addEventListener("change", () => {
+    let currentQuantity = parseInt(quantityInput.value);
+    if (isNaN(currentQuantity) || currentQuantity < 1) {
+      quantityInput.value = 1; 
+    }
+  });
 
     const sizeHeading = document.createElement("h4");
     sizeHeading.textContent = "Choose Size";
@@ -350,6 +390,103 @@
     addToCartButton.setAttribute("class", "add-to-cart-button");
     addToCartButton.textContent = "Add to Cart"; 
     buyOptionsDiv.append(addToCartButton);
+
+    const regularbtn = document.querySelector(".regular-button");
+    const mediumbtn = document.querySelector(".medium-button");
+    const largebtn = document.querySelector(".large-button");
+    const icebtn = document.querySelector(".ice-button");
+    const hotbtn = document.querySelector(".hot-button");
+    const buybtn = document.querySelector(".buy-button");
+    const addtocartbtn = document.querySelector(".add-to-cart-button");
+
+  let size = "";
+let isHot = false;
+let cart = [];
+
+const quantity = document.querySelector(".quantity-input");
+
+regularButton.addEventListener("click", () => {
+  regularButton.classList.add("active");
+  mediumButton.classList.remove("active");
+  largeButton.classList.remove("active");
+  size = "Regular";
+  console.log('pilihan size', size);
+});
+
+mediumButton.addEventListener("click", () => {
+  regularButton.classList.remove("active");
+  mediumButton.classList.add("active");
+  largeButton.classList.remove("active");
+  size = "Medium";
+  console.log('pilihan size', size);
+});
+
+largeButton.addEventListener("click", () => {
+  regularButton.classList.remove("active");
+  mediumButton.classList.remove("active");
+  largeButton.classList.add("active");
+  size = "Large";
+  console.log('pilihan size', size);
+});
+
+iceButton.addEventListener("click", () => {
+  iceButton.classList.add("active");
+  hotButton.classList.remove("active");
+  isHot = false;
+  console.log('pilihan es', isHot ? "Hot" : "Ice");
+});
+
+hotButton.addEventListener("click", () => {
+  iceButton.classList.remove("active");
+  hotButton.classList.add("active");
+  isHot = true;
+  console.log('pilihan es', isHot ? "Hot" : "Ice");
+});
+
+// ✅ PERBAIKAN: Pindahkan logika membuat items ke dalam event listener buyButton
+buybtn.addEventListener("click", () => {
+  // Validasi pilihan
+  if (!size) {
+    alert("Please select a size!");
+    return;
+  }
+  
+  if (isHot === undefined || isHot === null) {
+    alert("Please select hot or ice!");
+    return;
+  }
+
+  const quantityValue = parseInt(quantity.value);
+  if (isNaN(quantityValue) || quantityValue < 1) {
+    alert("Please enter a valid quantity!");
+    return;
+  }
+
+  // ✅ Buat objek items DI SINI, dengan nilai-nilai terkini
+  const items = {
+    id: productId,
+    size: size,           // Sekarang ini akan memiliki nilai yang benar (Regular, Medium, atau Large)
+    isHot: isHot,         // Sekarang ini akan memiliki nilai yang benar (true atau false)
+    quantity: quantityValue
+  };
+
+  console.log('itemsnyaa', items); // Akan menampilkan items dengan nilai yang benar
+
+  // Tambahkan items ke cart
+  cart.push(items);
+
+  // Simpan ke localStorage
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  alert(`${items.quantity}x ${items.size} ${items.isHot ? 'Hot' : 'Ice'} added to cart!`);
+
+  // Redirect ke checkout jika diperlukan
+  window.location.href = "products-checkout.html";
+});
+
+
+
+
   } else {
     console.error("Product not found with ID:", productId);
   }

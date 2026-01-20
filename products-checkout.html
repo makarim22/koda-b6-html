@@ -131,38 +131,86 @@
   </footer>
 
   <script>
- 
-    let items = [
-      {
-        name: "Cappuccino",
-        isFlashSale: true,
-        price: 18000,
-        discountedPrice: 15000,
-        quantity: 2,
-        image: "./src/product/new-item/affogato.jfif",
-        orderType: "dine-in",
-        size: "regular"
-      },
-      {
-        name: "Latte",
-        isFlashSale: true,
-        price: 20000,
-        discountedPrice: 18000,
-        quantity: 3,
-        image: "./src/product/new-item/mocha.jfif",
-        orderType: "dine-in",
-        size: "large"
+
+    function loadProducts() {
+      return fetch(
+        "https://raw.githubusercontent.com/makarim22/koda-b6-html/refs/heads/master/src/data/products.json"
+      )
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((products) => {
+          console.log("products", products);
+          return products;
+        })
+        .catch((error) => {
+          console.error("Error loading products:", error);
+          return [];
+        });
+    }
+
+    let combinedItems = [];
+
+    async function initCheckout() {
+      try {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        if (cart.length === 0) {
+          console.warn("Cart is empty");
+          renderCart([]);
+          return;
+        }
+
+        const products = await loadProducts();
+
+        const combinedItems = cart.map((item) => {
+          const product = products.find((prod) => prod.id === item.id);
+
+          if (!product) {
+            console.warn(`Product not found for id: ${item.id}`);
+            return null;
+          }
+
+          const effectivePrice = product.isFlashSale ? product.discountedPrice : product.price;
+          const itemSubtotal = item.quantity * effectivePrice;
+
+          return {
+            id: item.id,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+            discountedPrice: product.discountedPrice,
+            isFlashSale: product.isFlashSale,
+            quantity: item.quantity,
+            subtotal: itemSubtotal,
+            total: itemSubtotal,
+            size: item.size,
+            isHot: item.isHot,
+            orderType: 'dine-in'
+          };
+        }).filter(item => item !== null);
+
+        renderCart(combinedItems);
+        updateTotals();
+      } catch (error) {
+        console.error("Error initializing checkout:", error);
       }
-    ];
+    }
+
+    initCheckout();
 
     const orderLeft = document.querySelector(".order-left");
     const TAX_RATE = 0.1;
-    const DELIVERY_COST = 10000; 
+    const DELIVERY_COST = 10000;
 
-    function renderCart() {
+    function renderCart(combinedItems) {
       orderLeft.innerHTML = "";
 
-      items.forEach((item, index) => {
+
+      combinedItems.forEach((item, index) => {
         const orderItem = document.createElement("div");
         orderItem.setAttribute("class", "order-item");
         orderItem.setAttribute("data-item-index", index);
@@ -219,42 +267,42 @@
     }
 
     function removeItemFromCart(index) {
-      items.splice(index, 1);
+      combinedItems.splice(index, 1);
       renderCart();
       updateTotals();
     }
 
     function calculateSubtotal() {
       let subtotal = 0;
-      items.forEach(item => {
+      combinedItems.forEach(item => {
         const price = item.isFlashSale ? item.discountedPrice : item.price;
         subtotal += price * item.quantity;
       });
       return subtotal;
     }
 
-  function calculateTotal() {
-  const subtotal = calculateSubtotal();
+    function calculateTotal() {
+      const subtotal = calculateSubtotal();
 
-  if (items.length === 0) {
-    return {
-      subtotal: 0,
-      tax: 0,
-      delivery: 0,
-      total: 0
-    };
-  }
+      if (combinedItems.length === 0) {
+        return {
+          subtotal: 0,
+          tax: 0,
+          delivery: 0,
+          total: 0
+        };
+      }
 
-  const tax = Math.round(subtotal * TAX_RATE);
-  const total = subtotal + tax + DELIVERY_COST;
+      const tax = Math.round(subtotal * TAX_RATE);
+      const total = subtotal + tax + DELIVERY_COST;
 
-  return {
-    subtotal: subtotal,
-    tax: tax,
-    delivery: DELIVERY_COST,
-    total: total
-  };
-}
+      return {
+        subtotal: subtotal,
+        tax: tax,
+        delivery: DELIVERY_COST,
+        total: total
+      };
+    }
 
     function updateTotals() {
       const totals = calculateTotal();
