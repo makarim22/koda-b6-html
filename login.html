@@ -130,7 +130,6 @@
           return;
         }
 
-
         let allCredentials = getStoredCredentials(); 
 
         console.log('Credentials', allCredentials);
@@ -141,6 +140,17 @@
             passwordInput.focus();
             return;
         }
+
+        if(!allCredentials.some(user => user.email === email)) {
+            alert('Email tersebut belum terdaftar di sistem kami');
+            emailInput.focus();
+            return;
+        }
+
+        const userIndex = allCredentials.findIndex(user => user.email === email);
+
+        allCredentials[userIndex].isLoggedIn = true;
+        saveCredentials(allCredentials);
 
         emailInput.value = '';
         passwordInput.value = '';
