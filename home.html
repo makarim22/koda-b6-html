@@ -239,7 +239,7 @@
           const rating = document.createElement("div");
           rating.setAttribute("class", "rating");
 
-          for (let i = 0; i < 5; i++) {
+          for (let i = 1; i <= product.rating; i++) {
             const star = document.createElement("span");
             star.classList.add("star");
             star.textContent = "★";
@@ -303,75 +303,6 @@
           });
         }
       });
-
-      //  const product = [
-      //     {
-      //         id: 1,
-      //         name: "Hazelnut Latte",
-      //         description: "You can explore the menu that we provide with fun and have their own taste and make your day better.",
-      //         price: 20000,
-      //         image: "./src/product/product1.png",
-      //     },
-      //     {
-      //         id: 2,
-      //         name: "Kopi Susu Sekeluarga",
-      //         description: "Kopi Susu Mewah perpaduan biji kopi pilihan dengan susu oat yang gurih. cocok buat kamu yang berjiwa Genzi",
-      //         price: 20000,
-      //         image: "./src/product/product2.png",
-      //     },
-      //     {
-      //         id: 3,
-      //         name: "coffee Latte",
-      //         description: "Our Signature Menu. made from highest quality of coffee beans from Kintamani, Bali",
-      //         price: 100000,
-      //         image: "./src/product/product3.png",
-      //     },
-      //     {
-      //         id: 4,
-      //         name: "Americano Ice",
-      //         description: "Es Americano yang dibuat dengan blend rahasia kami. Sangat cocok untuk menemani aktivitas sehari-hari.",
-      //         price: 50000,
-      //         image: "./src/product/product4.png",
-      //     },
-      // ]
-
-      // product.forEach((product) => {
-      // console.log(product)
-      // const productsSection = document.querySelector(".products-section")
-      // const productCard = document.createElement("div")
-      // productCard.setAttribute("class", "product-card")
-      // productsSection.append(productCard);
-
-      // const productImage = document.createElement("img")
-      // productImage.setAttribute("src", product.image)
-      // productCard.append(productImage)
-
-      // const productName = document.createElement("h3")
-      // productName.textContent = product.name
-      // productCard.append(productName)
-
-      // const productDescription = document.createElement("p")
-      // productDescription.textContent = product.description
-      // productCard.append(productDescription)
-
-      // const productPrice = document.createElement("p")
-      // productPrice.setAttribute("class", "price")
-      // productPrice.textContent = "IDR " + product.price
-      // productCard.append(productPrice)
-
-      // const buyButton = document.createElement("button")
-      // buyButton.setAttribute("class", "buy-button")
-      // buyButton.textContent = "Buy"
-      // productCard.append(buyButton)
-
-      // const cartButton = document.createElement("button")
-      // cartButton.setAttribute("class", "cart-button")
-      // cartButton.textContent = "Add to Cart"
-      // productCard.append(cartButton)
-
-      // })
-
-      /// testimonial function
 
       $(document).ready(function () {
         const testimonials = [
