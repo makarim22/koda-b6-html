@@ -31,8 +31,8 @@
       <nav class="right-header">
         <img src="./src/icons/Search.svg" alt="Search" />
         <img src="./src/icons/ShoppingCart.svg" alt="Cart" />
-        <a href="login.html">Sign In</a>
-        <a href="register.html">Sign Up</a>
+        <a id="login" href="login.html">Sign In</a>
+        <a id="register" href="register.html">Sign Up</a>
       </nav>
     </header>
 
@@ -497,6 +497,31 @@
 
         updateTestimonial(testimonials[currentIndex]);
       });
+
+      const header = document.getElementById(".right-header");
+
+      creds = localStorage.getItem("user-data");
+      console.log('credsnya', creds);
+    
+      if (creds) {
+        creds = JSON.parse(creds);
+        user = creds.find((user) => user.isLoggedIn === true);
+        console.log('creds', creds);
+        
+        const signIn = document.getElementById("login");
+        signIn.textContent = `Hi, ${user.name}`;
+        signIn.href ="#";
+
+        const signOut = document.getElementById("register");
+        signOut.textContent = "Logout";
+
+        signOut.addEventListener("click", () => {
+          user.isLoggedIn = false;
+          localStorage.setItem("user-data", JSON.stringify(creds));
+          signOut.href = "login.html";
+        })
+    
+      }
     </script>
   </body>
 </html>
