@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="profile.css" />
+  <title>Profile - Coffee Shop</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <img src="./src/icons/coffee-cup.svg" alt="Coffee Shop Logo" />
+        <img src="./src/icons/home/Logo.svg" alt="Coffee Shop Text" />
+
+      </div>
+      
+      <nav class="nav-center">
+        <a href="home.html">Home</a>
+        <a href="product.html">Product</a>
+      </nav>
+      
+      <nav class="nav-right">
+        <img src="./src/icons/Search.svg" alt="Search" class="icon" />
+        <img src="./src/icons/ShoppingCart.svg" alt="Cart" class="icon" />
+        <a href="login.html" class="signin-btn">Sign In</a>
+        <a href="register.html" class="signup-btn">Sign Up</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <h1 class="page-title">Profile</h1>
+
+    <div class="profile-container">
+      
+      <div class="profile-card">
+        <h2 class="profile-name">Ghaluh Wizard</h2>
+        <p class="profile-email">ghaluhwizz@gmail.com</p>
+        
+        <div class="profile-image-wrapper">
+          <!-- <img src="./src/product/Profile.svg" alt="Profile Picture" class="profile-image" /> -->
+        </div>
+        
+        <button class="upload-btn">Upload New Photo</button>
+        
+        <p class="join-date">Since 20 January 2022</p>
+      </div>
+
+      <div class="profile-form">
+        
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <div class="input-wrapper">
+            <img src="./src/icons/Profile.png" alt="Name Icon" class="input-icon" />
+            <input 
+              type="text" 
+              id="fullname" 
+              name="fullname" 
+              placeholder="Ghaluh Wizard" 
+              value="Ghaluh Wizard"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <div class="input-wrapper">
+            <img src="./src/icons/mail.svg" alt="Email Icon" class="input-icon" />
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="ghaluhwizz@gmail.com" 
+              value="ghaluhwizz@gmail.com"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <div class="input-wrapper">
+            <img src="./src/icons/phone.svg" alt="Phone Icon" class="input-icon" />
+            <input 
+              type="tel" 
+              id="phone" 
+              name="phone" 
+              placeholder="08216304338" 
+              value="08216304338"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="password-header">
+            <label for="password">Password</label>
+            <a href="#" class="set-password-link">Set New Password</a>
+          </div>
+          <div class="input-wrapper">
+            <img src="./src/icons/Password.svg" alt="Password Icon" class="input-icon" />
+            <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              value="••••••••"
+              disabled
+            />
+            <img src="./src/icons/EyeSlash.svg" alt="Show/Hide" class="toggle-password" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <div class="input-wrapper">
+            <img src="./src/icons/location.svg" alt="Location Icon" class="input-icon" />
+            <input 
+              type="text" 
+              id="address" 
+              name="address" 
+              placeholder="Griya Bandung Indah" 
+              value="Griya Bandung Indah"
+            />
+          </div>
+        </div>
+
+        <button class="submit-btn">Submit</button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      
+      <div class="footer-section about-section">
+        <div class="footer-logo">
+           <img src="./src/icons/coffee-cup.svg" alt="Coffee Shop Logo" />
+          <img src="./src/icons/home/Logo.svg" alt="Coffee Shop text" />
+        </div>
+        <p class="footer-description">
+          Coffee Shop is a store that sells some good meals, and especially 
+          coffee. We provide high quality beans
+        </p>
+        <p class="footer-copyright">© 2020 CoffeeStore</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Product</h3>
+        <ul>
+          <li><a href="#">Our Product</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Locations</a></li>
+          <li><a href="#">Countries</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Engage</h3>
+        <ul>
+          <li><a href="#">Partner</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section social-section">
+        <h3>Social Media</h3>
+        <div class="social-icons">
+          <a href="#" class="social-icon facebook">
+            <img src="./src/icons/Facebook.svg" alt="Facebook" />
+          </a>
+          <a href="#" class="social-icon twitter">
+            <img src="./src/icons/Twitter.svg" alt="Twitter" />
+          </a>
+          <a href="#" class="social-icon instagram">
+            <img src="./src/icons/Instagram.png" alt="Instagram" />
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
