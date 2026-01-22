@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Order List</title>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo">Coffee Shop</div>
+        <div class="user-info">
+          <img src="default-profile.png" alt="User Profile" />
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="sidebar">
+        <ul>
+          <li>Dashboard</li>
+          <li>Product</li>
+          <li class="active">Order</li>
+          <li>User</li>
+          <li>Keluar</li>
+        </ul>
+      </div>
+      <div class="content">
+        <div class="header-content">
+          <h1>Order List</h1>
+          <button class="add-order">+ Add Order</button>
+        </div>
+        <div class="filter-section">
+          <select>
+            <option>Status</option>
+            <option>All</option>
+            <option>Pending</option>
+            <option>Done</option>
+            <option>On Progress</option>
+            <option>Waiting</option>
+          </select>
+          <div class="search-section">
+            <input type="text" placeholder="Enter Order Number" />
+            <button class="filter-button">Filter</button>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Select</th>
+              <th>No. Order</th>
+              <th>Date</th>
+              <th>Order</th>
+              <th>Status</th>
+              <th>Total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" /></td>
+              <td>#12354-09893</td>
+              <td>26 January 2023</td>
+              <td>Hazelnut Latte R 1x; Caramel Machiato L 1x</td>
+              <td class="status done">Done</td>
+              <td>IDR 40.000</td>
+              <td class="action-buttons">
+                <button class="action-btn view-btn" title="View">
+                  <img src="/src/icons/view-list.svg" alt="View" />
+                </button>
+                <button class="action-btn edit-btn" title="Edit">
+                  <img src="/src/icons/pen.svg" alt="Edit" />
+                </button>
+                <button class="action-btn delete-btn" title="Delete">
+                  <img src="/src/icons/delete.svg" alt="Delete" />
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" /></td>
+              <td>#12354-09893</td>
+              <td>26 January 2023</td>
+              <td>Hazelnut Latte 1x; Caramel Machiato 1x</td>
+              <td class="status pending">Pending</td>
+              <td>IDR 40.000</td>
+              <td class="action-buttons">
+                <button class="action-btn view-btn" title="View">
+                  <img src="/src/icons/view-list.svg" alt="View" />
+                </button>
+                <button class="action-btn edit-btn" title="Edit">
+                  <img src="/src/icons/pen.svg" alt="Edit" />
+                </button>
+                <button class="action-btn delete-btn" title="Delete">
+                  <img src="/src/icons/delete.svg" alt="Delete" />
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" /></td>
+              <td>#12354-09893</td>
+              <td>26 January 2023</td>
+              <td>Hazelnut Latte 1x; Caramel Machiato 1x</td>
+              <td class="status progress">On Progress</td>
+              <td>IDR 40.000</td>
+              <td class="action-buttons">
+                <button class="action-btn view-btn" title="View">
+                  <img src="/src/icons/view-list.svg" alt="View" />
+                </button>
+                <button class="action-btn edit-btn" title="Edit">
+                  <img src="/src/icons/pen.svg" alt="Edit" />
+                </button>
+                <button class="action-btn delete-btn" title="Delete">
+                  <img src="/src/icons/delete.svg" alt="Delete" />
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" /></td>
+              <td>#12354-09893</td>
+              <td>26 January 2023</td>
+              <td>Hazelnut Latte 1x; Caramel Machiato 1x</td>
+              <td class="status waiting">Waiting</td>
+              <td>IDR 40.000</td>
+              <td class="action-buttons">
+                <button class="action-btn view-btn" title="View">
+                  <img src="/src/icons/view-list.svg" alt="View" />
+                </button>
+                <button class="action-btn edit-btn" title="Edit">
+                  <img src="/src/icons/pen.svg" alt="Edit" />
+                </button>
+                <button class="action-btn delete-btn" title="Delete">
+                  <img src="/src/icons/delete.svg" alt="Delete" />
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="pagination">
+          <p>Show 5 Order of 100 order</p>
+          <button>Prev</button>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>5</button>
+          <button>Next</button>
+        </div>
+      </div>
+    </main>
+    <script></script>
+  </body>
+</html>
