@@ -443,9 +443,8 @@ hotButton.addEventListener("click", () => {
   console.log('pilihan es', isHot ? "Hot" : "Ice");
 });
 
-// ✅ PERBAIKAN: Pindahkan logika membuat items ke dalam event listener buyButton
+
 buybtn.addEventListener("click", () => {
-  // Validasi pilihan
   if (!size) {
     alert("Please select a size!");
     return;
@@ -462,25 +461,35 @@ buybtn.addEventListener("click", () => {
     return;
   }
 
-  // ✅ Buat objek items DI SINI, dengan nilai-nilai terkini
+  const user = localStorage.getItem("user-data");
+  let userLoggedIn = '';
+  if (user) {
+    const userData = JSON.parse(user);
+    userLoggedIn = userData.find((user) => user.isLoggedIn === true);
+    console.log('logged in user', userLoggedIn);
+  }
+    
+
   const items = {
+    userId: userLoggedIn.id,
+    name: userLoggedIn.name,
+    email: userLoggedIn.email,
     id: productId,
-    size: size,           // Sekarang ini akan memiliki nilai yang benar (Regular, Medium, atau Large)
-    isHot: isHot,         // Sekarang ini akan memiliki nilai yang benar (true atau false)
+    size: size,          
+    isHot: isHot,         
     quantity: quantityValue
   };
 
-  console.log('itemsnyaa', items); // Akan menampilkan items dengan nilai yang benar
+  console.log('itemsnyaa', items); 
 
-  // Tambahkan items ke cart
   cart.push(items);
 
-  // Simpan ke localStorage
+
   localStorage.setItem("cart", JSON.stringify(cart));
 
   alert(`${items.quantity}x ${items.size} ${items.isHot ? 'Hot' : 'Ice'} added to cart!`);
 
-  // Redirect ke checkout jika diperlukan
+
   window.location.href = "products-checkout.html";
 });
 

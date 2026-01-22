@@ -178,6 +178,8 @@
           const itemSubtotal = item.quantity * effectivePrice;
 
           return {
+            customer : item.name,
+            customerEmail: item.email,
             id: item.id,
             name: product.name,
             price: product.price,
@@ -320,22 +322,6 @@
       if (deliveryCostEl) deliveryCostEl.textContent = `Delivery: IDR ${totals.delivery.toLocaleString("id-ID")}`;
       if (taxEl) taxEl.textContent = `Tax: IDR ${totals.tax.toLocaleString("id-ID")}`;
       if (subtotalEl) subtotalEl.textContent = `Subtotal: IDR ${totals.total.toLocaleString("id-ID")}`;
-
-      // order = [];
-
-      // combinedItems.forEach(item => {
-      //   const orderItem = {
-      //     name: item.name,
-      //     quantity: item.quantity,
-      //     size: item.size,
-      //     orderType: item.orderType,
-      //     price: item.isFlashSale ? item.discountedPrice : item.price,
-      //     total: totals.subtotal,
-      //     deliveryCost : totals.delivery,
-      //     tax: totals.tax,   
-      //   };
-      //   order.push(orderItem);
-      // });
     }
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -351,9 +337,14 @@
     checkoutButton.addEventListener("click", () => {
 
       totals = calculateTotal();
+
+     
       
       combinedItems.forEach(item => {
         const orderItem = {
+          orderId : Math.floor(Math.random() * 100000),
+          customer : item.customer,
+          customerEmail: item.customerEmail,
           name: item.name,
           quantity: item.quantity,
           size: item.size,
@@ -362,6 +353,9 @@
           total: totals.subtotal,
           deliveryCost : totals.delivery,
           tax: totals.tax,   
+          date: new Date().toLocaleString(),
+          status: 'On Progress',
+          image: item.image
         };
         order.push(orderItem);
       });

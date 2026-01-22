@@ -33,124 +33,15 @@
         <select>
           <option value="january-2023">January 2023</option>
           <option value="february-2023">February 2023</option>
-          <!-- Add more months as needed -->
         </select>
       </div>
 
       <div class="content">
         <div class="orders">
-          <div class="order-item">
-            <img
-              src="./src/product/product1.png"
-              alt="Order Image"
-              class="order-image"
-            />
-            <div class="order-info">
-              <div class="order-details">
-                <div class="detail-item">
-                  <p>No. Order:</p>
-                  <strong>#12354-09893</strong>
-                </div>
-                <div class="detail-item">
-                  <p>Date:</p>
-                  <strong>25 January 2023</strong>
-                </div>
-                <div class="detail-item">
-                  <p>Total:</p>
-                  <strong>IDR 40.000</strong>
-                </div>
-                <div class="detail-item">
-                  <p>Status:</p>
-                  <strong><span class="status">On Progress</span></strong>
-                </div>
-              </div>
-              <p class="view-details">View Order Detail</p>
-            </div>
+          <div class="order-details">
+
           </div>
-          <div class="order-item">
-            <img
-              src="./src/product/product1.png"
-              alt="Order Image"
-              class="order-image"
-            />
-            <div class="order-info">
-              <div class="order-details">
-                <div class="detail-item">
-                  <p>No. Order:</p>
-                  <strong>#12354-09893</strong>
-                </div>
-                <div class="detail-item">
-                  <p>Date:</p>
-                  <strong>25 January 2023</strong>
-                </div>
-                <div class="detail-item">
-                  <p>Total:</p>
-                  <strong>IDR 40.000</strong>
-                </div>
-                <div class="detail-item">
-                  <p>Status:</p>
-                  <strong><span class="status">On Progress</span></strong>
-                </div>
-              </div>
-              <p class="view-details">View Order Detail</p>
-            </div>
-          </div>
-          <div class="order-item">
-            <img
-              src="./src/product/product1.png"
-              alt="Order Image"
-              class="order-image"
-            />
-            <div class="order-info">
-              <div class="order-details">
-                <div class="detail-item">
-                  <p>No. Order:</p>
-                  <strong>#12354-09893</strong>
-                </div>
-                <div class="detail-item">
-                  <p>Date:</p>
-                  <strong>25 January 2023</strong>
-                </div>
-                <div class="detail-item">
-                  <p>Total:</p>
-                  <strong>IDR 40.000</strong>
-                </div>
-                <div class="detail-item">
-                  <p>Status:</p>
-                  <strong><span class="status">On Progress</span></strong>
-                </div>
-              </div>
-              <p class="view-details">View Order Detail</p>
-            </div>
-          </div>
-          <div class="order-item">
-            <img
-              src="./src/product/product1.png"
-              alt="Order Image"
-              class="order-image"
-            />
-            <div class="order-info">
-              <div class="order-details">
-                <div class="detail-item">
-                  <p>No. Order:</p>
-                  <strong>#12354-09893</strong>
-                </div>
-                <div class="detail-item">
-                  <p>Date:</p>
-                  <strong>25 January 2023</strong>
-                </div>
-                <div class="detail-item">
-                  <p>Total:</p>
-                  <strong>IDR 40.000</strong>
-                </div>
-                <div class="detail-item">
-                  <p>Status:</p>
-                  <strong><span class="status">On Progress</span></strong>
-                </div>
-              </div>
-              <p class="view-details">View Order Detail</p>
-            </div>
-          </div>
+
         </div>
 
         <div class="message-box">
@@ -215,6 +106,85 @@
         </div>
       </div>
     </footer>
+
+    <script >
+
+    const order = localStorage.getItem("order");
+    let parsedOrder = null; 
+    if (order) {
+        parsedOrder = JSON.parse(order);
+        console.log("ordernyaa", parsedOrder);
+    }
+
+function createOrderDetailItem(label, value, isStatus = false) {
+    const detailItemDiv = document.createElement("div");
+    detailItemDiv.setAttribute("class", "detail-item");
+
+    const labelP = document.createElement("p");
+    labelP.textContent = label;
+    detailItemDiv.append(labelP);
+
+    const valueStrong = document.createElement("strong");
+
+    if (isStatus) {
+        const statusSpan = document.createElement("span");
+        statusSpan.setAttribute("class", "status");
+        statusSpan.textContent = value;
+        valueStrong.append(statusSpan);
+    } else {
+        valueStrong.textContent = value;
+    }
+
+    detailItemDiv.append(valueStrong);
+
+    return detailItemDiv;
+}
+
+ function createOrderItemImage(label, imageUrl, altText = "Order Item Image") {
+        const detailItemDiv = document.createElement("div");
+        detailItemDiv.setAttribute("class", "detail-item");
+
+        const labelP = document.createElement("p");
+        labelP.textContent = label;
+        detailItemDiv.append(labelP);
+
+        const imageWrapper = document.createElement("strong");
+        const itemImage = document.createElement("img");
+        itemImage.setAttribute("src", imageUrl);
+        itemImage.setAttribute("alt", altText);
+        itemImage.style.maxWidth = "100px";
+        itemImage.style.height = "auto";
+        itemImage.style.verticalAlign = "middle"; 
+
+        imageWrapper.append(itemImage);
+        detailItemDiv.append(imageWrapper);
+
+        return detailItemDiv;
+    }
+
+const orderDetailsDiv = document.querySelector(".order-details");
+
+if (orderDetailsDiv && parsedOrder) {
+
+    const itemImage = createOrderItemImage("Item:", parsedOrder[0].image, "Order Product Image");
+    orderDetailsDiv.append(itemImage);
+
+
+    const orderNumberItem = createOrderDetailItem("No. Order:", parsedOrder[0].orderId);
+    orderDetailsDiv.append(orderNumberItem);
+
+    const orderDateItem = createOrderDetailItem("Date:", parsedOrder[0].date);
+    orderDetailsDiv.append(orderDateItem);
+
+    const totalItem = createOrderDetailItem("Total:", parsedOrder[0].total);
+    orderDetailsDiv.append(totalItem);
+
+    const statusItem = createOrderDetailItem("Status:", parsedOrder[0].status, true); 
+    orderDetailsDiv.append(statusItem);
+}
+
+
+    </script>
 
   </body>
 </html>
