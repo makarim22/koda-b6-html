@@ -344,7 +344,7 @@
         const orderItem = {
           orderId : Math.floor(Math.random() * 100000),
           customer : item.customer,
-          customerEmail: item.customerEmail,
+          customerPhone: item.phone,
           name: item.name,
           quantity: item.quantity,
           size: item.size,
@@ -355,6 +355,8 @@
           tax: totals.tax,   
           date: new Date().toLocaleString(),
           status: 'On Progress',
+          payment : 'Cash',
+
           image: item.image
         };
         order.push(orderItem);

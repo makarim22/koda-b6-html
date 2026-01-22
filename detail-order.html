@@ -1,138 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="detail-order.css">
     <title>Order Details</title>
 </head>
+
 <body>
 
-   <header class="container">
-      <div class="logo">
-        <img src="./src/icons/home/Logo.svg" alt="Logo" />
-        <img src="./src/icons/home/Frame.svg" alt="Menu" />
-      </div>
-      <nav class="left-header">
-        <a href="home.html">Home</a>
-        <a href="product.html">Product</a>
-      </nav>
-      <nav class="right-header">
-        <img src="./src/icons/Search.svg" alt="Search" />
-        <img src="./src/icons/ShoppingCart.svg" alt="Cart" />
+    <header class="container">
+        <div class="logo">
+            <img src="./src/icons/home/Logo.svg" alt="Logo" />
+            <img src="./src/icons/home/Frame.svg" alt="Menu" />
+        </div>
+        <nav class="left-header">
+            <a href="home.html">Home</a>
+            <a href="product.html">Product</a>
+        </nav>
+        <nav class="right-header">
+            <img src="./src/icons/Search.svg" alt="Search" />
+            <img src="./src/icons/ShoppingCart.svg" alt="Cart" />
             <a href="login.html">Sign In</a>
             <a href="register.html">Sign Up</a>
-      </nav>
+        </nav>
     </header>
-    
-   <main>
-    <h1 class="page-title">Order #12354-09893</h1>
-    <p class="page-date">21 March 2023 at 10:30 AM</p>
 
-    <div class="container">
-        <section class="order-info">
-            <h2>Order Information</h2>
-            <div class="info-item">
-                <span class="info-label">Full Name</span>
-                <span class="info-value">Ghaluh Wizard Anggoro</span>
-            </div>
-            <div class="info-item">
-                <span class="info-label">Address</span>
-                <span class="info-value">Griya Bandung Indah</span>
-            </div>
-            <div class="info-item">
-                <span class="info-label">Phone</span>
-                <span class="info-value">082116304338</span>
-            </div>
-            <div class="info-item">
-                <span class="info-label">Payment Method</span>
-                <span class="info-value">Cash</span>
-            </div>
-            <div class="info-item">
-                <span class="info-label">Shipping</span>
-                <span class="info-value">Dine In</span>
-            </div>
-            <div class="info-item">
-                <span class="info-label">Status</span>
-                <span class="status">Done</span>
-            </div>
-            <div class="total-section">
-                <span class="total-label">Total Transaction</span>
-                <span class="total-amount">IDR 40.000</span>
-            </div>
-        </section>
+    <main>
+        <h1 class="page-title">Order #12354-09893</h1>
+        <p class="page-date">21 March 2023 at 10:30 AM</p>
 
-        <section class="order-summary">
-            <h2>Your Order</h2>
-            <div class="order-item">
-                <img src="/src/product/product2.png" alt="Hazelnut Latte" class="item-image">
-                <div class="item-details">
-                    <span class="item-badge">FLASH SALE</span>
-                    <p class="item-name">Hazelnut Latte</p>
-                    <p class="item-specs">2pcs | Regular | Ice | Dine In</p>
-                    <div class="item-price-section">
-                        <span class="item-original-price">IDR 40.000</span>
-                        <span class="item-price">IDR 20.000</span>
+        <div class="container">
+            <!-- <section class="order-info">
+                <h2>Order Information</h2>
+                <div class="info-item">
+                    <span class="info-label">Full Name</span>
+                    <span class="info-value">Ghaluh Wizard Anggoro</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Address</span>
+                    <span class="info-value">Griya Bandung Indah</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Phone</span>
+                    <span class="info-value">082116304338</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Payment Method</span>
+                    <span class="info-value">Cash</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Shipping</span>
+                    <span class="info-value">Dine In</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Status</span>
+                    <span class="status">Done</span>
+                </div>
+                <div class="total-section">
+                    <span class="total-label">Total Transaction</span>
+                    <span class="total-amount">IDR 40.000</span>
+                </div>
+            </section> -->
+
+            <section class="order-summary">
+                <h2>Your Order</h2>
+                <div class="order-item">
+                    <img src="/src/product/product2.png" alt="Hazelnut Latte" class="item-image">
+                    <div class="item-details">
+                        <span class="item-badge">FLASH SALE</span>
+                        <p class="item-name">Hazelnut Latte</p>
+                        <p class="item-specs">2pcs | Regular | Ice | Dine In</p>
+                        <div class="item-price-section">
+                            <span class="item-original-price">IDR 40.000</span>
+                            <span class="item-price">IDR 20.000</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="order-item">
-                <img src="/src/product/product3.png" alt="Hazelnut Latte" class="item-image">
-                <div class="item-details">
-                    <span class="item-badge">FLASH SALE</span>
-                    <p class="item-name">Hazelnut Latte</p>
-                    <p class="item-specs">2pcs | Regular | Ice | Dine In</p>
-                    <div class="item-price-section">
-                        <span class="item-original-price">IDR 40.000</span>
-                        <span class="item-price">IDR 20.000</span>
+                <div class="order-item">
+                    <img src="/src/product/product3.png" alt="Hazelnut Latte" class="item-image">
+                    <div class="item-details">
+                        <span class="item-badge">FLASH SALE</span>
+                        <p class="item-name">Hazelnut Latte</p>
+                        <p class="item-specs">2pcs | Regular | Ice | Dine In</p>
+                        <div class="item-price-section">
+                            <span class="item-original-price">IDR 40.000</span>
+                            <span class="item-price">IDR 20.000</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </div>
-</main>
+            </section>
+        </div>
+    </main>
 
-   <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-section about">
-                     <img src="./src/icons/coffee-cup.svg">
-               <img src="./src/icons/coffee-shop.svg">
-          <p style="margin-top: 20px;">
-            Coffee Shop is a store that sells some good meals, and especially
-            coffee. We provide high quality beans.
-          </p>
-          <p>&copy; 2020 CoffeeStore</p>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <img src="./src/icons/coffee-cup.svg">
+                <img src="./src/icons/coffee-shop.svg">
+                <p style="margin-top: 20px;">
+                    Coffee Shop is a store that sells some good meals, and especially
+                    coffee. We provide high quality beans.
+                </p>
+                <p>&copy; 2020 CoffeeStore</p>
+            </div>
+            <div class="footer-section products">
+                <h3>Product</h3>
+                <ul>
+                    <li>Our Product</li>
+                    <li>Pricing</li>
+                    <li>Locations</li>
+                    <li>Countries</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+            <div class="footer-section engage">
+                <h3>Engage</h3>
+                <ul>
+                    <li>Partner</li>
+                    <li>FAQ</li>
+                    <li>About Us</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms of Service</li>
+                </ul>
+            </div>
+            <div class="footer-section social-media">
+                <h3>Social Media</h3>
+                <div class="social-icons">
+                    <img src="./src/icons/Facebook.svg" alt="Facebook" />
+                    <img src="./src/icons/Twitter.svg" alt="Twitter" />
+                    <img src="./src/icons/Instagram.png" alt="Instagram" />
+                </div>
+            </div>
         </div>
-        <div class="footer-section products">
-          <h3>Product</h3>
-          <ul>
-            <li>Our Product</li>
-            <li>Pricing</li>
-            <li>Locations</li>
-            <li>Countries</li>
-            <li>Blog</li>
-          </ul>
-        </div>
-        <div class="footer-section engage">
-          <h3>Engage</h3>
-          <ul>
-            <li>Partner</li>
-            <li>FAQ</li>
-            <li>About Us</li>
-            <li>Privacy Policy</li>
-            <li>Terms of Service</li>
-          </ul>
-        </div>
-        <div class="footer-section social-media">
-          <h3>Social Media</h3>
-          <div class="social-icons">
-            <img src="./src/icons/Facebook.svg" alt="Facebook" />
-            <img src="./src/icons/Twitter.svg" alt="Twitter" />
-            <img src="./src/icons/Instagram.png" alt="Instagram" />
-          </div>
-        </div>
-      </div>
     </footer>
 
+    <script>
+            const ordersString = localStorage.getItem("order");
+        
+            let orders = [];
+
+            if (ordersString) {
+                try {
+                    orders = JSON.parse(ordersString);
+                } catch (e) {
+                    console.error("Error parsing orders from localStorage:", e);
+                }
+            }
+
+            const userString = localStorage.getItem("user-data");
+            const user = JSON.parse(userString);
+            const LoggedInUser = user.find((user) => user.isLoggedIn === true);
+            console.log('Logged In User', LoggedInUser);
+            
+
+            const relevantOrder = orders[orders.length - 1];
+            console.log('relevant order', relevantOrder);
+
+            relevantOrder.customer = LoggedInUser.name;
+            relevantOrder.customerEmail = LoggedInUser.email;
+            relevantOrder.customerPhone = LoggedInUser.phone;
+            relevantOrder.customerAddress = LoggedInUser.address;
+
+            if (relevantOrder) {
+    
+                const orderSection = document.createElement("section");
+                orderSection.className = "order-info";
+
+                const heading = document.createElement("h2");
+                heading.textContent = "Order Information";
+                orderSection.appendChild(heading);
+
+                const createInfoItem = (label, value) => {
+                    const infoItem = document.createElement("div");
+                    infoItem.className = "info-item";
+
+                    const labelSpan = document.createElement("span");
+                    labelSpan.className = "info-label";
+                    labelSpan.textContent = label;
+
+                    const valueSpan = document.createElement("span");
+                    valueSpan.className = "info-value";
+                    valueSpan.textContent = value;
+
+                    infoItem.appendChild(labelSpan);
+                    infoItem.appendChild(valueSpan);
+                    return infoItem;
+                };
+
+                orderSection.appendChild(createInfoItem("Full Name", relevantOrder.customer));
+                orderSection.appendChild(createInfoItem("Address", relevantOrder.customerAddress));
+                orderSection.appendChild(createInfoItem("Phone", relevantOrder.customerPhone));
+                orderSection.appendChild(createInfoItem("Payment Method", relevantOrder.payment));
+                orderSection.appendChild(createInfoItem("Shipping", relevantOrder.orderType));
+
+                const statusItem = document.createElement("div");
+                statusItem.className = "info-item";
+                const statusLabel = document.createElement("span");
+                statusLabel.className = "info-label";
+                statusLabel.textContent = "Status";
+                const statusValue = document.createElement("span");
+                statusValue.className = "status";
+                statusValue.textContent = relevantOrder.status;
+                statusItem.appendChild(statusLabel);
+                statusItem.appendChild(statusValue);
+                orderSection.appendChild(statusItem);
+
+                const totalSection = document.createElement("div");
+                totalSection.className = "total-section";
+
+                const totalLabel = document.createElement("span");
+                totalLabel.className = "total-label";
+                totalLabel.textContent = "Total Transaction";
+
+                const totalAmount = document.createElement("span");
+                totalAmount.className = "total-amount";
+                totalAmount.textContent = `IDR ${relevantOrder.total.toLocaleString('id-ID')}`;
+
+                totalSection.appendChild(totalLabel);
+                totalSection.appendChild(totalAmount);
+                orderSection.appendChild(totalSection);
+
+                const container = document.querySelector(".container");
+                container.appendChild(orderSection);
+            }
+    </script>
 </body>
+
 </html>
