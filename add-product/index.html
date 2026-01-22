@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Add Product - Coffee Shop Admin</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+          <img src="./src/icons/home/Logo.svg" alt="Coffee Shop Logo" />
+          <span>Coffee Shop</span>
+        </div>
+
+        <nav class="sidebar-menu">
+          <a href="#" class="menu-item">
+            <img src="./src/icons/dashboard.svg" alt="Dashboard" />
+            <span>Dashboard</span>
+          </a>
+          <a href="#" class="menu-item active">
+            <img src="./src/icons/product.svg" alt="Product" />
+            <span>Product</span>
+          </a>
+          <a href="#" class="menu-item">
+            <img src="./src/icons/order.svg" alt="Order" />
+            <span>Order</span>
+          </a>
+          <a href="#" class="menu-item">
+            <img src="./src/icons/user.svg" alt="User" />
+            <span>User</span>
+          </a>
+          <a href="#" class="menu-item">
+            <img src="./src/icons/logout.svg" alt="Logout" />
+            <span>Keluar</span>
+          </a>
+        </nav>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <div class="main-content">
+        <!-- HEADER -->
+        <header class="navbar">
+          <div class="navbar-search">
+            <img src="./src/icons/Search.svg" alt="Search" />
+            <input type="text" placeholder="Search..." />
+          </div>
+
+          <div class="navbar-right">
+            <img
+              src="./src/icons/ShoppingCart.svg"
+              alt="Cart"
+              class="navbar-icon"
+            />
+            <div class="navbar-profile">
+              <img
+                src="./src/product/Profile.svg"
+                alt="Profile"
+                class="profile-img"
+              />
+              <img
+                src="./src/icons/chevron-down.svg"
+                alt="Dropdown"
+                class="dropdown-icon"
+              />
+            </div>
+          </div>
+        </header>
+
+        <!-- CONTENT WRAPPER -->
+        <div class="content-wrapper">
+          <!-- PAGE HEADER -->
+          <div class="page-header">
+            <h1>Product List</h1>
+            <button class="add-product-btn" id="openAddProductBtn">
+              <span>+</span> Add Product
+            </button>
+          </div>
+
+          <!-- TABLE SECTION -->
+          <section class="table-section">
+            <div class="table-responsive">
+              <table class="products-table">
+                <thead>
+                  <tr>
+                    <th>
+                      <input type="checkbox" />
+                    </th>
+                    <th>Image</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Desc</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="checkbox" />
+                    </td>
+                    <td>
+                      <img
+                        src="./src/product/caramel-machiato.jpg"
+                        alt="Caramel Machiato"
+                        class="product-img"
+                      />
+                    </td>
+                    <td>Caramel Machiato</td>
+                    <td>IDR 40.000</td>
+                    <td>
+                      <span class="desc-text"
+                        >Cold brewing is a method of brewing that...</span
+                      >
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <input type="checkbox" />
+                    </td>
+                    <td>
+                      <img
+                        src="./src/product/hazelnut-latte.jpg"
+                        alt="Hazelnut Latte"
+                        class="product-img"
+                      />
+                    </td>
+                    <td>Hazelnut Latte</td>
+                    <td>IDR 40.000</td>
+                    <td>
+                      <span class="desc-text"
+                        >Cold brewing is a method of brewing that...</span
+                      >
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <input type="checkbox" />
+                    </td>
+                    <td>
+                      <img
+                        src="./src/product/kopi-susu.jpg"
+                        alt="Kopi Susu"
+                        class="product-img"
+                      />
+                    </td>
+                    <td>Kopi Susu</td>
+                    <td>IDR 40.000</td>
+                    <td>
+                      <span class="desc-text"
+                        >Cold brewing is a method of brewing that...</span
+                      >
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <input type="checkbox" />
+                    </td>
+                    <td>
+                      <img
+                        src="./src/product/espresso-supreme.jpg"
+                        alt="Espresso Supreme"
+                        class="product-img"
+                      />
+                    </td>
+                    <td>Espresso Supreme</td>
+                    <td>IDR 40.000</td>
+                    <td>
+                      <span class="desc-text"
+                        >Cold brewing is a method of brewing that...</span
+                      >
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <input type="checkbox" />
+                    </td>
+                    <td>
+                      <img
+                        src="./src/product/caramel-velvet.jpg"
+                        alt="Caramel Velvet Latte"
+                        class="product-img"
+                      />
+                    </td>
+                    <td>Caramel Velvet Latte</td>
+                    <td>IDR 40.000</td>
+                    <td>
+                      <span class="desc-text"
+                        >Cold brewing is a method of brewing that...</span
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- PAGINATION & INFO -->
+            <div class="table-footer">
+              <p class="showing-text">Show 5 product of 100 product</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL BACKDROP -->
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+
+    <!-- ADD PRODUCT MODAL -->
+    <div class="modal add-product-modal" id="addProductModal">
+      <div class="modal-content">
+        <!-- CLOSE BUTTON -->
+        <button class="modal-close" id="closeAddProductBtn">
+          <img src="./src/icons/close.svg" alt="Close" />
+        </button>
+
+        <!-- MODAL HEADER -->
+        <h2 class="modal-title">Add Product</h2>
+
+        <!-- MODAL BODY -->
+        <form class="modal-form">
+          <!-- PHOTO PRODUCT -->
+          <div class="form-group">
+            <label>Photo Product</label>
+            <div class="photo-upload">
+              <img
+                src="./src/icons/image-upload.svg"
+                alt="Upload"
+                class="upload-icon"
+              />
+              <input type="file" accept="image/*" hidden id="photoInput" />
+              <button type="button" class="upload-btn" id="uploadPhotoBtn">
+                Upload
+              </button>
+            </div>
+          </div>
+
+          <!-- PRODUCT NAME -->
+          <div class="form-group">
+            <label for="productName">Product name</label>
+            <input
+              type="text"
+              id="productName"
+              placeholder="Enter Product Name"
+              class="form-input"
+            />
+          </div>
+
+          <!-- PRICE -->
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input
+              type="text"
+              id="price"
+              placeholder="Enter Product Price"
+              class="form-input"
+            />
+          </div>
+
+          <!-- DESCRIPTION -->
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+              id="description"
+              placeholder="Enter Product Description"
+              class="form-textarea"
+              rows="4"
+            ></textarea>
+          </div>
+
+          <!-- PRODUCT SIZE -->
+          <div class="form-group">
+            <label>Product Size</label>
+            <div class="size-buttons">
+              <button type="button" class="size-btn">R</button>
+              <button type="button" class="size-btn">L</button>
+              <button type="button" class="size-btn">XL</button>
+              <button type="button" class="size-btn">250 gr</button>
+              <button type="button" class="size-btn">500gr</button>
+            </div>
+          </div>
+
+          <!-- STOCK -->
+          <div class="form-group">
+            <label for="stock">Stock</label>
+            <select id="stock" class="form-input">
+              <option value="">Enter Product Stock</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+              <option value="200">200</option>
+            </select>
+          </div>
+
+          <!-- SAVE BUTTON -->
+          <button type="submit" class="save-btn">Save Product</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const openAddProductBtn = document.getElementById("openAddProductBtn");
+      const closeAddProductBtn = document.getElementById("closeAddProductBtn");
+      const addProductModal = document.getElementById("addProductModal");
+      const modalBackdrop = document.getElementById("modalBackdrop");
+      const uploadPhotoBtn = document.getElementById("uploadPhotoBtn");
+      const photoInput = document.getElementById("photoInput");
+      const sizeButtons = document.querySelectorAll(".size-btn");
+
+      openAddProductBtn.addEventListener("click", () => {
+        addProductModal.classList.add("active");
+        modalBackdrop.classList.add("active");
+        document.body.style.overflow = "hidden";
+      });
+
+      closeAddProductBtn.addEventListener("click", () => {
+        addProductModal.classList.remove("active");
+        modalBackdrop.classList.remove("active");
+        document.body.style.overflow = "auto";
+      });
+
+      modalBackdrop.addEventListener("click", () => {
+        addProductModal.classList.remove("active");
+        modalBackdrop.classList.remove("active");
+        document.body.style.overflow = "auto";
+      });
+
+      uploadPhotoBtn.addEventListener("click", () => {
+        photoInput.click();
+      });
+
+      photoInput.addEventListener("change", (e) => {
+        if (e.target.files.length > 0) {
+          const fileName = e.target.files[0].name;
+          console.log("File selected:", fileName);
+        }
+      });
+
+      sizeButtons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+          e.preventDefault();
+          sizeButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+        });
+      });
+
+      const saveBtn = document.querySelector(".save-btn");
+      saveBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const productName = document.getElementById("productName").value;
+        const price = document.getElementById("price").value;
+        const description = document.getElementById("description").value;
+        const stock = document.getElementById("stock").value;
+
+        if (!productName || !price || !description || !stock) {
+          alert("Please fill all fields");
+          return;
+        }
+
+        alert("Product saved successfully!");
+        addProductModal.classList.remove("active");
+        modalBackdrop.classList.remove("active");
+        document.body.style.overflow = "auto";
+      });
+    </script>
+  </body>
+</html>

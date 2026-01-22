@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css" />
+  <title>Product List - Coffee Shop Admin</title>
+</head>
+<body>
+  
+  <div class="main-container">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="./src/icons/home/Logo.svg" alt="Coffee Shop Logo" />
+        <span>Coffee Shop</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="#" class="menu-item">
+          <img src="./src/icons/dashboard.svg" alt="Dashboard" />
+          <span>Dashboard</span>
+        </a>
+        <a href="#" class="menu-item active">
+          <img src="./src/icons/product.svg" alt="Product" />
+          <span>Product</span>
+        </a>
+        <a href="#" class="menu-item">
+          <img src="./src/icons/order.svg" alt="Order" />
+          <span>Order</span>
+        </a>
+        <a href="#" class="menu-item">
+          <img src="./src/icons/user.svg" alt="User" />
+          <span>User</span>
+        </a>
+        <a href="#" class="menu-item">
+          <img src="./src/icons/logout.svg" alt="Logout" />
+          <span>Keluar</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      
+      <!-- HEADER -->
+      <header class="navbar">
+        <div class="navbar-search">
+          <img src="./src/icons/Search.svg" alt="Search" />
+          <input type="text" placeholder="Search..." />
+        </div>
+
+        <div class="navbar-right">
+          <img src="./src/icons/ShoppingCart.svg" alt="Cart" class="navbar-icon" />
+          <div class="navbar-profile">
+            <img src="./src/product/Profile.svg" alt="Profile" class="profile-img" />
+            <img src="./src/icons/chevron-down.svg" alt="Dropdown" class="dropdown-icon" />
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT WRAPPER -->
+      <div class="content-wrapper">
+        
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+          <h1>Product List</h1>
+          <button class="add-product-btn">
+            <span>+</span> Add Product
+          </button>
+        </div>
+
+        <!-- SEARCH & FILTER -->
+        <div class="search-filter-section">
+          <div class="search-input">
+            <label>Search Product</label>
+            <div class="search-box">
+              <input type="text" placeholder="Enter Product Name" />
+              <img src="./src/icons/Search.svg" alt="Search" />
+            </div>
+          </div>
+          <button class="filter-btn">
+            <img src="./src/icons/filter.svg" alt="Filter" />
+            Filter
+          </button>
+        </div>
+
+        <!-- TABLE SECTION -->
+        <section class="table-section">
+          <div class="table-responsive">
+            <table class="products-table">
+              <thead>
+                <tr>
+                  <th>
+                    <input type="checkbox" />
+                  </th>
+                  <th>Image</th>
+                  <th>Product Name</th>
+                  <th>Price</th>
+                  <th>Desc</th>
+                  <th>Product Size</th>
+                  <th>Method</th>
+                  <th>Stock</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                  <td>
+                    <img src="./src/product/caramel-machiato.jpg" alt="Caramel Machiato" class="product-img" />
+                  </td>
+                  <td>Caramel Machiato</td>
+                  <td>IDR 40.000</td>
+                  <td><span class="desc-text">Cold brewing is a method of brewing that...</span></td>
+                  <td>R,L,XL 250gr</td>
+                  <td>Deliver, Dine In</td>
+                  <td>200</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="edit-btn" title="Edit">
+                        <img src="./src/icons/edit.svg" alt="Edit" />
+                      </button>
+                      <button class="delete-btn" title="Delete">
+                        <img src="./src/icons/trash.svg" alt="Delete" />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                  <td>
+                    <img src="./src/product/hazelnut-latte.jpg" alt="Hazelnut Latte" class="product-img" />
+                  </td>
+                  <td>Hazelnut Latte</td>
+                  <td>IDR 40.000</td>
+                  <td><span class="desc-text">Cold brewing is a method of brewing that...</span></td>
+                  <td>R,L 250gr</td>
+                  <td>Deliver, Dine In</td>
+                  <td>200</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="edit-btn" title="Edit">
+                        <img src="./src/icons/edit.svg" alt="Edit" />
+                      </button>
+                      <button class="delete-btn" title="Delete">
+                        <img src="./src/icons/trash.svg" alt="Delete" />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                  <td>
+                    <img src="./src/product/kopi-susu.jpg" alt="Kopi Susu" class="product-img" />
+                  </td>
+                  <td>Kopi Susu</td>
+                  <td>IDR 40.000</td>
+                  <td><span class="desc-text">Cold brewing is a method of brewing that...</span></td>
+                  <td>R,L 250gr</td>
+                  <td>Dine In</td>
+                  <td>200</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="edit-btn" title="Edit">
+                        <img src="./src/icons/edit.svg" alt="Edit" />
+                      </button>
+                      <button class="delete-btn" title="Delete">
+                        <img src="./src/icons/trash.svg" alt="Delete" />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                  <td>
+                    <img src="./src/product/espresso-supreme.jpg" alt="Espresso Supreme" class="product-img" />
+                  </td>
+                  <td>Espresso Supreme</td>
+                  <td>IDR 40.000</td>
+                  <td><span class="desc-text">Cold brewing is a method of brewing that...</span></td>
+                  <td>R,L 250gr</td>
+                  <td>Deliver</td>
+                  <td>200</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="edit-btn" title="Edit">
+                        <img src="./src/icons/edit.svg" alt="Edit" />
+                      </button>
+                      <button class="delete-btn" title="Delete">
+                        <img src="./src/icons/trash.svg" alt="Delete" />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                  <td>
+                    <img src="./src/product/caramel-velvet.jpg" alt="Caramel Velvet Latte" class="product-img" />
+                  </td>
+                  <td>Caramel Velvet Latte</td>
+                  <td>IDR 40.000</td>
+                  <td><span class="desc-text">Cold brewing is a method of brewing that...</span></td>
+                  <td>R,L 250gr</td>
+                  <td>Deliver, Dine In</td>
+                  <td>200</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="edit-btn" title="Edit">
+                        <img src="./src/icons/edit.svg" alt="Edit" />
+                      </button>
+                      <button class="delete-btn" title="Delete">
+                        <img src="./src/icons/trash.svg" alt="Delete" />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- PAGINATION & INFO -->
+          <div class="table-footer">
+            <p class="showing-text">Show 5 product of 100 product</p>
+            <div class="pagination">
+              <a href="#" class="prev">Prev</a>
+              <a href="#" class="page-num active">1</a>
+              <a href="#" class="page-num">2</a>
+              <a href="#" class="page-num">3</a>
+              <a href="#" class="page-num">4</a>
+              <a href="#" class="page-num">5</a>
+              <a href="#" class="page-num">6</a>
+              <a href="#" class="page-num">7</a>
+              <a href="#" class="page-num">8</a>
+              <a href="#" class="page-num">9</a>
+              <a href="#" class="next">Next</a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
