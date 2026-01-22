@@ -7,12 +7,21 @@
     <title>History Order</title>
   </head>
   <body>
-    <header>
-      <div class="logo">Coffee Shop</div>
-      <div class="auth-buttons">
-        <button>Sign in</button>
-        <button>Sign Up</button>
+       <header class="container">
+      <div class="logo">
+        <img src="./src/icons/home/Logo.svg" alt="Logo" />
+        <img src="./src/icons/home/Frame.svg" alt="Menu" />
       </div>
+      <nav class="left-header">
+        <a href="home.html">Home</a>
+        <a href="product.html">Product</a>
+      </nav>
+      <nav class="right-header">
+        <img src="./src/icons/Search.svg" alt="Search" />
+        <img src="./src/icons/ShoppingCart.svg" alt="Cart" />
+            <a href="login.html">Sign In</a>
+            <a href="register.html">Sign Up</a>
+      </nav>
     </header>
 
     <main>
@@ -165,19 +174,47 @@
       </div>
     </main>
 
-    <footer>
+     <footer class="footer">
       <div class="footer-content">
-        <p>
-          Coffee Shop is a store that sells some good meals, and especially
-          coffee. We provide high-quality beans.
-        </p>
-        <p>&copy; 2020 Coffee Store</p>
-      </div>
-      <div class="social-media">
-        <a href="#">Facebook</a>
-        <a href="#">Twitter</a>
-        <a href="#">Instagram</a>
+        <div class="footer-section about">
+                     <img src="./src/icons/coffee-cup.svg">
+               <img src="./src/icons/coffee-shop.svg">
+          <p style="margin-top: 20px;">
+            Coffee Shop is a store that sells some good meals, and especially
+            coffee. We provide high quality beans.
+          </p>
+          <p>&copy; 2020 CoffeeStore</p>
+        </div>
+        <div class="footer-section products">
+          <h3>Product</h3>
+          <ul>
+            <li>Our Product</li>
+            <li>Pricing</li>
+            <li>Locations</li>
+            <li>Countries</li>
+            <li>Blog</li>
+          </ul>
+        </div>
+        <div class="footer-section engage">
+          <h3>Engage</h3>
+          <ul>
+            <li>Partner</li>
+            <li>FAQ</li>
+            <li>About Us</li>
+            <li>Privacy Policy</li>
+            <li>Terms of Service</li>
+          </ul>
+        </div>
+        <div class="footer-section social-media">
+          <h3>Social Media</h3>
+          <div class="social-icons">
+            <img src="./src/icons/Facebook.svg" alt="Facebook" />
+            <img src="./src/icons/Twitter.svg" alt="Twitter" />
+            <img src="./src/icons/Instagram.png" alt="Instagram" />
+          </div>
+        </div>
       </div>
     </footer>
+
   </body>
 </html>
