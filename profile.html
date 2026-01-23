@@ -9,24 +9,27 @@
 </head>
 
 <body>
-  <header class="header">
-    <div class="header-container">
-      <div class="logo">
-        <img src="./src/icons/coffee-cup.svg" alt="Coffee Shop Logo" />
-        <img src="./src/icons/home/Logo.svg" alt="Coffee Shop Text" />
+  <header class="container">
+    <div class="logo">
+      <div>
+        <img src="./src/icons/home/Frame.svg" alt="Menu" />
+        <img src="./src/icons/home/Logo.svg" alt="Logo" />
+      </div>
+      <div>
+        <nav class="left-header">
+          <a href="home.html">Home</a>
+          <a href="product.html">Product</a>
+        </nav>
 
       </div>
 
-      <nav class="nav-center">
-        <a href="home.html">Home</a>
-        <a href="product.html">Product</a>
-      </nav>
-
-      <nav class="nav-right">
-        <img src="./src/icons/Search.svg" alt="Search" class="icon" />
-        <img src="./src/icons/ShoppingCart.svg" alt="Cart" class="icon" />
-        <a href="login.html" class="signin-btn">Sign In</a>
-        <a href="register.html" class="signup-btn">Sign Up</a>
+    </div>
+    <div class="search-container">
+      <nav class="right-header">
+        <img src="./src/icons/Search.svg" alt="Search" />
+        <img src="./src/icons/ShoppingCart.svg" alt="Cart" />
+        <a class="login-button" href="login.html">Sign In</a>
+        <a class="register-button" href="register.html">Sign Up</a>
       </nav>
     </div>
   </header>
@@ -252,7 +255,32 @@
       });
     }
 
+    const header = document.querySelector(".right-header");
 
+    creds = localStorage.getItem("user-data");
+    console.log('credsnya', creds);
+
+    if (creds) {
+      credsNew = JSON.parse(creds);
+      user = credsNew.find((user) => user.isLoggedIn === true);
+      console.log('creds', creds);
+      console.log('user', user);
+
+
+      const signIn = document.querySelector(".login-button");
+      signIn.textContent = `Hi, ${user.name}`;
+      signIn.href = "#";
+
+      const signOut = document.querySelector(".register-button");
+      signOut.textContent = "Logout";
+
+      signOut.addEventListener("click", () => {
+        user.isLoggedIn = false;
+        localStorage.setItem("user-data", JSON.stringify(creds));
+        signOut.href = "login.html";
+      })
+
+    }
 
 
 

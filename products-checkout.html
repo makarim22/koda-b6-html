@@ -11,22 +11,30 @@
 <body>
   <header class="container">
     <div class="logo">
-      <img src="./src/icons/home/Logo.svg" alt="Logo" />
-      <img src="./src/icons/home/Frame.svg" alt="Menu" />
+      <div>
+        <img src="./src/icons/home/Frame.svg" alt="Menu" />
+        <img src="./src/icons/home/Logo.svg" alt="Logo" />
+      </div>
+      <div>
+        <nav class="left-header">
+          <a href="home.html">Home</a>
+          <a href="product.html">Product</a>
+        </nav>
+
+      </div>
+
     </div>
-    <nav class="left-header">
-      <a href="home.html">Home</a>
-      <a href="product.html">Product</a>
-    </nav>
-    <nav class="right-header">
-      <img src="./src/icons/Search.svg" alt="Search" />
-      <img src="./src/icons/ShoppingCart.svg" alt="Cart" />
-      <a href="login.html" class="login-button">Sign In</a>
-      <a href="register.html" class="register-button">Sign Up</a>
-    </nav>
+    <div class="search-container">
+      <nav class="right-header">
+        <img src="./src/icons/Search.svg" alt="Search" />
+        <img src="./src/icons/ShoppingCart.svg" alt="Cart" />
+        <a class="login-button" href="login.html">Sign In</a>
+        <a class="register-button" href="register.html">Sign Up</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main class="main-container">
     <h1>Payment Details</h1>
     <div class="title">
       <h2>Your Order</h2>
@@ -89,46 +97,47 @@
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-section about">
-        <h2>Coffee Shop</h2>
-        <p>
-          Coffee Shop is a store that sells some good meals, and especially
-          coffee. We provide high quality beans.
-        </p>
-        <p>&copy; 2020 CoffeeStore</p>
-      </div>
-      <div class="footer-section products">
-        <h3>Product</h3>
-        <ul>
-          <li>Our Product</li>
-          <li>Pricing</li>
-          <li>Locations</li>
-          <li>Countries</li>
-          <li>Blog</li>
-        </ul>
-      </div>
-      <div class="footer-section engage">
-        <h3>Engage</h3>
-        <ul>
-          <li>Partner</li>
-          <li>FAQ</li>
-          <li>About Us</li>
-          <li>Privacy Policy</li>
-          <li>Terms of Service</li>
-        </ul>
-      </div>
-      <div class="footer-section social-media">
-        <h3>Social Media</h3>
-        <div class="social-icons">
-          <img src="./src/icons/Facebook.svg" alt="Facebook" />
-          <img src="./src/icons/Twitter.svg" alt="Twitter" />
-          <img src="./src/icons/Instagram.png" alt="Instagram" />
+     <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section about">
+          <img src="./src/icons/coffee-cup.svg">
+          <img src="./src/icons/coffee-shop.svg">
+          <p>
+            Coffee Shop is a store that sells some good meals, and especially
+            coffee. We provide high quality beans.
+          </p>
+          <p>&copy; 2020 CoffeeStore</p>
+        </div>
+        <div class="footer-section products">
+          <h3>Product</h3>
+          <ul>
+            <li>Our Product</li>
+            <li>Pricing</li>
+            <li>Locations</li>
+            <li>Countries</li>
+            <li>Blog</li>
+          </ul>
+        </div>
+        <div class="footer-section engage">
+          <h3>Engage</h3>
+          <ul>
+            <li>Partner</li>
+            <li>FAQ</li>
+            <li>About Us</li>
+            <li>Privacy Policy</li>
+            <li>Terms of Service</li>
+          </ul>
+        </div>
+        <div class="footer-section social-media">
+          <h3>Social Media</h3>
+          <div class="social-icons">
+            <img src="./src/icons/Facebook.svg" alt="Facebook" />
+            <img src="./src/icons/Twitter.svg" alt="Twitter" />
+            <img src="./src/icons/Instagram.png" alt="Instagram" />
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
   <script>
 
@@ -365,6 +374,33 @@
       localStorage.setItem("order", JSON.stringify(order));
       window.location.href = "history-order.html";
     });
+    
+     const header = document.querySelector(".right-header");
+
+      creds = localStorage.getItem("user-data");
+      console.log('credsnya', creds);
+    
+      if (creds) {
+        credsNew = JSON.parse(creds);
+        user = credsNew.find((user) => user.isLoggedIn === true);
+        console.log('creds', creds);
+        console.log('user', user);
+        
+        
+        const signIn = document.querySelector(".login-button");
+        signIn.textContent = `Hi, ${user.name}`;
+        signIn.href ="#";
+
+        const signOut = document.querySelector(".register-button");
+        signOut.textContent = "Logout";
+
+        signOut.addEventListener("click", () => {
+          user.isLoggedIn = false;
+          localStorage.setItem("user-data", JSON.stringify(creds));
+          signOut.href = "login.html";
+        })
+    
+      }
   </script>
 
 </html>

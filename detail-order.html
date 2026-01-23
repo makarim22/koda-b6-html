@@ -9,22 +9,27 @@
 </head>
 
 <body>
-
     <header class="container">
         <div class="logo">
-            <img src="./src/icons/home/Logo.svg" alt="Logo" />
-            <img src="./src/icons/home/Frame.svg" alt="Menu" />
+            <div>
+                <img src="./src/icons/home/Frame.svg" alt="Menu" />
+                <img src="./src/icons/home/Logo.svg" alt="Logo" />
+            </div>
+            <div>
+                <nav class="left-header">
+                    <a href="home.html">Home</a>
+                    <a href="product.html">Product</a>
+                </nav>
+            </div>
         </div>
-        <nav class="left-header">
-            <a href="home.html">Home</a>
-            <a href="product.html">Product</a>
-        </nav>
-        <nav class="right-header">
-            <img src="./src/icons/Search.svg" alt="Search" />
-            <img src="./src/icons/ShoppingCart.svg" alt="Cart" />
-            <a href="login.html">Sign In</a>
-            <a href="register.html">Sign Up</a>
-        </nav>
+        <div class="search-container">
+            <nav class="right-header">
+                <img src="./src/icons/Search.svg" alt="Search" />
+                <img src="./src/icons/ShoppingCart.svg" alt="Cart" />
+                <a class="login-button" href="login.html">Sign In</a>
+                <a class="register-button" href="register.html">Sign Up</a>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -115,144 +120,172 @@
     </footer>
 
     <script>
-            const ordersString = localStorage.getItem("order");
-        
-            let orders = [];
+        const ordersString = localStorage.getItem("order");
 
-            if (ordersString) {
-                try {
-                    orders = JSON.parse(ordersString);
-                } catch (e) {
-                    console.error("Error parsing orders from localStorage:", e);
-                }
+        let orders = [];
+
+        if (ordersString) {
+            try {
+                orders = JSON.parse(ordersString);
+            } catch (e) {
+                console.error("Error parsing orders from localStorage:", e);
             }
+        }
 
-            const userString = localStorage.getItem("user-data");
-            const user = JSON.parse(userString);
-            const LoggedInUser = user.find((user) => user.isLoggedIn === true);
-            console.log('Logged In User', LoggedInUser);
-            
-
-            const relevantOrder = orders[orders.length - 1];
-            console.log('relevant order', relevantOrder);
-
-            relevantOrder.customer = LoggedInUser.name;
-            relevantOrder.customerEmail = LoggedInUser.email;
-            relevantOrder.customerPhone = LoggedInUser.phone;
-            relevantOrder.customerAddress = LoggedInUser.address;
-
-            if (relevantOrder) {
-    
-                const orderSection = document.createElement("section");
-                orderSection.className = "order-info";
-
-                const heading = document.createElement("h2");
-                heading.textContent = "Order Information";
-                orderSection.appendChild(heading);
-
-                const createInfoItem = (label, value) => {
-                    const infoItem = document.createElement("div");
-                    infoItem.className = "info-item";
-
-                    const labelSpan = document.createElement("span");
-                    labelSpan.className = "info-label";
-                    labelSpan.textContent = label;
-
-                    const valueSpan = document.createElement("span");
-                    valueSpan.className = "info-value";
-                    valueSpan.textContent = value;
-
-                    infoItem.appendChild(labelSpan);
-                    infoItem.appendChild(valueSpan);
-                    return infoItem;
-                };
-
-                orderSection.appendChild(createInfoItem("Full Name", relevantOrder.customer));
-                orderSection.appendChild(createInfoItem("Address", relevantOrder.customerAddress));
-                orderSection.appendChild(createInfoItem("Phone", relevantOrder.customerPhone));
-                orderSection.appendChild(createInfoItem("Payment Method", relevantOrder.payment));
-                orderSection.appendChild(createInfoItem("Shipping", relevantOrder.orderType));
-
-                const statusItem = document.createElement("div");
-                statusItem.className = "info-item";
-                const statusLabel = document.createElement("span");
-                statusLabel.className = "info-label";
-                statusLabel.textContent = "Status";
-                const statusValue = document.createElement("span");
-                statusValue.className = "status";
-                statusValue.textContent = relevantOrder.status;
-                statusItem.appendChild(statusLabel);
-                statusItem.appendChild(statusValue);
-                orderSection.appendChild(statusItem);
-
-                const totalSection = document.createElement("div");
-                totalSection.className = "total-section";
-
-                const totalLabel = document.createElement("span");
-                totalLabel.className = "total-label";
-                totalLabel.textContent = "Total Transaction";
-
-                const totalAmount = document.createElement("span");
-                totalAmount.className = "total-amount";
-                totalAmount.textContent = `IDR ${relevantOrder.total.toLocaleString('id-ID')}`;
-
-                totalSection.appendChild(totalLabel);
-                totalSection.appendChild(totalAmount);
-                orderSection.appendChild(totalSection);
-
-                const container = document.querySelector(".container-content");
-                container.appendChild(orderSection);
+        const userString = localStorage.getItem("user-data");
+        const user = JSON.parse(userString);
+        const LoggedInUser = user.find((user) => user.isLoggedIn === true);
+        console.log('Logged In User', LoggedInUser);
 
 
-                ///
-                const orderItems = document.querySelector(".order-item");
+        const relevantOrder = orders[orders.length - 1];
+        console.log('relevant order', relevantOrder);
 
-                const img = document.createElement("img");
-                img.src = "/src/product/product2.png";
-                img.alt = "Hazelnut Latte";
-                img.className = "item-image";
+        relevantOrder.customer = LoggedInUser.name;
+        relevantOrder.customerEmail = LoggedInUser.email;
+        relevantOrder.customerPhone = LoggedInUser.phone;
+        relevantOrder.customerAddress = LoggedInUser.address;
 
-                const itemDetails = document.createElement("div");
-                itemDetails.className = "item-details";
+        if (relevantOrder) {
 
-                const badge = document.createElement("span");
-                badge.className = "item-badge";
-                badge.textContent = "FLASH SALE";
+            const orderSection = document.createElement("section");
+            orderSection.className = "order-info";
 
-                const name = document.createElement("h3");
-                name.textContent = "Hazelnut Latte";
+            const heading = document.createElement("h2");
+            heading.textContent = "Order Information";
+            orderSection.appendChild(heading);
 
-                const price = document.createElement("p");
-                price.textContent = `IDR ${relevantOrder.total.toLocaleString('id-ID')}`;
+            const createInfoItem = (label, value) => {
+                const infoItem = document.createElement("div");
+                infoItem.className = "info-item";
 
-                const specs = document.createElement("p");
-                specs.textContent = `${relevantOrder.quantity}pcs | ${relevantOrder.size} | ${relevantOrder.orderType.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}`;
+                const labelSpan = document.createElement("span");
+                labelSpan.className = "info-label";
+                labelSpan.textContent = label;
 
-                const priceSection = document.createElement("div");
-                priceSection.className = "item-price-section";
+                const valueSpan = document.createElement("span");
+                valueSpan.className = "info-value";
+                valueSpan.textContent = value;
 
-                const originalPrice = document.createElement("span");
-                originalPrice.className = "item-original-price";
-                originalPrice.textContent = `IDR ${relevantOrder.total.toLocaleString('id-ID')}`;
+                infoItem.appendChild(labelSpan);
+                infoItem.appendChild(valueSpan);
+                return infoItem;
+            };
 
-                const discount = document.createElement("span");
-                discount.className = "item-discount";
-                discount.textContent = `IDR ${relevantOrder.price.toLocaleString('id-ID')}`;
+            orderSection.appendChild(createInfoItem("Full Name", relevantOrder.customer));
+            orderSection.appendChild(createInfoItem("Address", relevantOrder.customerAddress));
+            orderSection.appendChild(createInfoItem("Phone", relevantOrder.customerPhone));
+            orderSection.appendChild(createInfoItem("Payment Method", relevantOrder.payment));
+            orderSection.appendChild(createInfoItem("Shipping", relevantOrder.orderType));
 
-                priceSection.appendChild(originalPrice);
-                priceSection.appendChild(discount);
+            const statusItem = document.createElement("div");
+            statusItem.className = "info-item";
+            const statusLabel = document.createElement("span");
+            statusLabel.className = "info-label";
+            statusLabel.textContent = "Status";
+            const statusValue = document.createElement("span");
+            statusValue.className = "status";
+            statusValue.textContent = relevantOrder.status;
+            statusItem.appendChild(statusLabel);
+            statusItem.appendChild(statusValue);
+            orderSection.appendChild(statusItem);
 
-                itemDetails.appendChild(badge);
-                itemDetails.appendChild(name);
-                itemDetails.appendChild(specs);
-                itemDetails.appendChild(priceSection);
+            const totalSection = document.createElement("div");
+            totalSection.className = "total-section";
 
-                orderItems.appendChild(img);
-                orderItems.appendChild(itemDetails);
+            const totalLabel = document.createElement("span");
+            totalLabel.className = "total-label";
+            totalLabel.textContent = "Total Transaction";
 
-                
+            const totalAmount = document.createElement("span");
+            totalAmount.className = "total-amount";
+            totalAmount.textContent = `IDR ${relevantOrder.total.toLocaleString('id-ID')}`;
 
-            }
+            totalSection.appendChild(totalLabel);
+            totalSection.appendChild(totalAmount);
+            orderSection.appendChild(totalSection);
+
+            const container = document.querySelector(".container-content");
+            container.appendChild(orderSection);
+
+
+            ///
+            const orderItems = document.querySelector(".order-item");
+
+            const img = document.createElement("img");
+            img.src = "/src/product/product2.png";
+            img.alt = "Hazelnut Latte";
+            img.className = "item-image";
+
+            const itemDetails = document.createElement("div");
+            itemDetails.className = "item-details";
+
+            const badge = document.createElement("span");
+            badge.className = "item-badge";
+            badge.textContent = "FLASH SALE";
+
+            const name = document.createElement("h3");
+            name.textContent = "Hazelnut Latte";
+
+            const price = document.createElement("p");
+            price.textContent = `IDR ${relevantOrder.total.toLocaleString('id-ID')}`;
+
+            const specs = document.createElement("p");
+            specs.textContent = `${relevantOrder.quantity}pcs | ${relevantOrder.size} | ${relevantOrder.orderType.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}`;
+
+            const priceSection = document.createElement("div");
+            priceSection.className = "item-price-section";
+
+            const originalPrice = document.createElement("span");
+            originalPrice.className = "item-original-price";
+            originalPrice.textContent = `IDR ${relevantOrder.total.toLocaleString('id-ID')}`;
+
+            const discount = document.createElement("span");
+            discount.className = "item-discount";
+            discount.textContent = `IDR ${relevantOrder.price.toLocaleString('id-ID')}`;
+
+            priceSection.appendChild(originalPrice);
+            priceSection.appendChild(discount);
+
+            itemDetails.appendChild(badge);
+            itemDetails.appendChild(name);
+            itemDetails.appendChild(specs);
+            itemDetails.appendChild(priceSection);
+
+            orderItems.appendChild(img);
+            orderItems.appendChild(itemDetails);
+
+        }
+
+        ///
+        const header = document.querySelector(".right-header");
+
+        let creds = localStorage.getItem("user-data");
+        console.log('credsnya', creds);
+
+        if (creds) {
+            credsNew = JSON.parse(creds);
+            let user = credsNew.find((user) => user.isLoggedIn === true);
+            console.log('creds', creds);
+            console.log('user', user);
+
+
+            const signIn = document.querySelector(".login-button");
+            signIn.textContent = `Hi, ${user.name}`;
+            signIn.href = "#";
+
+            const signOut = document.querySelector(".register-button");
+            signOut.textContent = "Logout";
+
+            signOut.addEventListener("click", () => {
+                user.isLoggedIn = false;
+                localStorage.setItem("user-data", JSON.stringify(creds));
+                signOut.href = "login.html";
+            })
+
+        }
+
+
     </script>
 </body>
 

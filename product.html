@@ -1,378 +1,410 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="product.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Rubik:wght@300..900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Coffee Shop Products</title>
-  </head>
-  <body>
-    <header class="container">
-      <div class="logo">
-        <img src="./src/icons/home/Logo.svg" alt="Logo" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="product.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&family=Rubik:wght@300..900&display=swap"
+    rel="stylesheet" />
+  <title>Coffee Shop Products</title>
+</head>
+
+<body>
+  <header class="container">
+    <div class="logo">
+      <div>
         <img src="./src/icons/home/Frame.svg" alt="Menu" />
+        <img src="./src/icons/home/Logo.svg" alt="Logo" />
       </div>
-      <nav class="left-header">
-        <a href="home.html">Home</a>
-        <a href="product.html">Product</a>
-      </nav>
+      <div>
+        <nav class="left-header">
+          <a href="home.html">Home</a>
+          <a href="product.html">Product</a>
+        </nav>
+
+      </div>
+
+    </div>
+    <div class="search-container">
       <nav class="right-header">
         <img src="./src/icons/Search.svg" alt="Search" />
         <img src="./src/icons/ShoppingCart.svg" alt="Cart" />
-            <a href="login.html">Sign In</a>
-            <a href="register.html">Sign Up</a>
+        <a class="login-button" href="login.html">Sign In</a>
+        <a class="register-button" href="register.html">Sign Up</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <div class="promo-container">
-      <div class="promo-background">
-        <img
-          src="./src/coffee-glass.svg"
-          alt="Coffee Glass"
-          class="background-image"
-        />
-      </div>
-      <div class="promo-content">
-        <h2>We Provide Good Coffee and Healthy Meals</h2>
+  <div class="promo-container">
+    <div class="promo-background">
+      <img src="./src/coffee-glass.svg" alt="Coffee Glass" class="background-image" />
+    </div>
+    <div class="promo-content">
+      <h2>We Provide Good Coffee and Healthy Meals</h2>
+    </div>
+  </div>
+  <div style="margin-left: 130px; margin-top: 20px">
+    <p class="title">Today <strong style="color: #8e6447">Promo</strong></p>
+  </div>
+  <div class="coupon-container">
+  </div>
+
+  <div class="main-container">
+    <h3 class="title">Our <strong style="color: #8e6447">Products</strong></h3>
+    <div class="sidebar">
+      <h3>Filter</h3>
+      <input type="text" placeholder="Search Product..." class="search-bar" />
+      <h4>Category</h4>
+      <label class="cek"><input type="checkbox" /> Favorite Products</label><br />
+      <label class="cek"><input type="checkbox" /> Coffee</label><br />
+      <label class="cek"><input type="checkbox" /> Non Coffee</label><br />
+      <label class="cek"><input type="checkbox" /> Foods</label><br />
+      <label class="cek"><input type="checkbox" /> Add On</label><br />
+      <h4>Sort By</h4>
+      <label class="cek"><input type="checkbox" /> Buy 1 Get 1</label><br />
+      <label class="cek"><input type="checkbox" /> Flash Sale</label><br />
+      <label class="cek"><input type="checkbox" /> Birthday Package</label><br />
+      <label class="cek"><input type="checkbox" /> Cheap</label><br />
+      <h4>Price Range</h4>
+      <input type="range" min="0" max="100000" step="5000" />
+      <button class="apply-filter">Apply Filter</button>
+    </div>
+
+    <div class="product-section">
+      <div class="product-grid">
       </div>
     </div>
-    <div style="margin-left: 130px; margin-top: 20px">
-      <p class="title">Today <strong style="color: #8e6447">Promo</strong></p>
-    </div>
-    <div class="coupon-container">
-    </div>
-
-    <div class="main-container">
-      <h3 class="title">Our <strong style="color: #8e6447">Products</strong></h3>
-      <div class="sidebar">
-        <h3>Filter</h3>
-        <input type="text" placeholder="Search Product..." class="search-bar" />
-        <h4>Category</h4>
-        <label class="cek"><input type="checkbox" /> Favorite Products</label
-        ><br />
-        <label class="cek"><input type="checkbox" /> Coffee</label><br />
-        <label class="cek"><input type="checkbox" /> Non Coffee</label><br />
-        <label class="cek"><input type="checkbox" /> Foods</label><br />
-        <label class="cek"><input type="checkbox" /> Add On</label><br />
-        <h4>Sort By</h4>
-        <label class="cek"><input type="checkbox" /> Buy 1 Get 1</label><br />
-        <label class="cek"><input type="checkbox" /> Flash Sale</label><br />
-        <label class="cek"><input type="checkbox" /> Birthday Package</label
-        ><br />
-        <label class="cek"><input type="checkbox" /> Cheap</label><br />
-        <h4>Price Range</h4>
-        <input type="range" min="0" max="100000" step="5000" />
-        <button class="apply-filter">Apply Filter</button>
+  </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <img src="./src/icons/coffee-cup.svg">
+        <img src="./src/icons/coffee-shop.svg">
+        <p style="margin-top: 20px;">
+          Coffee Shop is a store that sells some good meals, and especially
+          coffee. We provide high quality beans.
+        </p>
+        <p>&copy; 2020 CoffeeStore</p>
       </div>
-
-      <div class="product-section">
-        <div class="product-grid">
-        </div>
+      <div class="footer-section products">
+        <h3>Product</h3>
+        <ul>
+          <li>Our Product</li>
+          <li>Pricing</li>
+          <li>Locations</li>
+          <li>Countries</li>
+          <li>Blog</li>
+        </ul>
       </div>
-    </div>
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-section about">
-                     <img src="./src/icons/coffee-cup.svg">
-               <img src="./src/icons/coffee-shop.svg">
-          <p style="margin-top: 20px;">
-            Coffee Shop is a store that sells some good meals, and especially
-            coffee. We provide high quality beans.
-          </p>
-          <p>&copy; 2020 CoffeeStore</p>
-        </div>
-        <div class="footer-section products">
-          <h3>Product</h3>
-          <ul>
-            <li>Our Product</li>
-            <li>Pricing</li>
-            <li>Locations</li>
-            <li>Countries</li>
-            <li>Blog</li>
-          </ul>
-        </div>
-        <div class="footer-section engage">
-          <h3>Engage</h3>
-          <ul>
-            <li>Partner</li>
-            <li>FAQ</li>
-            <li>About Us</li>
-            <li>Privacy Policy</li>
-            <li>Terms of Service</li>
-          </ul>
-        </div>
-        <div class="footer-section social-media">
-          <h3>Social Media</h3>
-          <div class="social-icons">
-            <img src="./src/icons/Facebook.svg" alt="Facebook" />
-            <img src="./src/icons/Twitter.svg" alt="Twitter" />
-            <img src="./src/icons/Instagram.png" alt="Instagram" />
-          </div>
+      <div class="footer-section engage">
+        <h3>Engage</h3>
+        <ul>
+          <li>Partner</li>
+          <li>FAQ</li>
+          <li>About Us</li>
+          <li>Privacy Policy</li>
+          <li>Terms of Service</li>
+        </ul>
+      </div>
+      <div class="footer-section social-media">
+        <h3>Social Media</h3>
+        <div class="social-icons">
+          <img src="./src/icons/Facebook.svg" alt="Facebook" />
+          <img src="./src/icons/Twitter.svg" alt="Twitter" />
+          <img src="./src/icons/Instagram.png" alt="Instagram" />
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script>
-      function loadProducts() {
-        return fetch(
-          "https://raw.githubusercontent.com/makarim22/koda-b6-html/refs/heads/master/src/data/products.json"
-        )
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-          })
-          .then((products) => {
-            console.log("products", products);
-            return products;
-          })
-          .catch((error) => {
-            console.error("Error loading products:", error);
-            return [];
-          });
-      }
-
-      loadProducts().then((products) => {
-        products.forEach((product) => {
-          const productGrid = document.querySelector(".product-grid");
-          const productCard = document.createElement("div");
-          productCard.setAttribute("class", "product-card");
-          productGrid.append(productCard);
-
-          if (product.isFlashSale) {
-            const saleBanner = document.createElement("div");
-            saleBanner.setAttribute("class", "sale-banner");
-            saleBanner.textContent = "FLASH SALE!";
-            productCard.append(saleBanner);
+  <script>
+    function loadProducts() {
+      return fetch(
+        "https://raw.githubusercontent.com/makarim22/koda-b6-html/refs/heads/master/src/data/products.json"
+      )
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
           }
-
-          const productImage = document.createElement("img");
-          productImage.setAttribute("src", product.image);
-          productImage.setAttribute("alt", product.name);
-          productImage.setAttribute("class", "product-image");
-          productCard.append(productImage);
-
-          const descriptionMain = document.createElement("div");
-          descriptionMain.setAttribute("class", "description-main");
-          productCard.append(descriptionMain);
-
-          const productName = document.createElement("h4");
-          productName.textContent = product.name;
-          descriptionMain.append(productName);
-
-          const productDescription = document.createElement("p");
-          productDescription.textContent = product.description;
-          descriptionMain.append(productDescription);
-
-          const rating = document.createElement("div");
-          rating.setAttribute("class", "rating");
-
-          for (let i = 0; i < 5; i++) {
-            const star = document.createElement("span");
-            star.classList.add("star");
-            star.textContent = "★";
-            rating.append(star);
-          }
-
-          const ratingScore = document.createElement("span");
-          ratingScore.setAttribute("class", "rating-score");
-          ratingScore.textContent = product.rating;
-          rating.append(ratingScore);
-
-          descriptionMain.append(rating);
-
-          const priceContainer = document.createElement("div");
-          priceContainer.style.display = "flex";
-          priceContainer.style.gap = "10px";
-          descriptionMain.append(priceContainer);
-
-          const oldPrice = document.createElement("p");
-          oldPrice.setAttribute("class", "price");
-          oldPrice.textContent = "IDR " + product.price;
-          priceContainer.append(oldPrice);
-
-          const newPrice = document.createElement("p");
-          newPrice.setAttribute("class", "discounted-price");
-          newPrice.textContent = "IDR " + product.discountedPrice;
-          priceContainer.append(newPrice);
-
-          const wrapper = document.createElement("div");
-          wrapper.setAttribute("class", "wrapper");
-
-          descriptionMain.append(wrapper);
-
-          const addToCart = document.createElement("button");
-          addToCart.setAttribute("class", "add-to-cart");
-          addToCart.textContent = "Buy";
-          wrapper.append(addToCart);
-
-          addToCart.addEventListener("click", () => {
-            const params = new URLSearchParams({ id: product.id });
-            window.location.href = `products-review.html?${params.toString()}`;
-          });
-
-          // descriptionMain.append(addToCart);
-
-           const cartButton = document.createElement("button");
-          cartButton.setAttribute("class", "cart-button");
-          // Hapus baris ini: cartButton.textContent = "Add to Cart";
-
-          const cartIcon = document.createElement("img");
-          cartIcon.src = "./src/shoppingCart-org.svg"; 
-          cartIcon.alt = "Add to Cart"; 
-          cartIcon.classList.add("cart-icon"); 
-
-          cartButton.append(cartIcon);
-
-
-          wrapper.append(cartButton);
-
-          cartButton.addEventListener("click", () => {
-            const params = new URLSearchParams({ id: product.id });
-            window.location.href = `products-checkout.html?${params.toString()}`;
-          });
-
+          return response.json();
+        })
+        .then((products) => {
+          console.log("products", products);
+          return products;
+        })
+        .catch((error) => {
+          console.error("Error loading products:", error);
+          return [];
         });
-      });
-      
-      /// left-container function
-      const searchBar = document.querySelector(".search-bar");
-      searchBar.addEventListener("input", (e) => {
-        const query = e.target.value.toLowerCase();
-        const productCards = document.querySelectorAll(".product-card");
-        productCards.forEach((productCard) => {
-          const productName = productCard
-            .querySelector("h4")
-            .textContent.toLowerCase();
-          if (productName.includes(query)) {
-            productCard.style.display = "block";
-          } else {
-            productCard.style.display = "none";
-          }
-        });
-      });
+    }
 
-      const promo = [
-        {
-          image: "./src/woman.png",
-          rectangleImage: "./src/rectangle.svg",
-          title: "HAPPY MOTHER'S DAY!",
-          description: "Get one of our favorite menu for free!",
-          code: "Klaim Kupon",
-        },
-        {
-          image: "./src/woman.png",
-          rectangleImage: "./src/rectangle.svg",
-          title: "HAPPY MOTHER'S DAY!",
-          description: "Get one of our favorite menu for free!",
-          code: "Klaim Kupon",
-        },
-        {
-          image: "./src/woman.png",
-          rectangleImage: "./src/rectangle.svg",
-          title: "HAPPY MOTHER'S DAY!",
-          description: "Get one of our favorite menu for free!",
-          code: "Klaim Kupon",
-        },
-        {
-          image: "./src/man.png",
-          rectangleImage: "./src/rectangle-yellow.png",
-          title: "Get a cup of coffee for free on sunday morning",
-          description: "Only at 7 to 9 AM",
-          code: null,
-        },
-        {
-          image: "./src/woman.png",
-          rectangleImage: "./src/rectangle.svg",
-          title: "HAPPY MOTHER'S DAY!",
-          description: "Get one of our favorite menu for free!",
-          code: "Klaim Kupon",
-        },
-        {
-          image: "./src/woman.png",
-          rectangleImage: "./src/rectangle.svg",
-          title: "HAPPY MOTHER'S DAY!",
-          description: "Get one of our favorite menu for free!",
-          code: "Klaim Kupon",
-        },
-      ];
+    loadProducts().then((products) => {
+      products.forEach((product) => {
+        const productGrid = document.querySelector(".product-grid");
+        const productCard = document.createElement("div");
+        productCard.setAttribute("class", "product-card");
+        productGrid.append(productCard);
 
-      const couponContainer = document.querySelector(".coupon-container");
-
-      const navigation = document.createElement("div");
-      navigation.setAttribute("class", "navigation");
-
-      const leftArrow = document.createElement("img");
-      leftArrow.setAttribute("src", "./src/arrow-left.svg");
-      leftArrow.setAttribute("alt", "Arrow Left");
-      leftArrow.setAttribute("class", "left-arrow");
-      navigation.append(leftArrow);
-
-      const rightArrow = document.createElement("img");
-      rightArrow.setAttribute("src", "./src/arrow-right.svg");
-      rightArrow.setAttribute("alt", "Arrow Right");
-      rightArrow.setAttribute("class", "right-arrow");
-      navigation.append(rightArrow);
-
-      couponContainer.append(navigation);
-
-      promo.forEach((item) => {
-        const promoBox = document.createElement("div");
-        promoBox.setAttribute("class", "promo-box");
-
-        const rectangleImage = document.createElement("img");
-        rectangleImage.setAttribute("src", item.rectangleImage);
-        rectangleImage.setAttribute("alt", "Rectangle");
-        rectangleImage.setAttribute("class", "rectangle-image");
-        promoBox.append(rectangleImage);
-
-        const mainImage = document.createElement("img");
-        mainImage.setAttribute("src", item.image);
-        mainImage.setAttribute("alt", "Promo Image");
-        mainImage.setAttribute("class", "woman-image");
-        promoBox.append(mainImage);
-
-        const promoText = document.createElement("div");
-        promoText.setAttribute("class", "promo-text");
-
-        const heading = document.createElement("h3");
-        heading.textContent = item.title;
-        promoText.append(heading);
-
-        const description = document.createElement("p");
-        description.textContent = item.description;
-        promoText.append(description);
-
-        if (item.code) {
-          const codeText = document.createElement("p");
-          codeText.setAttribute("class", "code");
-          codeText.textContent = item.code;
-          promoText.append(codeText);
+        if (product.isFlashSale) {
+          const saleBanner = document.createElement("div");
+          saleBanner.setAttribute("class", "sale-banner");
+          saleBanner.textContent = "FLASH SALE!";
+          productCard.append(saleBanner);
         }
 
-        promoBox.append(promoText);
-        couponContainer.append(promoBox);
+        const productImage = document.createElement("img");
+        productImage.setAttribute("src", product.image);
+        productImage.setAttribute("alt", product.name);
+        productImage.setAttribute("class", "product-image");
+        productCard.append(productImage);
+
+        const descriptionMain = document.createElement("div");
+        descriptionMain.setAttribute("class", "description-main");
+        productCard.append(descriptionMain);
+
+        const productName = document.createElement("h4");
+        productName.textContent = product.name;
+        descriptionMain.append(productName);
+
+        const productDescription = document.createElement("p");
+        productDescription.textContent = product.description;
+        descriptionMain.append(productDescription);
+
+        const rating = document.createElement("div");
+        rating.setAttribute("class", "rating");
+
+        for (let i = 0; i < 5; i++) {
+          const star = document.createElement("span");
+          star.classList.add("star");
+          star.textContent = "★";
+          rating.append(star);
+        }
+
+        const ratingScore = document.createElement("span");
+        ratingScore.setAttribute("class", "rating-score");
+        ratingScore.textContent = product.rating;
+        rating.append(ratingScore);
+
+        descriptionMain.append(rating);
+
+        const priceContainer = document.createElement("div");
+        priceContainer.style.display = "flex";
+        priceContainer.style.gap = "10px";
+        descriptionMain.append(priceContainer);
+
+        const oldPrice = document.createElement("p");
+        oldPrice.setAttribute("class", "price");
+        oldPrice.textContent = "IDR " + product.price;
+        priceContainer.append(oldPrice);
+
+        const newPrice = document.createElement("p");
+        newPrice.setAttribute("class", "discounted-price");
+        newPrice.textContent = "IDR " + product.discountedPrice;
+        priceContainer.append(newPrice);
+
+        const wrapper = document.createElement("div");
+        wrapper.setAttribute("class", "wrapper");
+
+        descriptionMain.append(wrapper);
+
+        const addToCart = document.createElement("button");
+        addToCart.setAttribute("class", "add-to-cart");
+        addToCart.textContent = "Buy";
+        wrapper.append(addToCart);
+
+        addToCart.addEventListener("click", () => {
+          const params = new URLSearchParams({ id: product.id });
+          window.location.href = `products-review.html?${params.toString()}`;
+        });
+
+        // descriptionMain.append(addToCart);
+
+        const cartButton = document.createElement("button");
+        cartButton.setAttribute("class", "cart-button");
+        // Hapus baris ini: cartButton.textContent = "Add to Cart";
+
+        const cartIcon = document.createElement("img");
+        cartIcon.src = "./src/shoppingCart-org.svg";
+        cartIcon.alt = "Add to Cart";
+        cartIcon.classList.add("cart-icon");
+
+        cartButton.append(cartIcon);
+
+
+        wrapper.append(cartButton);
+
+        cartButton.addEventListener("click", () => {
+          const params = new URLSearchParams({ id: product.id });
+          window.location.href = `products-checkout.html?${params.toString()}`;
+        });
+
       });
+    });
 
-
-      let currentIndex = 0;
-
-      leftArrow.addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + promo.length) % promo.length;
-        updatePromo(promo[currentIndex]);
+    /// left-container function
+    const searchBar = document.querySelector(".search-bar");
+    searchBar.addEventListener("input", (e) => {
+      const query = e.target.value.toLowerCase();
+      const productCards = document.querySelectorAll(".product-card");
+      productCards.forEach((productCard) => {
+        const productName = productCard
+          .querySelector("h4")
+          .textContent.toLowerCase();
+        if (productName.includes(query)) {
+          productCard.style.display = "block";
+        } else {
+          productCard.style.display = "none";
+        }
       });
+    });
 
-      rightArrow.addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % promo.length;
-        updatePromo(promo[currentIndex]);
-      });
+    const promo = [
+      {
+        image: "./src/woman.png",
+        rectangleImage: "./src/rectangle.svg",
+        title: "HAPPY MOTHER'S DAY!",
+        description: "Get one of our favorite menu for free!",
+        code: "Klaim Kupon",
+      },
+      {
+        image: "./src/woman.png",
+        rectangleImage: "./src/rectangle.svg",
+        title: "HAPPY MOTHER'S DAY!",
+        description: "Get one of our favorite menu for free!",
+        code: "Klaim Kupon",
+      },
+      {
+        image: "./src/woman.png",
+        rectangleImage: "./src/rectangle.svg",
+        title: "HAPPY MOTHER'S DAY!",
+        description: "Get one of our favorite menu for free!",
+        code: "Klaim Kupon",
+      },
+      {
+        image: "./src/man.png",
+        rectangleImage: "./src/rectangle-yellow.png",
+        title: "Get a cup of coffee for free on sunday morning",
+        description: "Only at 7 to 9 AM",
+        code: null,
+      },
+      {
+        image: "./src/woman.png",
+        rectangleImage: "./src/rectangle.svg",
+        title: "HAPPY MOTHER'S DAY!",
+        description: "Get one of our favorite menu for free!",
+        code: "Klaim Kupon",
+      },
+      {
+        image: "./src/woman.png",
+        rectangleImage: "./src/rectangle.svg",
+        title: "HAPPY MOTHER'S DAY!",
+        description: "Get one of our favorite menu for free!",
+        code: "Klaim Kupon",
+      },
+    ];
+
+    const couponContainer = document.querySelector(".coupon-container");
+
+    const navigation = document.createElement("div");
+    navigation.setAttribute("class", "navigation");
+
+    const leftArrow = document.createElement("img");
+    leftArrow.setAttribute("src", "./src/arrow-left.svg");
+    leftArrow.setAttribute("alt", "Arrow Left");
+    leftArrow.setAttribute("class", "left-arrow");
+    navigation.append(leftArrow);
+
+    const rightArrow = document.createElement("img");
+    rightArrow.setAttribute("src", "./src/arrow-right.svg");
+    rightArrow.setAttribute("alt", "Arrow Right");
+    rightArrow.setAttribute("class", "right-arrow");
+    navigation.append(rightArrow);
+
+    couponContainer.append(navigation);
+
+    promo.forEach((item) => {
+      const promoBox = document.createElement("div");
+      promoBox.setAttribute("class", "promo-box");
+
+      const rectangleImage = document.createElement("img");
+      rectangleImage.setAttribute("src", item.rectangleImage);
+      rectangleImage.setAttribute("alt", "Rectangle");
+      rectangleImage.setAttribute("class", "rectangle-image");
+      promoBox.append(rectangleImage);
+
+      const mainImage = document.createElement("img");
+      mainImage.setAttribute("src", item.image);
+      mainImage.setAttribute("alt", "Promo Image");
+      mainImage.setAttribute("class", "woman-image");
+      promoBox.append(mainImage);
+
+      const promoText = document.createElement("div");
+      promoText.setAttribute("class", "promo-text");
+
+      const heading = document.createElement("h3");
+      heading.textContent = item.title;
+      promoText.append(heading);
+
+      const description = document.createElement("p");
+      description.textContent = item.description;
+      promoText.append(description);
+
+      if (item.code) {
+        const codeText = document.createElement("p");
+        codeText.setAttribute("class", "code");
+        codeText.textContent = item.code;
+        promoText.append(codeText);
+      }
+
+      promoBox.append(promoText);
+      couponContainer.append(promoBox);
+    });
 
 
-    </script>
-  </body>
+    let currentIndex = 0;
+
+    leftArrow.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + promo.length) % promo.length;
+      updatePromo(promo[currentIndex]);
+    });
+
+    rightArrow.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % promo.length;
+      updatePromo(promo[currentIndex]);
+    });
+
+    ///
+      const header = document.querySelector(".right-header");
+
+      creds = localStorage.getItem("user-data");
+      console.log('credsnya', creds);
+    
+      if (creds) {
+        credsNew = JSON.parse(creds);
+        user = credsNew.find((user) => user.isLoggedIn === true);
+        console.log('creds', creds);
+        console.log('user', user);
+        
+        
+        const signIn = document.querySelector(".login-button");
+        signIn.textContent = `Hi, ${user.name}`;
+        signIn.href ="#";
+
+        const signOut = document.querySelector(".register-button");
+        signOut.textContent = "Logout";
+
+        signOut.addEventListener("click", () => {
+          user.isLoggedIn = false;
+          localStorage.setItem("user-data", JSON.stringify(creds));
+          signOut.href = "login.html";
+        })
+    
+      }
+
+
+  </script>
+</body>
+
 </html>

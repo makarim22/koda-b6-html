@@ -39,11 +39,11 @@ img {
   padding: 0 1rem;
 }
 
-.logo {
+/* .logo {
   display: flex;
   gap: 0.5rem;
   align-items: center;
-}
+} */
 
 
 .logo-text {
@@ -409,4 +409,106 @@ img {
     padding: 0.4rem 0.8rem;
     font-size: 0.85rem;
   }
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    padding: 10px 20px;
+    background-color: black;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    justify-content: space-between;
+    vertical-align: middle;
+    margin-left: 130px;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+
+.left-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 45px;
+}
+
+.right-header {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 130px;
+}
+
+.right-header img {
+    height: 25px;
+    vertical-align: middle;
+    display: inline;
+    margin-right: 30px;
+}
+
+.right-header p {
+    color: white;
+    margin: 0 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.left-header img {
+    height: 25px;
+    vertical-align: middle;
+    display: inline;
+}
+
+.left-header p {
+    color: white;
+    margin: 0 15px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.login-button {
+    margin: 0 10px;
+    cursor: pointer;
+    border: 1px solid white;
+    padding: 10px;
+    /* color: black; */
+    display: inline-block;
+}
+
+.right-header a {
+    text-decoration: none;
+    color: white;
+}
+
+.right-header a {
+    text-decoration: none;
+    color: white;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+}
+
+.register-button {
+    background-color: #FF5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
 }
